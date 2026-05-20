@@ -1,13 +1,57 @@
 "use client";
-
 import { useState } from "react";
-import { motion } from "framer-motion";
+import Reveal from "@/components/Reveal";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/translations";
 
+const CALENDLY_URL = "https://calendly.com/kenneth-andersen2/30min";
+
+function CalendarPreview() {
+  const { lang } = useLang();
+  const today = new Date();
+  const monthName = today.toLocaleString(lang === "no" ? "nb-NO" : "en-US", { month: "long", year: "numeric" });
+  const year = today.getFullYear();
+  const month = today.getMonth();
+  const firstDay = new Date(year, month, 1).getDay();
+  const offset = firstDay === 0 ? 6 : firstDay - 1;
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const cells: (number | null)[] = [];
+  for (let i = 0; i < offset; i++) cells.push(null);
+  for (let d = 1; d <= daysInMonth; d++) cells.push(d);
+  const dows = lang === "no" ? ["M", "T", "O", "T", "F", "L", "S"] : ["M", "T", "W", "T", "F", "S", "S"];
+  const availDays = new Set<number>();
+  for (let d = today.getDate() + 1; d <= daysInMonth; d++) {
+    const dow = new Date(year, month, d).getDay();
+    if (dow === 2 || dow === 3 || dow === 4) availDays.add(d);
+  }
+  return (
+    <div className="calendar-preview">
+      <div className="head">
+        <span>{monthName}</span>
+        <span>{lang === "no" ? "neste slots" : "next slots"}</span>
+      </div>
+      <div className="calendar-grid">
+        {dows.map((d, i) => <div key={`dow${i}`} className="dow">{d}</div>)}
+        {cells.map((d, i) => {
+          if (d === null) return <div key={`e${i}`} className="day muted" />;
+          const isToday = d === today.getDate();
+          const isAvail = availDays.has(d);
+          const cls = isToday ? "today" : isAvail ? "avail" : "muted";
+          return (
+            <a key={`d${d}`} href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"
+              className={`day ${cls}`} style={{ textDecoration: "none" }}>
+              {d}
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function Contact() {
   const { lang } = useLang();
-  const t = translations[lang].contact;
+  const c = translations[lang].contact;
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
@@ -27,149 +71,88 @@ export default function Contact() {
   }
 
   return (
-    <section id="kontakt" className="py-24 bg-[#0a1120]">
-      <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <p className="text-[#D4AF37] text-sm font-medium uppercase tracking-widest mb-3">
-            {lang === "no" ? "Kontakt" : "Contact"}
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">{t.heading}</h2>
-          <p className="text-slate-400 text-lg max-w-2xl">{t.sub}</p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-3"
-          >
-            {status === "success" ? (
-              <div className="p-8 rounded-xl border border-[#D4AF37]/30 bg-[#D4AF37]/5 text-center">
-                <div className="text-4xl mb-4">✓</div>
-                <p className="text-white font-semibold text-lg">{t.form.success}</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-sm text-slate-400 mb-2">{t.form.name}</label>
-                    <input
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#1E293B] border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#D4AF37]/50 transition-colors text-sm"
-                      placeholder="Kenneth Andersen"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-slate-400 mb-2">{t.form.email}</label>
-                    <input
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#1E293B] border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#D4AF37]/50 transition-colors text-sm"
-                      placeholder="navn@selskap.no"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm text-slate-400 mb-2">{t.form.message}</label>
-                  <textarea
-                    required
-                    rows={5}
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full px-4 py-3 bg-[#1E293B] border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#D4AF37]/50 transition-colors text-sm resize-none"
-                    placeholder={t.form.messagePlaceholder}
-                  />
-                </div>
-
-                {status === "error" && (
-                  <p className="text-red-400 text-sm">{t.form.error}</p>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className="self-start px-8 py-3 bg-[#D4AF37] text-[#0F172A] font-bold text-sm rounded-full hover:bg-[#E8CC6A] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 hover:scale-105 disabled:hover:scale-100"
-                >
-                  {status === "sending" ? t.form.sending : t.form.submit}
-                </button>
-              </form>
-            )}
-          </motion.div>
-
-          {/* Direct contact */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-2 flex flex-col gap-4"
-          >
-            <div className="p-6 rounded-xl border border-white/10 bg-[#1E293B]/30">
-              <h3 className="text-white font-semibold mb-5">{t.direct.heading}</h3>
-              <div className="flex flex-col gap-4">
-                <a
-                  href={`mailto:${t.direct.email}`}
-                  className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
-                >
-                  <span className="w-8 h-8 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37]/20 transition-colors flex-shrink-0">
-                    @
-                  </span>
-                  <span className="text-sm break-all">{t.direct.email}</span>
-                </a>
-                <a
-                  href={`tel:${t.direct.phone.replace(/\s/g, "")}`}
-                  className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
-                >
-                  <span className="w-8 h-8 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37]/20 transition-colors flex-shrink-0">
-                    ✆
-                  </span>
-                  <span className="text-sm">{t.direct.phone}</span>
-                </a>
-                <a
-                  href="https://linkedin.com/in/kennethandersenstrategy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
-                >
-                  <span className="w-8 h-8 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37]/20 transition-colors flex-shrink-0">
-                    in
-                  </span>
-                  <span className="text-sm">LinkedIn</span>
-                </a>
-                <div className="flex items-center gap-3 text-slate-500">
-                  <span className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-                    ◎
-                  </span>
-                  <span className="text-sm">{t.direct.location}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-5 rounded-xl border border-[#D4AF37]/20 bg-[#D4AF37]/5">
-              <p className="text-[#D4AF37] text-sm font-medium mb-2">
-                {lang === "no" ? "Tilgjengelighet" : "Availability"}
-              </p>
-              <p className="text-slate-300 text-sm leading-relaxed">
+    <section id="kontakt" className="section">
+      <div className="container">
+        <Reveal className="section-head">
+          <div className="label-col">
+            <span className="num">09 / 09</span>
+            <span className="eyebrow"><span className="dot" />{c.eyebrow}</span>
+          </div>
+          <h2 className="h-section">
+            {lang === "no"
+              ? <>La oss <span className="accent-italic">snakke</span>.</>
+              : <>Let&apos;s <span className="accent-italic">talk</span>.</>}
+          </h2>
+        </Reveal>
+        <div className="contact-grid">
+          <Reveal>
+            <div className="contact-card">
+              <h3>
                 {lang === "no"
-                  ? "Åpen for rådgiverengasjementer, styrearbeid og C-nivå muligheter fra og med nå."
-                  : "Open for advisory engagements, board positions and C-level opportunities starting now."}
-              </p>
+                  ? <>Den enkleste veien inn er en <span className="it">30-minutters samtale</span>.</>
+                  : <>Easiest way in is a <span className="it">30-minute call</span>.</>}
+              </h3>
+              <p>{c.sub}</p>
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"
+                className="btn btn-primary" style={{ alignSelf: "flex-start" }}>
+                {c.bookCta}<span className="arrow" aria-hidden="true" />
+              </a>
+              <div className="or-label">{c.orLabel}</div>
+
+              {/* Contact form */}
+              {status === "success" ? (
+                <div style={{ padding: "20px 0", color: "var(--ok)", fontFamily: "var(--mono)", fontSize: 13 }}>
+                  ✓ {c.form.success}
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                    <div>
+                      <label style={{ display: "block", fontFamily: "var(--mono)", fontSize: 11, color: "var(--ink-dim)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 6 }}>{c.form.name}</label>
+                      <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        style={{ width: "100%", padding: "12px 14px", background: "var(--bg-elev-2)", border: "1px solid var(--line-strong)", borderRadius: "var(--radius)", color: "var(--ink)", fontFamily: "var(--sans)", fontSize: 14, outline: "none" }} />
+                    </div>
+                    <div>
+                      <label style={{ display: "block", fontFamily: "var(--mono)", fontSize: 11, color: "var(--ink-dim)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 6 }}>{c.form.email}</label>
+                      <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        style={{ width: "100%", padding: "12px 14px", background: "var(--bg-elev-2)", border: "1px solid var(--line-strong)", borderRadius: "var(--radius)", color: "var(--ink)", fontFamily: "var(--sans)", fontSize: 14, outline: "none" }} />
+                    </div>
+                  </div>
+                  <div>
+                    <label style={{ display: "block", fontFamily: "var(--mono)", fontSize: 11, color: "var(--ink-dim)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 6 }}>{c.form.message}</label>
+                    <textarea required rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      placeholder={c.form.messagePlaceholder}
+                      style={{ width: "100%", padding: "12px 14px", background: "var(--bg-elev-2)", border: "1px solid var(--line-strong)", borderRadius: "var(--radius)", color: "var(--ink)", fontFamily: "var(--sans)", fontSize: 14, outline: "none", resize: "none" }} />
+                  </div>
+                  {status === "error" && <p style={{ color: "#F87171", fontFamily: "var(--mono)", fontSize: 12 }}>{c.form.error}</p>}
+                  <button type="submit" disabled={status === "sending"}
+                    className="btn btn-ghost btn-small" style={{ alignSelf: "flex-start" }}>
+                    {status === "sending" ? c.form.sending : c.form.submit}
+                    {status !== "sending" && <span className="arrow" aria-hidden="true" />}
+                  </button>
+                </form>
+              )}
+
+              <div className="or-label" style={{ marginTop: 8 }}>{c.orLabel}</div>
+              <div className="contact-details">
+                <a href={`mailto:${c.email}`}><span className="ico">@</span><span>{c.email}</span></a>
+                <a href={`tel:${c.phone.replace(/\s/g, "")}`}><span className="ico">☎</span><span>{c.phone}</span></a>
+                <a href={`https://${c.linkedin}`} target="_blank" rel="noopener noreferrer"><span className="ico">in</span><span>{c.linkedin}</span></a>
+                <div style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 0", color: "var(--ink-dim)" }}>
+                  <span className="ico">⊙</span><span style={{ fontFamily: "var(--mono)", fontSize: 14.5 }}>{c.location}</span>
+                </div>
+              </div>
             </div>
-          </motion.div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="contact-side">
+              <div className="avail-card">
+                <div className="head">{c.availTitle}</div>
+                <div className="body">{c.avail}</div>
+              </div>
+              <CalendarPreview />
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

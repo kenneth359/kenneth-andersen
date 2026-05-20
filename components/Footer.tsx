@@ -1,42 +1,34 @@
 "use client";
-
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/translations";
 
 export default function Footer() {
   const { lang } = useLang();
-  const t = translations[lang].footer;
-  const year = new Date().getFullYear();
-
+  const { footer, nav, contact } = translations[lang];
   return (
-    <footer className="bg-[#080E1A] border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-        <div className="flex items-center gap-2">
-          <span className="text-[#D4AF37] font-bold">KA</span>
-          <span>· Kenneth Andersen · © {year} · {t.rights}</span>
+    <footer className="footer">
+      <div className="footer-inner">
+        <div className="brand-block">
+          <div className="brand">
+            <span className="logomark">K</span>
+            <span>kennethandersen<span style={{ color: "var(--accent)" }}>.no</span></span>
+          </div>
+          <p>{footer.tag}</p>
         </div>
-        <div className="flex items-center gap-5">
-          <a
-            href="https://linkedin.com/in/kennethandersenstrategy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="mailto:kenneth.andersen2@gmail.com"
-            className="hover:text-white transition-colors"
-          >
-            E-post
-          </a>
-          <a
-            href="tel:+4740237351"
-            className="hover:text-white transition-colors"
-          >
-            +47 402 37 351
-          </a>
+        <div className="footer-col">
+          <h4>{lang === "no" ? "Naviger" : "Navigate"}</h4>
+          {nav.links.map((l) => <a key={l.href} href={l.href}>{l.label.toLowerCase()}</a>)}
         </div>
+        <div className="footer-col">
+          <h4>{lang === "no" ? "Kontakt" : "Contact"}</h4>
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone}</a>
+          <a href={`https://${contact.linkedin}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <div>© {new Date().getFullYear()} <a href="https://kennethandersen.no">kennethandersen.no</a></div>
+        <div>{lang === "no" ? "Langesund · Norge" : "Langesund · Norway"}</div>
       </div>
     </footer>
   );
