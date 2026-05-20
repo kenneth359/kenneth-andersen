@@ -37,6 +37,8 @@ export default function PersonSchema() {
         },
         "sameAs": [
           "https://www.linkedin.com/in/kennethandersenstrategy",
+          "https://www.wikidata.org/wiki/Q139859833",
+          "https://www.crunchbase.com/person/kenneth-andersen-c45b",
           "https://kennethandersen.no"
         ],
         "hasOccupation": [
