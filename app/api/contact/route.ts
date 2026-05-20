@@ -41,9 +41,9 @@ export async function POST(req: NextRequest) {
   });
 
   if (!res.ok) {
-    const err = await res.text();
-    console.error("Resend error:", err);
-    return NextResponse.json({ error: "Failed to send" }, { status: 500 });
+    const errText = await res.text();
+    console.error("Resend error:", errText);
+    return NextResponse.json({ error: "Failed to send", detail: errText }, { status: 500 });
   }
 
   return NextResponse.json({ ok: true });
