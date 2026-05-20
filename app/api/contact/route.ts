@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
+    const apiKey = process.env.RESEND_API_KEY?.replace(/^﻿/, "").trim();
     if (!apiKey) {
       return NextResponse.json({ error: "No API key" }, { status: 500 });
     }
