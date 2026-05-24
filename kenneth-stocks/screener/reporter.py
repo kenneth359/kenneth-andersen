@@ -258,8 +258,11 @@ def _social_candidate_card_html(c) -> str:
   </div>
   <div style="font-size:13px;color:#374151;line-height:1.5">{analysis_html}</div>
   {esma_warning}
-  <div style="margin-top:10px;padding:8px;background:#fef9c3;border-radius:5px;font-size:12px;color:#78350f">
-    ⏱ Holdeperiode: 1–5 dager &nbsp;|&nbsp; 🛑 Stop-loss: 10% &nbsp;|&nbsp; 💰 Ta 50% gevinst ved +20%
+  <div style="margin-top:10px;padding:10px;background:#fef9c3;border-radius:5px;font-size:12px;color:#78350f;line-height:1.6">
+    ⏱ Holdeperiode: 1–5 dager &nbsp;|&nbsp; 🛑 Stop-loss: 10%<br>
+    💰 <strong>Standardregel:</strong> selg 50% ved +50%, trailing stop på resten<br>
+    📈 <strong>Hold lenger</strong> hvis kurs fortsatt stiger + volum over 20-dagers snitt (rally pågår)<br>
+    📉 <strong>Selg tidligere</strong> (&lt;+50%) hvis volum faller + åpenbar topp-formasjon
   </div>
 </div>
 """

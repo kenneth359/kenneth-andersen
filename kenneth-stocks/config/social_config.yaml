@@ -3,7 +3,10 @@ portfolio:
   max_positions: 5
   max_position_nok: 4000
   stop_loss_pct: 0.10            # 10% hard stop
-  take_profit_first_half_pct: 0.20  # Sell 50% at +20%
+  take_profit_first_half_pct: 0.50  # Sell 50% at +50% (default)
+  # Dynamic overrides:
+  #   Hold past +50% if: price still rising + volume above 20d average (rally in progress)
+  #   Sell earlier (<+50%) if: volume declining + price showing peak signals (obvious top)
   max_holding_days: 5            # Social momentum is a 1-5 day trade
 
 quality_filters:
