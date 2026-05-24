@@ -5,6 +5,10 @@
 
 set -e
 
+BRANCH="claude/trading-bot-setup-Ekh2i"
+REPO_URL="https://github.com/kenneth359/kenneth-andersen.git"
+DEPLOY_DIR="/opt/kenneth-stocks"
+
 echo "=== Kenneth Stocks VPS Setup ==="
 
 # Docker
@@ -14,9 +18,18 @@ systemctl enable docker
 systemctl start docker
 
 # Clone repo
-echo "[2/4] Cloning repository..."
-git clone https://github.com/kenneth359/kenneth-andersen.git /opt/kenneth-stocks
-cd /opt/kenneth-stocks/kenneth-stocks
+echo "[2/4] Cloning repository (branch: $BRANCH)..."
+if [ ! -d "$DEPLOY_DIR" ]; then
+  git clone -b "$BRANCH" "$REPO_URL" "$DEPLOY_DIR"
+else
+  echo "Directory already exists, pulling latest..."
+  cd "$DEPLOY_DIR"
+  git fetch origin
+  git checkout "$BRANCH"
+  git pull origin "$BRANCH"
+fi
+
+cd "$DEPLOY_DIR/kenneth-stocks"
 
 # .env file
 echo "[3/4] Creating .env file..."
@@ -48,3 +61,8 @@ echo "  docker compose exec screener python main.py --social   # Test social sca
 echo "  docker compose exec screener python main.py --weekly   # Run weekly report now"
 echo "  docker compose exec screener python main.py --panic    # Test panic check"
 echo "  docker compose restart          # Restart after config changes"
+echo ""
+echo "Auto-deploy is active: every push to GitHub triggers a redeploy."
+echo "To enable it, go to GitHub repo Settings > Secrets > Actions and add:"
+echo "  HETZNER_HOST = $(curl -s ifconfig.me)  (this server's IP)"
+echo "  HETZNER_SSH_KEY = (contents of your SSH private key)"
