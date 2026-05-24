@@ -1,0 +1,28 @@
+portfolio:
+  allocation_nok: 12500          # ~25% of 50k
+  max_positions: 5
+  max_position_nok: 4000
+  stop_loss_pct: 0.10            # 10% hard stop
+  take_profit_first_half_pct: 0.20  # Sell 50% at +20%
+  max_holding_days: 5            # Social momentum is a 1-5 day trade
+
+quality_filters:
+  min_market_cap_usd: 150_000_000   # $150M – no tiny shells
+  min_price_usd: 3.00               # No sub-$3 penny stocks
+  min_avg_daily_volume: 500_000     # Must be able to exit
+  allowed_exchanges: ["NMS", "NGM", "NYQ", "NYSEArca"]  # NASDAQ + NYSE only
+  max_5d_price_increase_pct: 0.30   # Skip if already up >30% this week (too late)
+
+signal_filters:
+  min_mention_velocity: 1.5        # Mentions must be at least 1.5x yesterday's count
+  min_rank_improvement: 5          # Must have risen at least 5 spots in 24h ranking
+  min_apewisdom_mentions: 10       # Filter out noise (< 10 mentions = too obscure)
+
+subreddits_monitored:
+  - wallstreetbets
+  - stocks
+  - options
+  - investing
+  - pennystocks
+
+scan_interval_hours: 6

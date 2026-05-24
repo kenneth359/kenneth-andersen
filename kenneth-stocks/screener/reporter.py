@@ -110,7 +110,7 @@ def _signals_html(signals: list[dict]) -> str:
     return "<h3>Makrosignaler</h3>" + "".join(items)
 
 
-def build_weekly_report_html(candidates: list, analyses: dict[str, str], macro: dict, eod_hits: list) -> str:
+def build_weekly_report_html(candidates: list, analyses: dict[str, str], macro: dict, eod_hits: list, social_candidates: list = None) -> str:
     date_str = datetime.now().strftime("%d.%m.%Y")
     candidates_html = "".join(
         _candidate_card_html(c, analyses.get(c.ticker, "Analyse mangler")) for c in candidates
@@ -138,8 +138,10 @@ def build_weekly_report_html(candidates: list, analyses: dict[str, str], macro: 
 
   {signals_html}
 
-  <h2>Topp kjøpskandidater denne uken</h2>
+  <h2>Topp kjøpskandidater denne uken (QGL – 75% kjernestrategi)</h2>
   {candidates_html}
+
+  {_social_section_html(social_candidates or [])}
 
   {eod_html}
 
@@ -156,9 +158,9 @@ def build_weekly_report_html(candidates: list, analyses: dict[str, str], macro: 
 """
 
 
-def send_weekly_report(candidates: list, analyses: dict, macro: dict, eod_hits: list) -> None:
+def send_weekly_report(candidates: list, analyses: dict, macro: dict, eod_hits: list, social_candidates: list = None) -> None:
     _setup_resend()
-    html = build_weekly_report_html(candidates, analyses, macro, eod_hits)
+    html = build_weekly_report_html(candidates, analyses, macro, eod_hits, social_candidates)
     date_str = datetime.now().strftime("%d.%m.%Y")
     params = resend.Emails.SendParams(
         from_=FROM_EMAIL,
@@ -213,3 +215,96 @@ def send_eod_alert(hits: list) -> None:
         html=html,
     )
     resend.Emails.send(params)
+
+
+def _social_candidate_card_html(c) -> str:
+    velocity_str = f"{c.mention_velocity:.1f}x"
+    rank_str = f"#{c.rank_now} (var #{c.rank_24h_ago})"
+    price_change_str = f"{c.price_5d_change*100:+.1f}%" if c.price_5d_change is not None else "N/A"
+    mcap_str = f"${c.market_cap_usd/1e6:.0f}M" if c.market_cap_usd else "N/A"
+    st_badge = ' <span style="background:#1da1f2;color:#fff;font-size:11px;padding:2px 6px;border-radius:10px">StockTwits ✓</span>' if c.details.get("stocktwits") else ""
+    esma_warning = '<p style="color:#b45309;font-size:12px;margin-top:8px">⚠️ Market cap under $500M – verifiser tilgjengelighet på Nordnet (ESMA-regler).</p>' if c.esma_flag else ""
+    analysis_html = c.claude_analysis.replace("\n", "<br>")
+
+    return f"""
+<div style="border:1px solid #fca5a5;border-radius:8px;padding:16px;margin-bottom:16px;background:#fff">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+    <h3 style="margin:0;font-size:17px">{c.ticker} – {c.name}{st_badge}</h3>
+    <span style="background:#dc2626;color:#fff;padding:3px 10px;border-radius:20px;font-size:13px;font-weight:bold">
+      Social {c.social_score}/100
+    </span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:12px">
+    <div style="background:#fef2f2;padding:6px;border-radius:5px;text-align:center">
+      <div style="font-size:10px;color:#6b7280">Kurs</div>
+      <div style="font-weight:bold">${c.price}</div>
+    </div>
+    <div style="background:#fef2f2;padding:6px;border-radius:5px;text-align:center">
+      <div style="font-size:10px;color:#6b7280">Market cap</div>
+      <div style="font-weight:bold">{mcap_str}</div>
+    </div>
+    <div style="background:#fef2f2;padding:6px;border-radius:5px;text-align:center">
+      <div style="font-size:10px;color:#6b7280">Mention velocity</div>
+      <div style="font-weight:bold">{velocity_str}</div>
+    </div>
+    <div style="background:#fef2f2;padding:6px;border-radius:5px;text-align:center">
+      <div style="font-size:10px;color:#6b7280">Reddit rank</div>
+      <div style="font-weight:bold">{rank_str}</div>
+    </div>
+    <div style="background:#fef2f2;padding:6px;border-radius:5px;text-align:center">
+      <div style="font-size:10px;color:#6b7280">5-dagers kurs</div>
+      <div style="font-weight:bold">{price_change_str}</div>
+    </div>
+  </div>
+  <div style="font-size:13px;color:#374151;line-height:1.5">{analysis_html}</div>
+  {esma_warning}
+  <div style="margin-top:10px;padding:8px;background:#fef9c3;border-radius:5px;font-size:12px;color:#78350f">
+    ⏱ Holdeperiode: 1–5 dager &nbsp;|&nbsp; 🛑 Stop-loss: 10% &nbsp;|&nbsp; 💰 Ta 50% gevinst ved +20%
+  </div>
+</div>
+"""
+
+
+def _social_section_html(candidates: list) -> str:
+    if not candidates:
+        return ""
+    cards = "".join(_social_candidate_card_html(c) for c in candidates)
+    return f"""
+<h2 style="border-top:2px solid #dc2626;padding-top:16px;margin-top:24px">
+  🔥 Social Momentum – 25% høyrisikoportefølje
+</h2>
+<p style="font-size:13px;color:#6b7280;margin-bottom:16px">
+  Basert på Reddit mention velocity. Holdeperiode 1–5 dager. Maks 4 000 kr per posisjon. Hard stop-loss 10%.
+</p>
+{cards}
+"""
+
+
+def send_social_alert(candidates: list) -> None:
+    """Send immediate email alert when new social momentum candidates are found."""
+    if not candidates:
+        return
+    _setup_resend()
+    cards_html = "".join(_social_candidate_card_html(c) for c in candidates)
+    html = f"""
+<div style="font-family:system-ui,sans-serif;max-width:700px;margin:0 auto;padding:24px">
+  <div style="background:#dc2626;color:#fff;padding:16px;border-radius:8px;margin-bottom:20px">
+    <h2 style="margin:0">🔥 Nye sosiale momentum-kandidater</h2>
+    <p style="margin:4px 0 0;opacity:.85">{datetime.now().strftime('%d.%m.%Y %H:%M')} – 25% høyrisikoportefølje</p>
+  </div>
+  <p style="font-size:14px;color:#374151">
+    Disse aksjene viser høy Reddit mention velocity og passerer alle kvalitetsfiltre (NYSE/NASDAQ, market cap > $150M, kurs > $3).
+    <strong>Horisont: 1–5 dager. Stop-loss: 10%. Maks 4 000 kr per posisjon.</strong>
+  </p>
+  {cards_html}
+  <p style="font-size:12px;color:#9ca3af">Kenneth Stocks Social Scanner · Ikke finansiell rådgivning.</p>
+</div>
+"""
+    params = resend.Emails.SendParams(
+        from_=FROM_EMAIL,
+        to=[TO_EMAIL],
+        subject=f"🔥 {len(candidates)} sosiale momentum-kandidat(er) funnet",
+        html=html,
+    )
+    resend.Emails.send(params)
+    logger.info(f"Social alert sent: {[c.ticker for c in candidates]}")

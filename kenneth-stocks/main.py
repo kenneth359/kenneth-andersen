@@ -42,19 +42,38 @@ def run_weekly():
     from screener.analyzer import analyze_batch
     from screener.reporter import send_weekly_report
     from screener.eod_scanner import run_eod_scan
+    from screener.social_scanner import run_social_scan
 
     try:
         candidates = get_top_candidates(n=5)
-        logger.info(f"Top candidates: {[c.ticker for c in candidates]}")
+        logger.info(f"Top QGL candidates: {[c.ticker for c in candidates]}")
 
         analyses = analyze_batch(candidates)
         macro = get_macro_snapshot()
         eod_hits = run_eod_scan()
+        social_candidates = run_social_scan(top_n=3)
+        logger.info(f"Top social candidates: {[c.ticker for c in social_candidates]}")
 
-        send_weekly_report(candidates, analyses, macro, eod_hits)
+        send_weekly_report(candidates, analyses, macro, eod_hits, social_candidates)
         logger.info("Weekly report sent successfully.")
     except Exception as e:
         logger.error(f"Weekly run failed: {e}", exc_info=True)
+
+
+def run_social_scan():
+    logger.info("=== Starting social momentum scan ===")
+    from screener.social_scanner import run_social_scan as _scan
+    from screener.reporter import send_social_alert
+
+    try:
+        candidates = _scan(top_n=3)
+        if candidates:
+            send_social_alert(candidates)
+            logger.info(f"Social alert sent for: {[c.ticker for c in candidates]}")
+        else:
+            logger.info("Social scan: no qualifying candidates this run")
+    except Exception as e:
+        logger.error(f"Social scan failed: {e}", exc_info=True)
 
 
 def run_eod():
@@ -90,6 +109,8 @@ def start_scheduler():
     schedule.every().day.at("22:15").do(run_eod)
     # Panic check: every 30 minutes
     schedule.every(30).minutes.do(run_panic_check)
+    # Social momentum: every 6 hours
+    schedule.every(6).hours.do(run_social_scan)
 
     logger.info("Scheduler started. Waiting for jobs...")
     while True:
@@ -102,6 +123,7 @@ def main():
     parser.add_argument("--weekly", action="store_true", help="Run weekly report now")
     parser.add_argument("--eod", action="store_true", help="Run EOD scan now")
     parser.add_argument("--panic", action="store_true", help="Run panic check now")
+    parser.add_argument("--social", action="store_true", help="Run social momentum scan now")
     args = parser.parse_args()
 
     if args.weekly:
@@ -110,6 +132,8 @@ def main():
         run_eod()
     elif args.panic:
         run_panic_check()
+    elif args.social:
+        run_social_scan()
     else:
         start_scheduler()
 
