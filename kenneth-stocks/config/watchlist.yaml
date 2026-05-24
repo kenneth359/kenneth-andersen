@@ -1,0 +1,12 @@
+# Stocks to monitor daily for entry signals (beyond universe)
+extra_watchlist:
+  - "NVDA"   # NVIDIA
+  - "MSFT"   # Microsoft
+  - "GOOGL"  # Alphabet
+  - "META"   # Meta
+  - "AMZN"   # Amazon
+  - "AAPL"   # Apple
+  - "COST"   # Costco
+  - "ASML"   # ASML (also EEA – can go in ASK)
+  - "SAP"    # SAP (EEA)
+  - "MC.PA"  # LVMH (EEA)

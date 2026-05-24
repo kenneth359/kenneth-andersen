@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  screener:
+    build: .
+    container_name: kenneth-stocks
+    restart: unless-stopped
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - FRED_API_KEY=${FRED_API_KEY}
+      - ALPHA_VANTAGE_KEY=${ALPHA_VANTAGE_KEY}
+      - REPORT_EMAIL=${REPORT_EMAIL}
+    volumes:
+      - ./data:/app/data
+    working_dir: /app
+    command: python main.py
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

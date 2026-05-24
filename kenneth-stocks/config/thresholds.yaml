@@ -1,0 +1,29 @@
+qgl:
+  min_roic: 0.15          # ROIC > 15%
+  min_earnings_yield: 0.08 # EBIT/EV > 8%
+  max_peg: 1.0             # PEG <= 1.0
+  min_eps_growth_3y: 0.10  # EPS growth > 10% annualized
+  max_debt_equity: 0.5     # D/E < 0.5
+  min_piotroski: 7         # F-Score >= 7
+  momentum_lookback_months: 6
+  momentum_top_percentile: 0.25  # Top 25%
+  use_200d_ma_filter: true       # Only buy above 200-day MA
+
+universe:
+  min_market_cap_usd: 500_000_000  # $500M minimum
+
+panic_alerts:
+  vix_caution: 35
+  vix_buy_signal: 40
+  vix_extreme: 50
+  aaii_bearish_threshold: 0.50
+  fear_greed_extreme: 25
+
+eod_scan:
+  rsi_oversold: 30
+  volume_spike_multiplier: 1.5
+  price_below_50d_ma_pct: 0.15  # 15% below 50-day MA
+
+macro:
+  credit_spread_warning_bps: 300  # High-yield spread rise > 300bps from recent low
+  pmi_contraction: 50             # ISM PMI below this = contraction

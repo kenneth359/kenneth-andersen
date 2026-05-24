@@ -1,0 +1,53 @@
+sp500_url: "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+sp400_url: "https://en.wikipedia.org/wiki/List_of_S%26P_400_companies"
+
+obx_tickers:
+  - "EQNR.OL"   # Equinor
+  - "DNB.OL"    # DNB Bank
+  - "MOWI.OL"   # Mowi
+  - "TEL.OL"    # Telenor
+  - "ORK.OL"    # Orkla
+  - "AKERBP.OL" # Aker BP
+  - "YAR.OL"    # Yara
+  - "SUBC.OL"   # Subsea 7
+  - "NHY.OL"    # Norsk Hydro
+  - "SALM.OL"   # SalMar
+  - "BWLPG.OL"  # BW LPG
+  - "SDRL.OL"   # Seadrill
+  - "STB.OL"    # Storebrand
+  - "SCHA.OL"   # Schibsted
+  - "BAKKA.OL"  # Bakkafrost
+  - "TOM.OL"    # Tomra Systems
+  - "PGS.OL"    # PGS
+  - "FRO.OL"    # Frontline
+  - "GJFY.OL"   # Gjensidige
+  - "SRBANK.OL" # SpareBank 1 SR-Bank
+
+kenneth_holdings:
+  ask:
+    - ticker: "SRBANK.OL"
+      name: "Sparebanken Norge"
+      shares: 133
+      cost_basis: 10501
+    - ticker: "NONG.OL"
+      name: "SpareBank 1 Nord-Norge"
+      shares: 161
+      cost_basis: 19914
+    - ticker: "SEA1.OL"
+      name: "Sea1 Offshore"
+      shares: 645
+      cost_basis: 16871
+    - ticker: "SENTI.OL"
+      name: "Sentia ASA"
+      shares: 210
+      cost_basis: 10500
+    - ticker: "OTL.OL"
+      name: "Odfjell Technology"
+      shares: 233
+      cost_basis: 11962
+  regular:
+    - ticker: "LILDOG.OL"
+      name: "LILDOG AS"
+      shares: 68965
+      cost_basis: 19999
+      unlisted: true
