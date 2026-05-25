@@ -750,3 +750,100 @@ img { display: block; max-width: 100%; }
 @keyframes blink { 50% { opacity: 0; } }
 
 @media (max-width: 720px) { .container { padding: 0 20px; } }
+
+/* ============================================
+   MOBILE OPTIMISATION — 480px and below
+   ============================================ */
+@media (max-width: 480px) {
+
+  /* Status bar — simplify */
+  .status-bar { font-size: 9px; padding: 5px 14px; height: 26px; gap: 10px; }
+  .status-bar .right .clock { display: none; }
+
+  /* Nav */
+  .nav { top: 26px; }
+  .nav-inner { padding: 12px 20px; }
+
+  /* Sections */
+  .section { padding: clamp(48px, 6vw, 72px) 0; }
+  .section-head { grid-template-columns: 1fr; gap: 14px; margin-bottom: 32px; }
+  .h-section { font-size: clamp(32px, 8.5vw, 48px); }
+
+  /* Hero — stack vertically, photo comes second */
+  .hero { padding-top: 80px; padding-bottom: 48px; }
+  .hero-v1 { grid-template-columns: 1fr; gap: 28px; }
+  .hero-v1 h1 { font-size: clamp(38px, 9vw, 52px); margin-bottom: 16px; }
+  .hero-v1 .sub { font-size: 15px; }
+  .photo-frame { max-width: 100%; aspect-ratio: 3/2; }
+  .photo-frame img { object-position: center top; }
+  .hero-eyebrow { font-size: 9.5px; padding: 6px 10px; margin-bottom: 20px; }
+  .hero-ctas { flex-direction: column; gap: 10px; margin-top: 20px; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+  .hero-micro { font-size: 10px; }
+
+  /* Logo ticker */
+  .logos-track { font-size: 18px; gap: 36px; }
+  .logos-label-row { margin-bottom: 16px; }
+
+  /* Origin chapters — single column on very small */
+  .chapters { grid-template-columns: 1fr; }
+  .chapter { padding: 24px 20px 20px; }
+  .chapter .label { font-size: 32px; }
+  .origin-lede { font-size: 18px; margin-bottom: 36px; }
+
+  /* OS Pillars */
+  .pillars { grid-template-columns: 1fr; }
+  .pillar { padding: 28px 20px; }
+  .pillar h3 { font-size: 22px; }
+
+  /* Stats grid — 2 cols */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-cell { padding: 24px 12px 20px 0; }
+  .stat-cell .v { font-size: clamp(40px, 10vw, 64px); }
+  .stat-cell:nth-child(3n) { border-right: 1px solid var(--line); }
+  .stat-cell:nth-child(2n) { border-right: 0; }
+
+  /* Cases */
+  .case { grid-template-columns: 1fr; gap: 14px; padding: 28px 0; }
+  .case .body h3 { font-size: 22px; }
+  .case .body p { font-size: 14px; }
+
+  /* Services */
+  .services-grid { grid-template-columns: 1fr; }
+  .service h3 { font-size: 22px; }
+
+  /* Career timeline */
+  .career-grid { grid-template-columns: 1fr; gap: 24px; }
+  .timeline-row { grid-template-columns: 76px 1fr; gap: 12px; padding: 16px 0; }
+  .timeline-row .role-title { font-size: 14px; }
+  .timeline-row .pill { display: none; }
+
+  /* Testimonials */
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial blockquote { font-size: 14px; }
+
+  /* Thoughts */
+  .thought { grid-template-columns: 1fr auto; gap: 10px; padding: 20px 0; }
+  .thought .t-date { display: none; }
+  .thought .t-title { font-size: 16px; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-card { padding: 24px 20px; }
+  .contact-card h3 { font-size: 24px; }
+  .avail-card .body { font-size: 15px; }
+
+  /* Footer */
+  .footer { padding: 48px 0 24px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+  .footer::before { display: none; }
+  .footer-bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
+
+  /* Floating CTA — hide on very small, show bottom bar instead */
+  .floating-cta { bottom: 16px; right: 16px; }
+  .btn { padding: 12px 18px; font-size: 13px; }
+  .btn-primary { padding: 13px 20px; }
+
+  /* Aside blocks */
+  .aside-block { padding: 18px; }
+}
