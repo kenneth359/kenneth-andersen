@@ -14,12 +14,12 @@ export const translations = {
       cta: "Book 30 min sparring",
     },
     hero: {
-      eyebrow: "Strategisk rådgiver · Styremedlem · Operativ leder",
+      eyebrow: "Strategisk rådgiver · Styremedlem · Operativ leder · Gründer",
       title: ["Strategi som", "lander i drift."],
-      sub: "Kenneth Andersen er strategisk rådgiver og styremedlem for selskaper som vil koble ambisjon til gjennomføring — særlig der teknologi, energi og industri møter kommersiell vekst.",
+      sub: "Kenneth Andersen er strategisk rådgiver og styremedlem for selskaper som vil koble ambisjon til gjennomføring. Gründer av Fundel — og alltid tett på hva som faktisk endrer seg, særlig innen AI.",
       ctaPrimary: "Book 30 min sparring",
       ctaSecondary: "Se hva jeg leverer",
-      microProof: "Åpen for nye engasjementer — styrearbeid, rådgivning og interim ledelse.",
+      microProof: "Åpen for nye engasjementer — styrearbeid, rådgivning, vekstoppdrag og interim ledelse.",
     },
     logos: {
       label: "Erfaring fra og samarbeid med",
@@ -61,7 +61,7 @@ export const translations = {
     os: {
       eyebrow: "Operativsystem",
       heading: "Slik jobber jeg.",
-      sub: "Fire prinsipper som går igjen, enten jeg er CEO, rådgiver eller i styrerommet.",
+      sub: "Fem prinsipper som går igjen, enten jeg er CEO, rådgiver eller i styrerommet.",
       pillars: [
         {
           n: "01", title: "Resultatorientert",
@@ -82,6 +82,11 @@ export const translations = {
           n: "04", title: "Kommersiell bygger",
           body: "Fra teknisk innsikt til omsetning. Jeg ser kommersielle muligheter i teknologi og operasjon andre overser, og strukturerer salget for å lande dem.",
           proof: "Kontrakter opp til 100 MNOK, nye partnerskap (Volvo, Circle K)",
+        },
+        {
+          n: "05", title: "Evig lærende",
+          body: "Holder meg aktivt oppdatert på hva som skjer — særlig innen AI. Ikke for å følge trender, men fordi det faktisk endrer hva som er mulig i salg, strategi og drift. Jeg tester selv, bruker det i Fundel, og hjelper klienter skille det som gir verdi fra det som er støy.",
+          proof: "Gründer av Fundel — sponsormarkedsplass for norske idrettslag",
         },
       ],
     },
@@ -139,7 +144,7 @@ export const translations = {
     },
     services: {
       eyebrow: "Tjenester",
-      heading: "Tre måter jeg jobber med ledere på.",
+      heading: "Fire måter jeg jobber med ledere og gründere på.",
       sub: "Engasjement skreddersys per oppdrag — start gjerne med en sparringssamtale.",
       items: [
         {
@@ -159,6 +164,12 @@ export const translations = {
           title: "Interim CEO / COO",
           body: "Når selskapet trenger operativ leder gjennom en kritisk fase — eierskifte, snu-operasjon, ny satsing eller skalering. Korte, definerte mandater med tydelige resultatmål.",
           bullets: ["3–18 mnd mandat", "Tydelige KPI-er", "Overlevering til permanent ledelse"],
+        },
+        {
+          tag: "04 / Vekst",
+          title: "Vekstrådgiver — startups og scaleups",
+          body: "Jobber med gründere og vekstselskaper — særlig i Vestfold og Telemark — som vil ta produktet til markedet. Struktur på GTM, salg og strategi. Praktisk AI der det faktisk sparer tid. Gründer-til-gründer, uten konsulentklisjeer.",
+          bullets: ["Go-to-market og kommersialisering", "AI-effektivisering i salg og drift", "Vekststruktur fra første kunde til skalering"],
         },
       ],
     },
@@ -241,6 +252,7 @@ export const translations = {
       sub: "Lengre artikler legges på LinkedIn — her samler jeg de viktigste tankene.",
       items: [
         { tag: "Lederskap", title: "Hvorfor strategi feiler i driftsleddet — og fire grep som fikser det", date: "Skriver" },
+        { tag: "AI", title: "Hva AI faktisk gir verdi for i norsk næringsliv — og hva som bare er støy", date: "Skriver" },
         { tag: "M&A", title: "Shifting Identities in Investor Acquisitions — organisasjonsidentitet ved oppkjøp", date: "Publisert" },
         { tag: "Energi", title: "Mobil grønn energi for utslippsfrie byggeplasser — fra idé til skalering", date: "Caseartikkel" },
       ],
@@ -257,7 +269,7 @@ export const translations = {
       location: "Langesund · Norge",
       linkedin: "linkedin.com/in/kennethandersenstrategy",
       availTitle: "Tilgjengelighet",
-      avail: "Åpen for rådgiverengasjementer, styreverv og C-nivå muligheter fra og med nå. Svarer typisk innen 24 timer.",
+      avail: "Åpen for rådgiverengasjementer, styreverv og C-nivå muligheter. Jobber særlig med startups og scaleups i Vestfold og Telemark. Svarer typisk innen 24 timer.",
       form: {
         name: "Navn",
         email: "E-post",
@@ -287,12 +299,12 @@ export const translations = {
       cta: "Book a 30-min call",
     },
     hero: {
-      eyebrow: "Strategic Advisor · Board Member · Operational Leader",
+      eyebrow: "Strategic Advisor · Board Member · Operational Leader · Founder",
       title: ["Strategy that", "lands in operations."],
-      sub: "Kenneth Andersen is a strategic advisor and board member for companies that want to connect ambition to execution — especially where technology, energy and industry meet commercial growth.",
+      sub: "Kenneth Andersen is a strategic advisor and board member for companies that want to connect ambition to execution. Founder of Fundel — and always close to what's actually changing, especially in AI.",
       ctaPrimary: "Book a 30-min call",
       ctaSecondary: "What I deliver",
-      microProof: "Open for new engagements — board work, advisory and interim leadership.",
+      microProof: "Open for new engagements — board work, advisory, growth mandates and interim leadership.",
     },
     logos: {
       label: "Experience from and partnerships with",
@@ -314,12 +326,13 @@ export const translations = {
     os: {
       eyebrow: "Operating system",
       heading: "How I work.",
-      sub: "Four principles that show up whether I'm CEO, advisor or in the boardroom.",
+      sub: "Five principles that show up whether I'm CEO, advisor or in the boardroom.",
       pillars: [
         { n: "01", title: "Results-oriented", body: "Strategy is not a document — it's what actually happens in operations. I set clear targets, measure weekly, and remove friction between plan and execution.", proof: "2× budget target in 12 months, OneCo Elkraft" },
         { n: "02", title: "Data-driven", body: "Decisions backed by numbers. KPI structures that give line managers direction and the board visibility. Business cases that withstand due diligence.", proof: "Established 3-tier KPI framework, Skagerak Mobil Energi" },
         { n: "03", title: "Relationship builder", body: "Trust is built when people feel you understand their job. My leadership style is relational and direct — people know where they have me, and I know where they stand.", proof: "Scaled team from 21 to 60+ in 12 months" },
         { n: "04", title: "Commercial builder", body: "From technical insight to revenue. I see commercial opportunities in technology and operations that others miss, and structure the sales motion to land them.", proof: "Contracts up to 100 MNOK, new partnerships (Volvo, Circle K)" },
+        { n: "05", title: "Always learning", body: "I keep myself actively updated on what's happening — especially in AI. Not to follow trends, but because it genuinely changes what's possible in sales, strategy and operations. I test it myself, use it in Fundel, and help clients separate what delivers real value from what's just noise.", proof: "Founder of Fundel — sponsorship marketplace for Norwegian sports clubs" },
       ],
     },
     track: {
@@ -346,12 +359,13 @@ export const translations = {
     },
     services: {
       eyebrow: "Services",
-      heading: "Three ways I work with leaders.",
+      heading: "Four ways I work with leaders and founders.",
       sub: "Engagements are tailored — start with a sparring call.",
       items: [
         { tag: "01 / Advisory", title: "Strategic advisor", body: "Sparring partner for CEO, owner or leadership team. Strategy development, commercial modelling, M&A preparation and go-to-market. Monthly retainer or project-based.", bullets: ["1:1 with CEO/owner", "Commercial due diligence", "Growth roadmap"] },
         { tag: "02 / Board", title: "Board member", body: "Certified board member with experience from technology, energy and infrastructure companies. Brings commercial weight, execution experience and governance.", bullets: ["Board work and committees", "M&A and demerger", "Strategy processes"] },
         { tag: "03 / Interim", title: "Interim CEO / COO", body: "When the company needs an operational leader through a critical phase — ownership change, turnaround, new venture or scaling. Short, defined mandates with clear targets.", bullets: ["3–18 month mandate", "Clear KPIs", "Handover to permanent leadership"] },
+        { tag: "04 / Growth", title: "Growth advisor — startups & scaleups", body: "Working with founders and growth companies — particularly in Vestfold and Telemark — who want to take their product to market. Structure on GTM, sales and strategy. Practical AI where it actually saves time. Founder-to-founder, without the consultant clichés.", bullets: ["Go-to-market and commercialisation", "AI application in sales and operations", "Growth structure from first customer to scale"] },
       ],
     },
     career: {
@@ -433,6 +447,7 @@ export const translations = {
       sub: "Longer pieces live on LinkedIn — here I collect the most important thoughts.",
       items: [
         { tag: "Leadership", title: "Why strategy fails in operations — and four moves that fix it", date: "Drafting" },
+        { tag: "AI", title: "What AI actually delivers in Norwegian business — and what's just noise", date: "Drafting" },
         { tag: "M&A", title: "Shifting Identities in Investor Acquisitions — organisational identity in M&A", date: "Published" },
         { tag: "Energy", title: "Mobile green energy for zero-emission construction sites — from idea to scaling", date: "Case article" },
       ],
@@ -449,7 +464,7 @@ export const translations = {
       location: "Langesund · Norway",
       linkedin: "linkedin.com/in/kennethandersenstrategy",
       availTitle: "Availability",
-      avail: "Open for advisory engagements, board roles and C-level opportunities from now. Typically respond within 24 hours.",
+      avail: "Open for advisory engagements, board roles and C-level opportunities. Working particularly with startups and scaleups in Vestfold. Typically respond within 24 hours.",
       form: {
         name: "Name",
         email: "Email",
