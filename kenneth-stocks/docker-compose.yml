@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-      - RESEND_API_KEY=${RESEND_API_KEY}
+      - POSTMARK_API_KEY=${POSTMARK_API_KEY}
       - FRED_API_KEY=${FRED_API_KEY}
       - ALPHA_VANTAGE_KEY=${ALPHA_VANTAGE_KEY}
       - REPORT_EMAIL=${REPORT_EMAIL}

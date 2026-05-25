@@ -3,7 +3,7 @@ anthropic>=0.40.0
 pandas>=2.0.0
 numpy>=1.24.0
 requests>=2.31.0
-resend>=2.0.0
+# resend removed – using Postmark via requests (already included)
 fredapi>=0.5.1
 pyyaml>=6.0
 schedule>=1.2.0

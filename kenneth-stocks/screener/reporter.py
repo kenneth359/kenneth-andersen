@@ -1,5 +1,5 @@
 """
-Reporter: formats and sends email reports via Resend.
+Reporter: formats and sends email reports via Postmark.
 Weekly report + real-time alerts.
 """
 
@@ -8,16 +8,61 @@ import logging
 from datetime import datetime
 from typing import Optional
 
-import resend
+import requests
 
 logger = logging.getLogger(__name__)
 
 TO_EMAIL = os.getenv("REPORT_EMAIL", "kenneth@fundel.no")
 FROM_EMAIL = "kenneth-stocks@kennethandersen.no"
+POSTMARK_API_URL = "https://api.postmarkapp.com/email"
 
 
-def _setup_resend():
-    resend.api_key = os.environ["RESEND_API_KEY"]
+def _send_postmark(subject: str, html: str) -> None:
+    api_key = os.environ["POSTMARK_API_KEY"]
+    resp = requests.post(
+        POSTMARK_API_URL,
+        headers={
+            "X-Postmark-Server-Token": api_key,
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        },
+        json={
+            "From": FROM_EMAIL,
+            "To": TO_EMAIL,
+            "Subject": subject,
+            "HtmlBody": html,
+            "MessageStream": "outbound",
+        },
+        timeout=15,
+    )
+    if not resp.ok:
+        logger.error(f"Postmark error {resp.status_code}: {resp.text}")
+        resp.raise_for_status()
+    logger.info(f"Email sent via Postmark: {resp.json().get('MessageID', '')}")
+
+
+_RISK_CONFIG = {
+    "green": {"bg": "#16a34a", "label": "🟢 LAV RISIKO", "border": "#16a34a"},
+    "yellow": {"bg": "#d97706", "label": "🟡 MIDDELS RISIKO", "border": "#d97706"},
+    "red": {"bg": "#dc2626", "label": "🔴 HØY RISIKO", "border": "#dc2626"},
+}
+
+_CONSENSUS_MAP = {
+    "strong_buy": "STERKT KJØP",
+    "buy": "KJØP",
+    "hold": "HOLD",
+    "underperform": "SELG",
+    "sell": "STERKT SELG",
+}
+
+
+def _risk_badge_html(color: str) -> str:
+    cfg = _RISK_CONFIG.get(color, _RISK_CONFIG["yellow"])
+    return (
+        f'<span style="background:{cfg["bg"]};color:#fff;'
+        f'padding:3px 10px;border-radius:12px;font-size:12px;font-weight:bold">'
+        f'{cfg["label"]}</span>'
+    )
 
 
 def _macro_table_html(macro: dict) -> str:
@@ -58,17 +103,42 @@ def _candidate_card_html(stock, analysis: str) -> str:
     peg_str = f"{stock.peg:.2f}" if stock.peg else "N/A"
     piotroski_str = f"{stock.piotroski}/9" if stock.piotroski is not None else "N/A"
     above_ma_str = "✅ Ja" if stock.above_200d_ma else "❌ Nei" if stock.above_200d_ma is False else "N/A"
+    risk_badge = _risk_badge_html(getattr(stock, "risk_color", "yellow"))
 
-    analysis_html = analysis.replace("\n", "<br>").replace("**", "<strong>").replace("**", "</strong>")
+    # Price target row
+    upside_color = "#16a34a" if (stock.upside_pct or 0) > 10 else "#dc2626" if (stock.upside_pct or 0) < 0 else "#d97706"
+    target_html = ""
+    if stock.price_target:
+        consensus_label = _CONSENSUS_MAP.get(stock.analyst_consensus or "", stock.analyst_consensus or "N/A")
+        analyst_note = f"({stock.analyst_count} analytikere · {consensus_label})" if stock.analyst_count else ""
+        target_html = (
+            f'<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;'
+            f'padding:8px 12px;margin-bottom:12px;font-size:13px">'
+            f'📊 <strong>Analytikerkursmål: ${stock.price_target}</strong> '
+            f'<span style="color:{upside_color};font-weight:bold">'
+            f'({stock.upside_pct:+.1f}% fra nåkurs)</span> {analyst_note}'
+            f'</div>'
+        )
+
+    # Bold the first word of each paragraph (the KJØP/VENT/SELG verdict)
+    import re
+    analysis_html = analysis.strip()
+    analysis_html = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', analysis_html)
+    analysis_html = analysis_html.replace("\n\n", "</p><p>").replace("\n", "<br>")
+    analysis_html = f"<p>{analysis_html}</p>"
 
     return f"""
-<div style="border:1px solid #e5e7eb;border-radius:8px;padding:20px;margin-bottom:20px;background:#fff">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+<div style="border:2px solid {_RISK_CONFIG.get(getattr(stock,'risk_color','yellow'),_RISK_CONFIG['yellow'])['border']};border-radius:8px;padding:20px;margin-bottom:20px;background:#fff">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px">
     <h2 style="margin:0;font-size:20px">{stock.ticker} – {stock.name}</h2>
-    <span style="background:#1d4ed8;color:#fff;padding:4px 10px;border-radius:20px;font-size:13px;font-weight:bold">
-      QGL {stock.qgl_score}/100
-    </span>
+    <div style="display:flex;gap:8px;align-items:center">
+      {risk_badge}
+      <span style="background:#1d4ed8;color:#fff;padding:4px 10px;border-radius:20px;font-size:13px;font-weight:bold">
+        QGL {stock.qgl_score}/100
+      </span>
+    </div>
   </div>
+  {target_html}
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px">
     <div style="background:#f9fafb;padding:8px;border-radius:6px;text-align:center">
       <div style="font-size:11px;color:#6b7280">ROIC</div>
@@ -161,21 +231,16 @@ def build_weekly_report_html(candidates: list, analyses: dict[str, str], macro: 
 
 
 def send_weekly_report(candidates: list, analyses: dict, macro: dict, eod_hits: list, social_candidates: list = None, pension_data: dict = None) -> None:
-    _setup_resend()
     html = build_weekly_report_html(candidates, analyses, macro, eod_hits, social_candidates, pension_data)
     date_str = datetime.now().strftime("%d.%m.%Y")
-    params = resend.Emails.SendParams(
-        from_=FROM_EMAIL,
-        to=[TO_EMAIL],
+    _send_postmark(
         subject=f"📊 Ukentlig aksjeanalyse {date_str} – {len(candidates)} kandidater",
         html=html,
     )
-    result = resend.Emails.send(params)
-    logger.info(f"Weekly report sent: {result}")
+    logger.info("Weekly report sent successfully.")
 
 
 def send_alert(alert: dict) -> None:
-    _setup_resend()
     html = f"""
 <div style="font-family:system-ui,sans-serif;max-width:600px;margin:0 auto;padding:24px">
   <div style="background:#dc2626;color:#fff;padding:16px;border-radius:8px;margin-bottom:16px">
@@ -185,20 +250,16 @@ def send_alert(alert: dict) -> None:
   <p style="font-size:12px;color:#9ca3af">Kenneth Stocks AI-monitor</p>
 </div>
 """
-    params = resend.Emails.SendParams(
-        from_=FROM_EMAIL,
-        to=[TO_EMAIL],
+    _send_postmark(
         subject=f"{alert.get('emoji','')} {alert['level']}: {alert['title']}",
         html=html,
     )
-    resend.Emails.send(params)
     logger.info(f"Alert sent: {alert['level']}")
 
 
 def send_eod_alert(hits: list) -> None:
     if not hits:
         return
-    _setup_resend()
     items = "".join(
         f'<li><strong>{h["ticker"]}</strong> ({h["name"]}) – {", ".join(h["signals"])}</li>'
         for h in hits
@@ -210,13 +271,10 @@ def send_eod_alert(hits: list) -> None:
   <p style="font-size:12px;color:#9ca3af">Kenneth Stocks EOD-scanner</p>
 </div>
 """
-    params = resend.Emails.SendParams(
-        from_=FROM_EMAIL,
-        to=[TO_EMAIL],
+    _send_postmark(
         subject=f"🔍 {len(hits)} inngangssignal(er) funnet",
         html=html,
     )
-    resend.Emails.send(params)
 
 
 def _social_candidate_card_html(c) -> str:
@@ -366,7 +424,6 @@ def send_social_alert(candidates: list) -> None:
     """Send immediate email alert when new social momentum candidates are found."""
     if not candidates:
         return
-    _setup_resend()
     cards_html = "".join(_social_candidate_card_html(c) for c in candidates)
     html = f"""
 <div style="font-family:system-ui,sans-serif;max-width:700px;margin:0 auto;padding:24px">
@@ -375,18 +432,15 @@ def send_social_alert(candidates: list) -> None:
     <p style="margin:4px 0 0;opacity:.85">{datetime.now().strftime('%d.%m.%Y %H:%M')} – 25% høyrisikoportefølje</p>
   </div>
   <p style="font-size:14px;color:#374151">
-    Disse aksjene viser høy Reddit mention velocity og passerer alle kvalitetsfiltre (NYSE/NASDAQ, market cap > $150M, kurs > $3).
+    Disse aksjene viser høy Reddit mention velocity og passerer alle kvalitetsfiltre (NYSE/NASDAQ, market cap &gt; $150M, kurs &gt; $3).
     <strong>Horisont: 1–5 dager. Stop-loss: 10%. Maks 4 000 kr per posisjon.</strong>
   </p>
   {cards_html}
-  <p style="font-size:12px;color:#9ca3af">Kenneth Stocks Social Scanner · Ikke finansiell rådgivning.</p>
+  <p style="font-size:12px;color:#9ca3af">Kenneth Stocks Social Scanner</p>
 </div>
 """
-    params = resend.Emails.SendParams(
-        from_=FROM_EMAIL,
-        to=[TO_EMAIL],
+    _send_postmark(
         subject=f"🔥 {len(candidates)} sosiale momentum-kandidat(er) funnet",
         html=html,
     )
-    resend.Emails.send(params)
     logger.info(f"Social alert sent: {[c.ticker for c in candidates]}")

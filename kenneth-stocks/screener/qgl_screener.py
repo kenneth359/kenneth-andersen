@@ -34,6 +34,15 @@ class StockScore:
     above_200d_ma: Optional[bool]
     price: Optional[float]
     market_cap_usd: Optional[float]
+    # Analyst data
+    price_target: Optional[float] = None        # Analyst consensus target
+    price_target_high: Optional[float] = None
+    price_target_low: Optional[float] = None
+    analyst_count: Optional[int] = None
+    analyst_consensus: Optional[str] = None     # "buy" / "hold" / "sell"
+    upside_pct: Optional[float] = None          # (target - price) / price
+    # Risk classification
+    risk_color: str = "yellow"                  # "green" / "yellow" / "red"
     details: dict = field(default_factory=dict)
 
 
@@ -255,6 +264,20 @@ def score_stock(data: dict, thresholds: dict) -> Optional[StockScore]:
     price = info.get("currentPrice") or info.get("regularMarketPrice")
     name = info.get("longName") or info.get("shortName") or ticker
 
+    # --- Analyst consensus & price target ---
+    price_target = info.get("targetMeanPrice")
+    price_target_high = info.get("targetHighPrice")
+    price_target_low = info.get("targetLowPrice")
+    analyst_count = info.get("numberOfAnalystOpinions")
+    rec_key = info.get("recommendationKey", "")
+    analyst_consensus = rec_key.lower() if rec_key else None
+    upside_pct = None
+    if price and price_target and price > 0:
+        upside_pct = round((price_target / price - 1) * 100, 1)
+
+    # --- Risk color: green / yellow / red ---
+    risk_color = _classify_risk(qgl_score, piotroski, debt_equity, above_200d, momentum_6m, upside_pct)
+
     return StockScore(
         ticker=ticker,
         name=name,
@@ -269,13 +292,78 @@ def score_stock(data: dict, thresholds: dict) -> Optional[StockScore]:
         above_200d_ma=above_200d,
         price=round(price, 2) if price else None,
         market_cap_usd=market_cap,
+        price_target=round(price_target, 2) if price_target else None,
+        price_target_high=round(price_target_high, 2) if price_target_high else None,
+        price_target_low=round(price_target_low, 2) if price_target_low else None,
+        analyst_count=analyst_count,
+        analyst_consensus=analyst_consensus,
+        upside_pct=upside_pct,
+        risk_color=risk_color,
         details={
             "ev_ebitda": round(ev_ebitda, 2) if ev_ebitda else None,
             "sector": info.get("sector"),
             "industry": info.get("industry"),
             "country": info.get("country"),
+            "beta": info.get("beta"),
+            "forward_pe": info.get("forwardPE"),
+            "free_cashflow": info.get("freeCashflow"),
+            "short_ratio": info.get("shortRatio"),
+            "earnings_date": str(info.get("earningsTimestamp", "")),
         },
     )
+
+
+def _classify_risk(
+    qgl_score: float,
+    piotroski: Optional[int],
+    debt_equity: Optional[float],
+    above_200d: Optional[bool],
+    momentum_6m: Optional[float],
+    upside_pct: Optional[float],
+) -> str:
+    """Return 'green', 'yellow', or 'red' risk classification."""
+    red_flags = 0
+    green_flags = 0
+
+    if qgl_score >= 65:
+        green_flags += 2
+    elif qgl_score < 40:
+        red_flags += 2
+
+    if piotroski is not None:
+        if piotroski >= 7:
+            green_flags += 1
+        elif piotroski < 5:
+            red_flags += 2
+
+    if debt_equity is not None:
+        if debt_equity > 0.8:
+            red_flags += 1
+        elif debt_equity < 0.3:
+            green_flags += 1
+
+    if above_200d is True:
+        green_flags += 1
+    elif above_200d is False:
+        red_flags += 1
+
+    if momentum_6m is not None:
+        if momentum_6m > 0.1:
+            green_flags += 1
+        elif momentum_6m < -0.1:
+            red_flags += 1
+
+    if upside_pct is not None:
+        if upside_pct > 20:
+            green_flags += 1
+        elif upside_pct < 0:
+            red_flags += 1
+
+    if red_flags >= 3:
+        return "red"
+    if green_flags >= 4:
+        return "green"
+    return "yellow"
 
 
 def screen_universe(max_tickers: int = 600, batch_size: int = 20, delay: float = 1.0) -> list[StockScore]:
