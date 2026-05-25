@@ -66,7 +66,7 @@ export const metadata: Metadata = {
       "Strategisk rådgiver, styremedlem og interim CEO med ekspertise innen energi og teknologi i Norge. 15 år fra montørhender til konsernledelse.",
     images: [
       {
-        url: `${BASE}/assets/kenneth-tedx.jpg`,
+        url: `${BASE}/assets/kenneth-studio.jpg`,
         width: 1200,
         height: 800,
         alt: "Kenneth Andersen — Strategisk rådgiver, styremedlem, interim CEO",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     title: "Kenneth Andersen — Strategisk rådgiver og styremedlem, Norge",
     description:
       "Strategisk rådgivning, styrearbeid og interim ledelse. Spesialist på energi og teknologi i Norge.",
-    images: [`${BASE}/assets/kenneth-tedx.jpg`],
+    images: [`${BASE}/assets/kenneth-studio.jpg`],
   },
   robots: {
     index: true,

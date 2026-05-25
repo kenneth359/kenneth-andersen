@@ -80,7 +80,7 @@ export default function Hero() {
             </Reveal>
           </div>
           <Reveal delay={200}>
-            <PhotoFrame src="/assets/kenneth-tedx.jpg" />
+            <PhotoFrame src="/assets/kenneth-studio.jpg" />
           </Reveal>
         </div>
       </div>

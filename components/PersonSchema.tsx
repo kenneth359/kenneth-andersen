@@ -11,7 +11,7 @@ export default function PersonSchema() {
         "url": "https://kennethandersen.no",
         "image": {
           "@type": "ImageObject",
-          "url": "https://kennethandersen.no/assets/kenneth-tedx.jpg",
+          "url": "https://kennethandersen.no/assets/kenneth-studio.jpg",
           "caption": "Kenneth Andersen — strategisk rådgiver, styremedlem og interim CEO"
         },
         "description": "Kenneth Andersen er strategisk rådgiver, styremedlem og former C-nivå leder med ekspertise innen energi, teknologi og virksomhetstransformasjon i Norge. 15 år erfaring fra energimontør til konsernledelse.",
