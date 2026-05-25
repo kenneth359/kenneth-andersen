@@ -11,6 +11,7 @@ Usage:
   python main.py --weekly   # Run weekly report immediately
   python main.py --eod      # Run EOD scan immediately
   python main.py --panic    # Run panic check immediately
+  python main.py --pension  # Show pension snapshot now
 """
 
 import argparse
@@ -43,6 +44,7 @@ def run_weekly():
     from screener.reporter import send_weekly_report
     from screener.eod_scanner import run_eod_scan
     from screener.social_scanner import run_social_scan
+    from screener.pension_tracker import get_pension_snapshot
 
     try:
         candidates = get_top_candidates(n=5)
@@ -54,10 +56,34 @@ def run_weekly():
         social_candidates = run_social_scan(top_n=3)
         logger.info(f"Top social candidates: {[c.ticker for c in social_candidates]}")
 
-        send_weekly_report(candidates, analyses, macro, eod_hits, social_candidates)
+        pension = get_pension_snapshot()
+        if pension:
+            logger.info(f"Pension: Kron EPK {pension['current']['kron_epk_nok']:,.0f} kr")
+
+        send_weekly_report(candidates, analyses, macro, eod_hits, social_candidates, pension)
         logger.info("Weekly report sent successfully.")
     except Exception as e:
         logger.error(f"Weekly run failed: {e}", exc_info=True)
+
+
+def run_pension_check():
+    logger.info("=== Pension snapshot ===")
+    from screener.pension_tracker import get_pension_snapshot
+    try:
+        data = get_pension_snapshot()
+        if not data:
+            logger.warning("No pension data – check config/pension_config.yaml")
+            return
+        cur = data["current"]
+        proj = data["projection"]
+        logger.info(f"Kron EPK:       {cur['kron_epk_nok']:>12,.0f} kr")
+        logger.info(f"Storebrand OTP: {cur['storebrand_otp_nok']:>12,.0f} kr")
+        logger.info(f"Projected at {proj['retirement_age']}: {proj['total_at_retirement_nok']:>12,.0f} kr")
+        logger.info(f"Est. monthly pension: {proj['monthly_pension_estimate_nok']:,.0f} kr/mnd")
+        for s in data.get("signals", []):
+            logger.warning(f"[{s['level']}] {s['msg']}")
+    except Exception as e:
+        logger.error(f"Pension check failed: {e}", exc_info=True)
 
 
 def run_social_scan():
@@ -124,6 +150,7 @@ def main():
     parser.add_argument("--eod", action="store_true", help="Run EOD scan now")
     parser.add_argument("--panic", action="store_true", help="Run panic check now")
     parser.add_argument("--social", action="store_true", help="Run social momentum scan now")
+    parser.add_argument("--pension", action="store_true", help="Show pension snapshot now")
     args = parser.parse_args()
 
     if args.weekly:
@@ -134,6 +161,8 @@ def main():
         run_panic_check()
     elif args.social:
         run_social_scan()
+    elif args.pension:
+        run_pension_check()
     else:
         start_scheduler()
 

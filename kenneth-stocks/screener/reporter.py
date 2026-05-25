@@ -110,7 +110,7 @@ def _signals_html(signals: list[dict]) -> str:
     return "<h3>Makrosignaler</h3>" + "".join(items)
 
 
-def build_weekly_report_html(candidates: list, analyses: dict[str, str], macro: dict, eod_hits: list, social_candidates: list = None) -> str:
+def build_weekly_report_html(candidates: list, analyses: dict[str, str], macro: dict, eod_hits: list, social_candidates: list = None, pension_data: dict = None) -> str:
     date_str = datetime.now().strftime("%d.%m.%Y")
     candidates_html = "".join(
         _candidate_card_html(c, analyses.get(c.ticker, "Analyse mangler")) for c in candidates
@@ -143,6 +143,8 @@ def build_weekly_report_html(candidates: list, analyses: dict[str, str], macro: 
 
   {_social_section_html(social_candidates or [])}
 
+  {_pension_section_html(pension_data or {})}
+
   {eod_html}
 
   <h2>Makro &amp; råvarer</h2>
@@ -158,9 +160,9 @@ def build_weekly_report_html(candidates: list, analyses: dict[str, str], macro: 
 """
 
 
-def send_weekly_report(candidates: list, analyses: dict, macro: dict, eod_hits: list, social_candidates: list = None) -> None:
+def send_weekly_report(candidates: list, analyses: dict, macro: dict, eod_hits: list, social_candidates: list = None, pension_data: dict = None) -> None:
     _setup_resend()
-    html = build_weekly_report_html(candidates, analyses, macro, eod_hits, social_candidates)
+    html = build_weekly_report_html(candidates, analyses, macro, eod_hits, social_candidates, pension_data)
     date_str = datetime.now().strftime("%d.%m.%Y")
     params = resend.Emails.SendParams(
         from_=FROM_EMAIL,
@@ -265,6 +267,83 @@ def _social_candidate_card_html(c) -> str:
     📉 <strong>Selg tidligere</strong> (&lt;+50%) hvis volum faller + åpenbar topp-formasjon
   </div>
 </div>
+"""
+
+
+def _pension_section_html(data: dict) -> str:
+    if not data:
+        return ""
+
+    cur = data["current"]
+    proj = data["projection"]
+    signals = data.get("signals", [])
+    alloc = data.get("allocation", {})
+
+    def nok(n):
+        return f"{n:,.0f} kr".replace(",", " ")
+
+    signal_html = ""
+    level_colors = {"ACTION": "#7f1d1d", "WATCH": "#78350f"}
+    for s in signals:
+        color = level_colors.get(s["level"], "#374151")
+        signal_html += (
+            f'<div style="border-left:4px solid {color};padding:8px 12px;margin-bottom:6px;background:#fafafa;font-size:13px">'
+            f'<strong style="color:{color}">{s["level"]}</strong> – {s["msg"]}</div>'
+        )
+
+    alloc_html = ""
+    if alloc:
+        alloc_html = (
+            f'<div style="font-size:12px;color:#6b7280;margin-top:6px">'
+            f'Allokering: {alloc.get("global_pct",0)}% global · '
+            f'{alloc.get("nordic_pct",0)}% nordisk · '
+            f'{alloc.get("em_pct",0)}% EM</div>'
+        )
+
+    stale_note = ""
+    if cur.get("days_stale") and cur["days_stale"] > 30:
+        stale_note = f'<span style="color:#b45309;font-size:11px"> (oppdatert for {cur["days_stale"]} dager siden)</span>'
+
+    return f"""
+<h2 style="border-top:2px solid #7c3aed;padding-top:16px;margin-top:24px">
+  🏦 Pensjonsoversikt – EPK + OTP
+</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+  <div style="border:1px solid #e5e7eb;border-radius:8px;padding:16px;background:#f9fafb">
+    <div style="font-size:12px;color:#6b7280;margin-bottom:4px">Kron EPK – nåværende{stale_note}</div>
+    <div style="font-size:22px;font-weight:bold;color:#111">{nok(cur['kron_epk_nok'])}</div>
+    <div style="font-size:12px;color:#6b7280;margin-top:4px">{cur['kron_fund']}</div>
+    <div style="font-size:12px;color:#6b7280">Kostnad: {cur['kron_cost_pct']}%/år</div>
+    {alloc_html}
+  </div>
+  <div style="border:1px solid #e5e7eb;border-radius:8px;padding:16px;background:#f9fafb">
+    <div style="font-size:12px;color:#6b7280;margin-bottom:4px">Storebrand OTP – løpende</div>
+    <div style="font-size:22px;font-weight:bold;color:#111">{nok(cur['otp_monthly_contribution'])}/mnd</div>
+    <div style="font-size:12px;color:#6b7280;margin-top:4px">Arbeidsgiver-bidrag</div>
+    <div style="font-size:12px;color:#6b7280">Profil: {cur['otp_profile']}</div>
+  </div>
+</div>
+<div style="border:1px solid #7c3aed;border-radius:8px;padding:16px;background:#faf5ff;margin-bottom:12px">
+  <div style="font-size:13px;color:#6b7280;margin-bottom:8px">
+    Projeksjon ved {proj['retirement_age']} år ({proj['years_to_retirement']} år frem)
+    – {proj['real_return_assumption_pct']}% reell avkastning/år
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+    <div style="text-align:center">
+      <div style="font-size:11px;color:#6b7280">Kron EPK</div>
+      <div style="font-size:16px;font-weight:bold;color:#7c3aed">{nok(proj['kron_at_retirement_nok'])}</div>
+    </div>
+    <div style="text-align:center">
+      <div style="font-size:11px;color:#6b7280">Storebrand OTP</div>
+      <div style="font-size:16px;font-weight:bold;color:#7c3aed">{nok(proj['otp_at_retirement_nok'])}</div>
+    </div>
+    <div style="text-align:center;border-left:1px solid #ddd">
+      <div style="font-size:11px;color:#6b7280">Est. månedlig pensjon</div>
+      <div style="font-size:16px;font-weight:bold;color:#059669">{nok(proj['monthly_pension_estimate_nok'])}/mnd</div>
+    </div>
+  </div>
+</div>
+{signal_html}
 """
 
 

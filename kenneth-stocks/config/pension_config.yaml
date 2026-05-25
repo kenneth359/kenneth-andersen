@@ -1,0 +1,22 @@
+kron_epk:
+  balance_nok: 1851574
+  last_updated: "2026-05-24"
+  fund_name: "Kron Indekspakke Forening 100 P"
+  cost_pct: 0.17
+  allocation:
+    global_pct: 80
+    nordic_pct: 10
+    em_pct: 10
+
+storebrand_otp:
+  # Arbeidsgiver betaler inn løpende. Oppdater balance_nok månedlig fra Storebrand-appen.
+  balance_nok: 0        # sett inn nåværende saldo fra Storebrand
+  monthly_contribution_nok: 15000
+  profile: "Pensjonsprofil"   # endre til "Offensiv" i Storebrand-appen!
+  isin: "XL8000306018"
+
+projection:
+  current_age: 41
+  retirement_age: 70
+  expected_real_return_pct: 5.0   # reell avkastning etter inflasjon og kostnader
+  inflation_pct: 2.5
