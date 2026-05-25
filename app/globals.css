@@ -774,7 +774,7 @@ img { display: block; max-width: 100%; }
   .hero-v1 { grid-template-columns: 1fr; gap: 28px; }
   .hero-v1 h1 { font-size: clamp(38px, 9vw, 52px); margin-bottom: 16px; }
   .hero-v1 .sub { font-size: 15px; }
-  .photo-frame { max-width: 100%; aspect-ratio: 3/2; }
+  .photo-frame { max-width: 280px; aspect-ratio: 3/4; margin: 0 auto; }
   .photo-frame img { object-position: center top; }
   .hero-eyebrow { font-size: 9.5px; padding: 6px 10px; margin-bottom: 20px; }
   .hero-ctas { flex-direction: column; gap: 10px; margin-top: 20px; }
