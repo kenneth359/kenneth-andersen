@@ -763,6 +763,7 @@ img { display: block; max-width: 100%; }
   /* Nav */
   .nav { top: 26px; }
   .nav-inner { padding: 12px 20px; }
+  .nav-right .btn-primary { display: none; } /* hidden on mobile — burger menu has CTA */
 
   /* Sections */
   .section { padding: clamp(48px, 6vw, 72px) 0; }
