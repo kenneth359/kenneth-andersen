@@ -41,6 +41,12 @@ class StockScore:
     analyst_count: Optional[int] = None
     analyst_consensus: Optional[str] = None     # "buy" / "hold" / "sell"
     upside_pct: Optional[float] = None          # (target - price) / price
+    # Advanced signals (research-backed)
+    fcf_yield: Optional[float] = None           # FCF/EV %  (strongest value factor)
+    short_interest_chg: Optional[float] = None  # MoM short interest % change
+    eps_revisions_up_7d: Optional[int] = None   # EPS upward revisions last 7 days
+    eps_revisions_down_30d: Optional[int] = None
+    next_earnings_days: Optional[int] = None    # Days until next earnings report
     # Risk classification
     risk_color: str = "yellow"                  # "green" / "yellow" / "red"
     details: dict = field(default_factory=dict)
@@ -275,8 +281,48 @@ def score_stock(data: dict, thresholds: dict) -> Optional[StockScore]:
     if price and price_target and price > 0:
         upside_pct = round((price_target / price - 1) * 100, 1)
 
+    # --- FCF Yield: freeCashflow / enterpriseValue ---
+    fcf = info.get("freeCashflow")
+    ev_val = info.get("enterpriseValue")
+    fcf_yield = round(fcf / ev_val * 100, 1) if fcf and ev_val and ev_val > 0 else None
+
+    # --- Short interest change MoM ---
+    shares_short = info.get("sharesShort")
+    shares_short_prior = info.get("sharesShortPriorMonth")
+    short_interest_chg = None
+    if shares_short and shares_short_prior and shares_short_prior > 0:
+        short_interest_chg = round((shares_short / shares_short_prior - 1) * 100, 1)
+
+    # --- EPS revisions + next earnings date (extra ticker calls) ---
+    eps_revisions_up_7d = None
+    eps_revisions_down_30d = None
+    next_earnings_days = None
+    try:
+        tobj = data["ticker_obj"]
+        rev = tobj.eps_revisions
+        if rev is not None and not rev.empty:
+            row = rev.iloc[0]
+            eps_revisions_up_7d = int(row["upLast7days"]) if "upLast7days" in rev.columns and not pd.isna(row.get("upLast7days")) else None
+            eps_revisions_down_30d = int(row["downLast30days"]) if "downLast30days" in rev.columns and not pd.isna(row.get("downLast30days")) else None
+    except Exception:
+        pass
+    try:
+        tobj = data["ticker_obj"]
+        ed = tobj.earnings_dates
+        if ed is not None and not ed.empty:
+            today = pd.Timestamp.now(tz="UTC")
+            future = ed[ed.index > today]
+            if not future.empty:
+                nxt = future.index[-1]
+                next_earnings_days = max(0, (nxt - today).days)
+    except Exception:
+        pass
+
     # --- Risk color: green / yellow / red ---
-    risk_color = _classify_risk(qgl_score, piotroski, debt_equity, above_200d, momentum_6m, upside_pct)
+    risk_color = _classify_risk(
+        qgl_score, piotroski, debt_equity, above_200d, momentum_6m,
+        upside_pct, fcf_yield, short_interest_chg
+    )
 
     return StockScore(
         ticker=ticker,
@@ -298,6 +344,11 @@ def score_stock(data: dict, thresholds: dict) -> Optional[StockScore]:
         analyst_count=analyst_count,
         analyst_consensus=analyst_consensus,
         upside_pct=upside_pct,
+        fcf_yield=fcf_yield,
+        short_interest_chg=short_interest_chg,
+        eps_revisions_up_7d=eps_revisions_up_7d,
+        eps_revisions_down_30d=eps_revisions_down_30d,
+        next_earnings_days=next_earnings_days,
         risk_color=risk_color,
         details={
             "ev_ebitda": round(ev_ebitda, 2) if ev_ebitda else None,
@@ -320,6 +371,8 @@ def _classify_risk(
     above_200d: Optional[bool],
     momentum_6m: Optional[float],
     upside_pct: Optional[float],
+    fcf_yield: Optional[float] = None,
+    short_interest_chg: Optional[float] = None,
 ) -> str:
     """Return 'green', 'yellow', or 'red' risk classification."""
     red_flags = 0
@@ -358,6 +411,17 @@ def _classify_risk(
             green_flags += 1
         elif upside_pct < 0:
             red_flags += 1
+
+    # FCF yield: strongest single value factor
+    if fcf_yield is not None:
+        if fcf_yield > 5:
+            green_flags += 1
+        elif fcf_yield < 0:
+            red_flags += 2   # Negative FCF = burn rate, serious red flag
+
+    # Short interest rising > 20% MoM = bearish signal
+    if short_interest_chg is not None and short_interest_chg > 20:
+        red_flags += 1
 
     if red_flags >= 3:
         return "red"

@@ -120,6 +120,34 @@ def _candidate_card_html(stock, analysis: str) -> str:
             f'</div>'
         )
 
+    # --- Advanced signals row ---
+    signals_row = []
+    fcf = getattr(stock, "fcf_yield", None)
+    if fcf is not None:
+        fcf_color = "#16a34a" if fcf > 5 else "#dc2626" if fcf < 0 else "#374151"
+        signals_row.append(f'<span style="color:{fcf_color}"><strong>FCF yield:</strong> {fcf:+.1f}%</span>')
+    si_chg = getattr(stock, "short_interest_chg", None)
+    if si_chg is not None:
+        si_color = "#dc2626" if si_chg > 20 else "#16a34a" if si_chg < -10 else "#374151"
+        signals_row.append(f'<span style="color:{si_color}"><strong>Short ↕:</strong> {si_chg:+.0f}% MoM</span>')
+    rev_up = getattr(stock, "eps_revisions_up_7d", None)
+    rev_dn = getattr(stock, "eps_revisions_down_30d", None)
+    if rev_up is not None or rev_dn is not None:
+        rev_color = "#16a34a" if (rev_up or 0) > (rev_dn or 0) else "#dc2626"
+        signals_row.append(f'<span style="color:{rev_color}"><strong>EPS rev (7d):</strong> ↑{rev_up or 0} ↓{rev_dn or 0}</span>')
+    nxt = getattr(stock, "next_earnings_days", None)
+    if nxt is not None:
+        earn_color = "#dc2626" if nxt <= 21 else "#d97706" if nxt <= 45 else "#374151"
+        earn_warn = " ⚠️ KJØP FØR RAPPORT?" if nxt <= 21 else ""
+        signals_row.append(f'<span style="color:{earn_color}"><strong>Neste rapport:</strong> om {nxt}d{earn_warn}</span>')
+    signals_html_row = ""
+    if signals_row:
+        signals_html_row = (
+            '<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;'
+            'padding:8px 12px;margin-bottom:12px;font-size:12px;display:flex;gap:16px;flex-wrap:wrap">'
+            + " &nbsp;|&nbsp; ".join(signals_row) + "</div>"
+        )
+
     # Bold the first word of each paragraph (the KJØP/VENT/SELG verdict)
     import re
     analysis_html = analysis.strip()
@@ -139,6 +167,7 @@ def _candidate_card_html(stock, analysis: str) -> str:
     </div>
   </div>
   {target_html}
+  {signals_html_row}
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px">
     <div style="background:#f9fafb;padding:8px;border-radius:6px;text-align:center">
       <div style="font-size:11px;color:#6b7280">ROIC</div>
