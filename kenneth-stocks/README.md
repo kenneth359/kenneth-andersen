@@ -1,16 +1,10 @@
-# Kenneth Stocks AI Screener
+# Kenneth Stocks — ukentlig rapport i Claude
 
-Automatisert aksje- og sosial momentum-screener. Kjøres 24/7 på en VPS og sender email-rapporter til kenneth@fundel.no.
+Ukentlig investeringsrapport levert direkte som en Claude-melding. Ingen server, ingen Docker, ingen e-posttjeneste — rapporten genereres av Claude selv via `.claude/skills/weekly-stock-report/`, satt opp som en ukentlig **Trigger** i Claude Code on the web.
 
-## Hva systemet gjør
+## Hvorfor ingen server
 
-| Jobb | Frekvens | Hva |
-|---|---|---|
-| **QGL-screener** | Mandag 07:00 | Screener S&P 500/400 + OBX på ROIC, PEG, momentum |
-| **Makro-rapport** | Mandag 07:00 | Råvarer, kredittspread, VIX, fraktrater |
-| **EOD-scan** | Daglig 22:15 | RSI + volum-signaler på watchlisten |
-| **Social scanner** | Hvert 6. time | Reddit mention velocity via ApeWisdom |
-| **Panikk-monitor** | Hvert 30. min | VIX > 35/40/50 + Fear & Greed < 25 |
+Systemet kjørte tidligere som en Python-bot på en Hetzner VPS med `yfinance` for data og Postmark for e-post. Det er lagt ned: `yfinance` og Postmark er blokkert fra Claude Code sitt sandkasse-nettverk uansett, og en VPS bare for å sende én e-post i uken var unødvendig. Nå henter Claude data via websøk (som går via Anthropics egen infrastruktur, ikke den blokkerte proxyen) og leverer rapporten som selve chat-meldingen.
 
 ## Porteføljestruktur
 
@@ -18,34 +12,31 @@ Automatisert aksje- og sosial momentum-screener. Kjøres 24/7 på en VPS og send
 |---|---|---|---|
 | QGL-kjerne | ~37 500 kr | Quality + Growth + Lynch | 12–18 mnd |
 | Social momentum | ~12 500 kr | Reddit velocity + kvalitetsfiltre | 1–5 dager |
+| Pensjon | Kron EPK + Storebrand OTP | Indeksfond, faktor-tilt | 29 år |
 
-## Oppsett (kjøres én gang på Hetzner VPS)
+## Hvordan det kjører
 
-```bash
-bash setup.sh
-```
-
-## API-nøkler som trengs
-
-| Nøkkel | Hvor | Pris |
-|---|---|---|
-| `ANTHROPIC_API_KEY` | console.anthropic.com/keys | ~$5–10/mnd |
-| `RESEND_API_KEY` | Allerede i portfolio-nettstedet | Gratis |
-| `FRED_API_KEY` | fred.stlouisfed.org/docs/api/api_key.html | Gratis |
-| `ALPHA_VANTAGE_KEY` | alphavantage.co/support/#api-key | Gratis |
+1. En ukentlig **Trigger** i Claude Code on the web starter en ny økt
+2. Økten kjører skillen `weekly-stock-report` (se `.claude/skills/weekly-stock-report/SKILL.md`)
+3. Claude leser config-filene under, henter live data via WebSearch, kjører pensjonsberegningen lokalt (ren Python, ingen nettverk), og skriver rapporten som chat-meldingen
+4. En kort push-varsel sendes når rapporten er klar
 
 ## Kjøre manuelt
 
-```bash
-docker compose exec screener python main.py --weekly   # Ukentlig rapport nå
-docker compose exec screener python main.py --social   # Social scan nå
-docker compose exec screener python main.py --eod      # EOD scan nå
-docker compose exec screener python main.py --panic    # Sjekk VIX/frykt nå
+I en Claude Code-økt i dette repoet:
+```
+/weekly-stock-report
 ```
 
 ## Konfigurering
 
-- `config/thresholds.yaml` – QGL-filtergrenser
+- `config/thresholds.yaml` – QGL-filtergrenser (ROIC, PEG, momentum osv.)
 - `config/social_config.yaml` – Social momentum-regler (stop-loss, take-profit, kvalitetsfiltre)
-- `config/universe.yaml` – Aksjer som screenes + eksisterende posisjoner
-- `config/watchlist.yaml` – Ekstra watchlist utover universet
+- `config/universe.yaml` – OBX-watchlist + Kenneths faktiske ASK-beholdning
+- `config/watchlist.yaml` – Ekstra US-watchlist
+- `config/pension_config.yaml` – Kron EPK + Storebrand OTP-saldo (oppdateres manuelt ~månedlig)
+
+## Vedlikehold
+
+- Oppdater `pension_config.yaml` → `kron_epk.balance_nok` og `storebrand_otp.balance_nok` når saldo endrer seg i appene
+- Oppdater `universe.yaml` → `kenneth_holdings` ved kjøp/salg på ASK-kontoen
