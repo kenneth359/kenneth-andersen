@@ -19,11 +19,11 @@ export const translations = {
       sub: "Kenneth Andersen er strategisk rådgiver og styremedlem for selskaper som vil koble ambisjon til gjennomføring. Gründer av Fundel — og alltid tett på hva som faktisk endrer seg, særlig innen AI.",
       ctaPrimary: "Book 30 min sparring",
       ctaSecondary: "Se hva jeg leverer",
-      microProof: "Åpen for nye engasjementer — styrearbeid, rådgivning, vekstoppdrag og interim ledelse.",
+      microProof: "Ved siden av nåværende rolle: styrearbeid, rådgivning, vekstoppdrag og interim ledelse.",
     },
     logos: {
       label: "Erfaring fra og samarbeid med",
-      items: ["Skagerak Energi", "OneCo", "Agder Energi", "ABB Marine", "Statnett", "Statkraft", "Volvo", "Circle K"],
+      items: ["Skagerak Energi", "OneCo", "Agder Energi", "ABB Marine", "Statnett", "Statkraft"],
     },
     origin: {
       eyebrow: "Origin",
@@ -81,7 +81,7 @@ export const translations = {
         {
           n: "04", title: "Kommersiell bygger",
           body: "Fra teknisk innsikt til omsetning. Jeg ser kommersielle muligheter i teknologi og operasjon andre overser, og strukturerer salget for å lande dem.",
-          proof: "Kontrakter opp til 100 MNOK, nye partnerskap (Volvo, Circle K)",
+          proof: "Kontrakter opp til 100 MNOK, nye strategiske partnerskap",
         },
         {
           n: "05", title: "Evig lærende",
@@ -113,9 +113,8 @@ export const translations = {
           title: "Bygd en ny konsernvirksomhet fra null til operativ drift.",
           body: "Tok rollen som Interim CEO og senior forretningsutvikler. Etablerte strategi, team, styringsmodell og KPI-rammeverk. Bygget en ny kategori — mobile, utslippsfrie energiløsninger for bygg- og anleggssektoren — i et marked som ikke fantes.",
           bullets: [
-            "Strategiske partnerskap med Volvo og Circle K",
-            "Ledet M&A-prosess på selgersiden med IM, due diligence og forhandling",
-            "Banebrytende SaaS-plattform for energistyring og nullutslipp",
+            "Strategiske partnerskap med store aktører",
+            "Evaluert oppkjøpscase og drevet forretningsutvikling — business case, partnerdialog og investordekk",
           ],
         },
         {
@@ -144,7 +143,7 @@ export const translations = {
     },
     services: {
       eyebrow: "Tjenester",
-      heading: "Fire måter jeg jobber med ledere og gründere på.",
+      heading: "Tre måter jeg jobber med ledere og gründere på.",
       sub: "Engasjement skreddersys per oppdrag — start gjerne med en sparringssamtale.",
       items: [
         {
@@ -160,15 +159,9 @@ export const translations = {
           bullets: ["Styrearbeid og styreutvalg", "M&A og fisjon", "Strategiprosesser"],
         },
         {
-          tag: "03 / Interim",
-          title: "Interim CEO / COO",
-          body: "Når selskapet trenger operativ leder gjennom en kritisk fase — eierskifte, snu-operasjon, ny satsing eller skalering. Korte, definerte mandater med tydelige resultatmål.",
-          bullets: ["3–18 mnd mandat", "Tydelige KPI-er", "Overlevering til permanent ledelse"],
-        },
-        {
-          tag: "04 / Vekst",
+          tag: "03 / Vekst",
           title: "Vekstrådgiver — startups og scaleups",
-          body: "Jobber med gründere og vekstselskaper — særlig i Vestfold og Telemark — som vil ta produktet til markedet. Struktur på GTM, salg og strategi. Praktisk AI der det faktisk sparer tid. Gründer-til-gründer, uten konsulentklisjeer.",
+          body: "Jobber med gründere og vekstselskaper i hele Norge, med tyngdepunkt på Østlandet, som vil ta produktet til markedet. Struktur på GTM, salg og strategi. Praktisk AI der det faktisk sparer tid. Gründer-til-gründer, uten konsulentklisjeer.",
           bullets: ["Go-to-market og kommersialisering", "AI-effektivisering i salg og drift", "Vekststruktur fra første kunde til skalering"],
         },
       ],
@@ -269,7 +262,7 @@ export const translations = {
       location: "Langesund · Norge",
       linkedin: "linkedin.com/in/kennethandersenstrategy",
       availTitle: "Tilgjengelighet",
-      avail: "Åpen for rådgiverengasjementer, styreverv og C-nivå muligheter. Jobber særlig med startups og scaleups i Vestfold og Telemark. Svarer typisk innen 24 timer.",
+      avail: "Åpen for rådgiverengasjementer og styreverv. Jobber med startups og scaleups i hele Norge, med tyngdepunkt på Østlandet. Svarer typisk innen 24 timer.",
       form: {
         name: "Navn",
         email: "E-post",
@@ -304,11 +297,11 @@ export const translations = {
       sub: "Kenneth Andersen is a strategic advisor and board member for companies that want to connect ambition to execution. Founder of Fundel — and always close to what's actually changing, especially in AI.",
       ctaPrimary: "Book a 30-min call",
       ctaSecondary: "What I deliver",
-      microProof: "Open for new engagements — board work, advisory, growth mandates and interim leadership.",
+      microProof: "Alongside my current role: board work, advisory, growth mandates and interim leadership.",
     },
     logos: {
       label: "Experience from and partnerships with",
-      items: ["Skagerak Energi", "OneCo", "Agder Energi", "ABB Marine", "Statnett", "Statkraft", "Volvo", "Circle K"],
+      items: ["Skagerak Energi", "OneCo", "Agder Energi", "ABB Marine", "Statnett", "Statkraft"],
     },
     origin: {
       eyebrow: "Origin",
@@ -331,7 +324,7 @@ export const translations = {
         { n: "01", title: "Results-oriented", body: "Strategy is not a document — it's what actually happens in operations. I set clear targets, measure weekly, and remove friction between plan and execution.", proof: "2× budget target in 12 months, OneCo Elkraft" },
         { n: "02", title: "Data-driven", body: "Decisions backed by numbers. KPI structures that give line managers direction and the board visibility. Business cases that withstand due diligence.", proof: "Established 3-tier KPI framework, Skagerak Mobil Energi" },
         { n: "03", title: "Relationship builder", body: "Trust is built when people feel you understand their job. My leadership style is relational and direct — people know where they have me, and I know where they stand.", proof: "Scaled team from 21 to 60+ in 12 months" },
-        { n: "04", title: "Commercial builder", body: "From technical insight to revenue. I see commercial opportunities in technology and operations that others miss, and structure the sales motion to land them.", proof: "Contracts up to 100 MNOK, new partnerships (Volvo, Circle K)" },
+        { n: "04", title: "Commercial builder", body: "From technical insight to revenue. I see commercial opportunities in technology and operations that others miss, and structure the sales motion to land them.", proof: "Contracts up to 100 MNOK, new strategic partnerships" },
         { n: "05", title: "Always learning", body: "I keep myself actively updated on what's happening — especially in AI. Not to follow trends, but because it genuinely changes what's possible in sales, strategy and operations. I test it myself, use it in Fundel, and help clients separate what delivers real value from what's just noise.", proof: "Founder of Fundel — sponsorship marketplace for Norwegian sports clubs" },
       ],
     },
@@ -352,20 +345,19 @@ export const translations = {
       eyebrow: "Selected work",
       heading: "Three stories that show what I do.",
       items: [
-        { tag: "Build · Interim CEO", period: "2020 → today", company: "Skagerak Mobil Energi", title: "Built a new business from zero to operational.", body: "Took the role as Interim CEO and senior business developer. Established strategy, team, governance model and KPI framework. Built a new category — mobile zero-emission energy solutions for construction — in a market that didn't yet exist.", bullets: ["Strategic partnerships with Volvo and Circle K", "Led sell-side M&A with IM, due diligence and negotiation", "Pioneering SaaS platform for energy management and zero emissions"] },
+        { tag: "Build · Interim CEO", period: "2020 → today", company: "Skagerak Mobil Energi", title: "Built a new business from zero to operational.", body: "Took the role as Interim CEO and senior business developer. Established strategy, team, governance model and KPI framework. Built a new category — mobile zero-emission energy solutions for construction — in a market that didn't yet exist.", bullets: ["Strategic partnerships with major players", "Evaluated acquisition cases and drove business development — business case, partner dialogue and investor decks"] },
         { tag: "Growth · Director", period: "2018–2020", company: "OneCo Elkraft", title: "Doubled revenue against budget in twelve months.", body: "Led the elkraft and energy segment with full responsibility for strategy, sales and delivery. Structured sales work, clear pipeline and targeted positioning delivered growth well above budget.", bullets: ["Scaled the organisation from 21 to 60+ employees in 12 months", "Led Kvilldal HVDC (73 MNOK) — OneCo's largest elkraft project", "Refined the HUB delivery model for cross-region resource utilisation"] },
         { tag: "Transformation · CEO", period: "2017–2018", company: "Otera Ratel (Agder Energi)", title: "Repositioned through ownership change — won ¾ major tenders.", body: "Managing director with full P&L responsibility. Qualified the company for Statnett and Hafslund Nett, built HSE and quality systems and delivered a 145 kV GIS project at Sildvik.", bullets: ["3 of 4 major national tenders won in first operating year", "145 kV GIS station for Statnett, delivered on quality and time", "Preserved key competence and customer relationships through sale"] },
       ],
     },
     services: {
       eyebrow: "Services",
-      heading: "Four ways I work with leaders and founders.",
+      heading: "Three ways I work with leaders and founders.",
       sub: "Engagements are tailored — start with a sparring call.",
       items: [
         { tag: "01 / Advisory", title: "Strategic advisor", body: "Sparring partner for CEO, owner or leadership team. Strategy development, commercial modelling, M&A preparation and go-to-market. Monthly retainer or project-based.", bullets: ["1:1 with CEO/owner", "Commercial due diligence", "Growth roadmap"] },
         { tag: "02 / Board", title: "Board member", body: "Certified board member with experience from technology, energy and infrastructure companies. Brings commercial weight, execution experience and governance.", bullets: ["Board work and committees", "M&A and demerger", "Strategy processes"] },
-        { tag: "03 / Interim", title: "Interim CEO / COO", body: "When the company needs an operational leader through a critical phase — ownership change, turnaround, new venture or scaling. Short, defined mandates with clear targets.", bullets: ["3–18 month mandate", "Clear KPIs", "Handover to permanent leadership"] },
-        { tag: "04 / Growth", title: "Growth advisor — startups & scaleups", body: "Working with founders and growth companies — particularly in Vestfold and Telemark — who want to take their product to market. Structure on GTM, sales and strategy. Practical AI where it actually saves time. Founder-to-founder, without the consultant clichés.", bullets: ["Go-to-market and commercialisation", "AI application in sales and operations", "Growth structure from first customer to scale"] },
+        { tag: "03 / Growth", title: "Growth advisor — startups & scaleups", body: "Working with founders and growth companies across Norway, with a focus on Eastern Norway, who want to take their product to market. Structure on GTM, sales and strategy. Practical AI where it actually saves time. Founder-to-founder, without the consultant clichés.", bullets: ["Go-to-market and commercialisation", "AI application in sales and operations", "Growth structure from first customer to scale"] },
       ],
     },
     career: {
@@ -464,7 +456,7 @@ export const translations = {
       location: "Langesund · Norway",
       linkedin: "linkedin.com/in/kennethandersenstrategy",
       availTitle: "Availability",
-      avail: "Open for advisory engagements, board roles and C-level opportunities. Working particularly with startups and scaleups in Vestfold. Typically respond within 24 hours.",
+      avail: "Open for advisory engagements and board roles. Working with startups and scaleups across Norway, with a focus on Eastern Norway. Typically respond within 24 hours.",
       form: {
         name: "Name",
         email: "Email",

@@ -67,7 +67,7 @@ export default function Energi() {
               "Fornybar energi og energiomstilling — strategi og kommersialisering",
               "Mobile og utslippsfrie energiløsninger for bygg og anlegg",
               "Energy-as-a-Service og digitale plattformer for energistyring",
-              "Partnerskap og distribusjonskanaler i energibransjen (Volvo, Circle K, Avinor)",
+              "Partnerskap og distribusjonskanaler i energibransjen",
               "Offentlige anbudsprosesser og kvalifisering (Statnett, Hafslund Nett)",
             ].map((item, i) => (
               <li key={i} style={{ fontFamily: "var(--font-jetbrains-mono, monospace)", fontSize: 13, color: "#D4D4D2", paddingLeft: 24, position: "relative" }}>

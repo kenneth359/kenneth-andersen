@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Interim CEO og interim ledelse | Kenneth Andersen",
+  title: "Erfaring med interim ledelse | Kenneth Andersen",
   description:
-    "Kenneth Andersen tar på seg interim CEO og COO-oppdrag i kritiske faser — eierskifter, snuoperasjoner og skalering. Erfaren norsk interimledelse i energi og teknologi.",
+    "Kenneth Andersen har erfaring som interim CEO og COO gjennom kritiske faser — eierskifter, snuoperasjoner og skalering — i norsk energi og teknologi.",
   alternates: { canonical: "https://kennethandersen.no/interim" },
   openGraph: {
     type: "website",
     url: "https://kennethandersen.no/interim",
-    title: "Interim CEO Norge — Kenneth Andersen",
-    description: "Interim CEO og COO med dokumentert track record. Operativ leder i kritiske faser for norske selskaper i energi og teknologi.",
+    title: "Erfaring med interim ledelse — Kenneth Andersen",
+    description: "Erfaring som interim CEO og COO med dokumentert track record — operativ leder i kritiske faser for norske selskaper i energi og teknologi.",
     images: [{ url: "https://kennethandersen.no/assets/kenneth-tedx.jpg", width: 1200, height: 800 }],
   },
 };
@@ -23,23 +23,23 @@ const faqSchema = {
       "name": "Hva er en interim CEO?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En interim CEO er en erfaren leder som midlertidig tar topplederstillingen i en organisasjon gjennom en kritisk fase — typisk ved eierskifte, snuoperasjon, plutselig lederavgang eller en ny strategisk satsing. Kenneth Andersen tilbyr interim CEO-tjenester med typisk mandat på 3–18 måneder."
+        "text": "En interim CEO er en erfaren leder som midlertidig tar topplederstillingen i en organisasjon gjennom en kritisk fase — typisk ved eierskifte, snuoperasjon, plutselig lederavgang eller en ny strategisk satsing. Kenneth Andersen har erfaring som interim CEO med mandater på typisk 3–18 måneder."
       }
     },
     {
       "@type": "Question",
-      "name": "Når passer interim ledelse fra Kenneth Andersen?",
+      "name": "Hvor har Kenneth Andersen hatt interim-roller?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Interim ledelse passer når selskapet trenger en operativ leder med tung erfaring raskt — ved eierskifter, når selskapet skal skaleres, ved en snuoperasjon, eller som bro mellom to permanente ledere. Kenneth Andersen har erfaring fra alle disse situasjonene i norsk energi og teknologi."
+        "text": "Kenneth Andersen har tatt interim-roller ved eierskifter, skalering og snuoperasjoner — blant annet som Interim CEO for Skagerak Mobil Energi siden 2020. Erfaringen er fra norsk energi og teknologi."
       }
     },
     {
       "@type": "Question",
-      "name": "Hva koster en interim CEO i Norge?",
+      "name": "Hva innebærer interim ledelse i praksis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kostnaden for en interim CEO varierer med mandatets omfang og varighet. Kenneth Andersen tilbyr tydelig definerte engasjementer med klare KPI-er og overlevering til permanent ledelse. Ta kontakt for en innledende samtale."
+        "text": "Interim ledelse betyr en operativ leder som går inn i en klart definert periode med tydelige mål og en plan for overlevering til permanent ledelse. Kenneth Andersen har gjort dette i roller med mandater på 3–18 måneder."
       }
     }
   ]
@@ -60,7 +60,7 @@ export default function Interim() {
           Operativ leder<br /><em style={{ fontFamily: "var(--font-instrument-serif, serif)", color: "#FF6B35", fontStyle: "italic", fontWeight: 400 }}>når det teller.</em>
         </h1>
         <p style={{ fontSize: 19, lineHeight: 1.55, color: "#D4D4D2", maxWidth: 680, marginBottom: 48 }}>
-          Når selskapet trenger en operativ leder gjennom en kritisk fase — eierskifte, snuoperasjon, ny satsing eller skalering. Korte, definerte mandater med tydelige resultatmål.
+          Erfaring som operativ leder gjennom kritiske faser — eierskifte, snuoperasjon, ny satsing eller skalering. Korte, definerte mandater med tydelige resultatmål.
         </p>
         <section style={{ marginBottom: 48, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
           {[
@@ -85,7 +85,7 @@ export default function Interim() {
           ))}
         </section>
         <a href="/#kontakt" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 24px", background: "#FF6B35", color: "#16100B", fontWeight: 600, borderRadius: 999, textDecoration: "none", fontSize: 14 }}>
-          Diskuter interim-oppdrag →
+          Book 30 min sparring →
         </a>
       </main>
     </>

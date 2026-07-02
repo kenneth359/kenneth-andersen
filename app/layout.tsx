@@ -29,13 +29,12 @@ const jetbrainsMono = JetBrains_Mono({
 const BASE = "https://kennethandersen.no";
 
 export const metadata: Metadata = {
-  title: "Kenneth Andersen | Strategisk rådgiver, styremedlem og interim CEO — Norge",
+  title: "Kenneth Andersen | Strategisk rådgiver og styremedlem — Norge",
   description:
-    "Kenneth Andersen er strategisk rådgiver, styremedlem og former C-nivå leder med 15 år erfaring innen energi og teknologi i Norge. Tilgjengelig for styrearbeid, strategi og interim ledelse.",
+    "Kenneth Andersen er strategisk rådgiver og styremedlem med 15 år erfaring innen energi og teknologi i Norge. Tilgjengelig for styrearbeid, strategi og interim ledelse.",
   keywords: [
     "strategisk rådgiver Norge",
     "styremedlem energi Norge",
-    "interim CEO Norway",
     "strategic advisor Norway energy",
     "board member Norway",
     "Kenneth Andersen",
@@ -63,13 +62,13 @@ export const metadata: Metadata = {
     alternateLocale: "en_US",
     title: "Kenneth Andersen — Strategisk rådgiver og styremedlem",
     description:
-      "Strategisk rådgiver, styremedlem og interim CEO med ekspertise innen energi og teknologi i Norge. 15 år fra montørhender til konsernledelse.",
+      "Strategisk rådgiver og styremedlem med ekspertise innen energi og teknologi i Norge. 15 år fra montørhender til konsernledelse.",
     images: [
       {
         url: `${BASE}/assets/kenneth-studio.jpg`,
         width: 1200,
         height: 800,
-        alt: "Kenneth Andersen — Strategisk rådgiver, styremedlem, interim CEO",
+        alt: "Kenneth Andersen — Strategisk rådgiver, styremedlem",
       },
     ],
     firstName: "Kenneth",
