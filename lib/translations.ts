@@ -162,7 +162,7 @@ export const translations = {
           tag: "03 / Vekst",
           title: "Vekstrådgiver — startups og scaleups",
           body: "Jobber med gründere og vekstselskaper i hele Norge, med tyngdepunkt på Østlandet, som vil ta produktet til markedet. Struktur på GTM, salg og strategi. Praktisk AI der det faktisk sparer tid. Gründer-til-gründer, uten konsulentklisjeer.",
-          bullets: ["Go-to-market og kommersialisering", "AI-effektivisering i salg og drift", "Vekststruktur fra første kunde til skalering"],
+          bullets: ["Go-to-market og kommersialisering", "AI-effektivisering i salg og drift", "MVP-bygging og rask markedstesting med AI", "Vekststruktur fra første kunde til skalering"],
         },
         {
           tag: "04 / Foredrag",
@@ -363,7 +363,7 @@ export const translations = {
       items: [
         { tag: "01 / Advisory", title: "Strategic advisor", body: "Sparring partner for CEO, owner or leadership team. Strategy development, commercial modelling, M&A preparation and go-to-market. Monthly retainer or project-based.", bullets: ["1:1 with CEO/owner", "Commercial due diligence", "Growth roadmap"] },
         { tag: "02 / Board", title: "Board member", body: "Certified board member with experience from technology, energy and infrastructure companies. Brings commercial weight, execution experience and governance.", bullets: ["Board work and committees", "M&A and demerger", "Strategy processes"] },
-        { tag: "03 / Growth", title: "Growth advisor — startups & scaleups", body: "Working with founders and growth companies across Norway, with a focus on Eastern Norway, who want to take their product to market. Structure on GTM, sales and strategy. Practical AI where it actually saves time. Founder-to-founder, without the consultant clichés.", bullets: ["Go-to-market and commercialisation", "AI application in sales and operations", "Growth structure from first customer to scale"] },
+        { tag: "03 / Growth", title: "Growth advisor — startups & scaleups", body: "Working with founders and growth companies across Norway, with a focus on Eastern Norway, who want to take their product to market. Structure on GTM, sales and strategy. Practical AI where it actually saves time. Founder-to-founder, without the consultant clichés.", bullets: ["Go-to-market and commercialisation", "AI application in sales and operations", "MVP building and rapid market testing with AI", "Growth structure from first customer to scale"] },
         { tag: "04 / Speaking", title: "AI speaker & trainer", body: "Talks and internal courses on practical artificial intelligence for boards and leadership teams. Built on real board and executive experience — AI for decisions, not hype.", bullets: ["Talks for leadership teams and boards", "Internal AI courses and workshops", "Practical AI — not hype"] },
       ],
     },

@@ -49,6 +49,14 @@ const faqSchema = {
         "@type": "Answer",
         "text": "Ja — dette er kjernevinkelen. Kenneth har selv sittet i styrerom og konsernledelse, og foredragene er bygget for styrets perspektiv: hvilke spørsmål bør styret stille, hvor er risikoen, og hvor skaper AI faktisk verdi."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan Kenneth bygge en MVP eller prototype for oss, ikke bare snakke om det?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja — der det er relevant kombineres foredrag eller internkurs med praktisk MVP-bygging og rask markedstesting med AI-verktøy, som en del av et rådgivningsoppdrag. Dette gjøres gjennom den ordinære vekstrådgivningen, ikke som en del av selve foredraget."
+      }
     }
   ]
 };
@@ -73,7 +81,7 @@ export default function AiForedrag() {
         <section style={{ marginBottom: 56 }}>
           <h2 style={{ fontSize: 28, fontWeight: 500, letterSpacing: "-0.02em", marginBottom: 20 }}>Foredrag og temaer</h2>
           <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 16 }}>
-            {["AI for styrerommet — hvilke spørsmål bør styret stille?", "Fra hype til drift — praktisk AI-implementering i virksomheten", "AI i energi- og industrisektoren", "Lederteamet og KI — hva må dere faktisk beslutte"].map((item, i) => (
+            {["AI for styrerommet — hvilke spørsmål bør styret stille?", "Fra hype til drift — praktisk AI-implementering i virksomheten", "Fra idé til MVP — hvordan AI endrer innovasjonstrakten", "AI i energi- og industrisektoren", "Lederteamet og KI — hva må dere faktisk beslutte"].map((item, i) => (
               <li key={i} style={{ fontFamily: "var(--font-jetbrains-mono, monospace)", fontSize: 14, color: "#D4D4D2", paddingLeft: 24, position: "relative" }}>
                 <span style={{ position: "absolute", left: 0, color: "#FF6B35" }}>→</span>
                 {item}
@@ -85,6 +93,25 @@ export default function AiForedrag() {
           <h2 style={{ fontSize: 28, fontWeight: 500, letterSpacing: "-0.02em", marginBottom: 20 }}>Format</h2>
           <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 16 }}>
             {["Keynote-foredrag (30–60 min) — til kick-off, samling eller konferanse", "Internkurs / workshop (halv- eller heldag) — ledergruppen jobber med egne problemstillinger", "Styreseminar — AI-forståelse spisset mot styrets rolle og ansvar"].map((item, i) => (
+              <li key={i} style={{ fontFamily: "var(--font-jetbrains-mono, monospace)", fontSize: 14, color: "#D4D4D2", paddingLeft: 24, position: "relative" }}>
+                <span style={{ position: "absolute", left: 0, color: "#FF6B35" }}>→</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section style={{ marginBottom: 56, borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: 40 }}>
+          <h2 style={{ fontSize: 28, fontWeight: 500, letterSpacing: "-0.02em", marginBottom: 20 }}>Hvorfor Kenneth</h2>
+          <p style={{ fontSize: 16, lineHeight: 1.6, color: "#D4D4D2", maxWidth: 680, marginBottom: 24 }}>
+            Ikke bare foredrag om AI — Kenneth bruker det selv, i egne prosjekter, og kan vise til konkrete resultater:
+          </p>
+          <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 16 }}>
+            {[
+              "AI-assistert produktutvikling: bygger og drifter selv produksjonskode med AI-kodeagenter (Claude Code) — denne nettsiden og Fundel-plattformen er begge utviklet på den måten",
+              "MVP fra idé til marked: grunnla og bygde Fundel — sponsormarkedsplass for norske idrettslag — fra konsept til live plattform med Vipps- og kortbetaling",
+              "Rask innovasjonstrakt: bruker AI til å gå fra idé til testbar prototype på dager i stedet for måneder, for å validere markedsrespons før full utvikling",
+              "AI i go-to-market og markedsarbeid: samme metodikk som ligger bak posisjonering, innhold og SEO på denne siden",
+            ].map((item, i) => (
               <li key={i} style={{ fontFamily: "var(--font-jetbrains-mono, monospace)", fontSize: 14, color: "#D4D4D2", paddingLeft: 24, position: "relative" }}>
                 <span style={{ position: "absolute", left: 0, color: "#FF6B35" }}>→</span>
                 {item}
