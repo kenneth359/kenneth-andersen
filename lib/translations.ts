@@ -16,10 +16,10 @@ export const translations = {
     hero: {
       eyebrow: "Strategisk rådgiver · Styremedlem · Operativ leder · Gründer",
       title: ["Strategi som", "lander i drift."],
-      sub: "Kenneth Andersen er strategisk rådgiver og styremedlem for selskaper som vil koble ambisjon til gjennomføring. Gründer av Fundel — og alltid tett på hva som faktisk endrer seg, særlig innen AI.",
+      sub: "Kenneth Andersen er strategisk rådgiver og styremedlem for selskaper som vil koble ambisjon til gjennomføring. Gründer av Fundel — og alltid tett på hva som faktisk endrer seg, særlig innen AI. Holder også foredrag og kurs om praktisk AI for styrer og ledergrupper.",
       ctaPrimary: "Book 30 min sparring",
       ctaSecondary: "Se hva jeg leverer",
-      microProof: "Ved siden av nåværende rolle: styrearbeid, rådgivning, vekstoppdrag og interim ledelse.",
+      microProof: "Ved siden av nåværende rolle: styrearbeid, rådgivning, vekstoppdrag, AI-foredrag og interim ledelse.",
     },
     logos: {
       label: "Erfaring fra og samarbeid med",
@@ -168,7 +168,7 @@ export const translations = {
           tag: "04 / Foredrag",
           title: "AI-foredragsholder og kursholder",
           body: "Foredrag og internkurs om praktisk kunstig intelligens for styrer og ledergrupper. Bygget på egen styre- og konsernledererfaring — AI for beslutninger, ikke hype.",
-          bullets: ["Foredrag for ledergrupper og styrer", "Internkurs og workshops i KI", "Praktisk AI — ikke hype"],
+          bullets: ["Foredrag for ledergrupper og styrer", "Internkurs og workshops i KI", "Bygger selv med AI (Claude Code) — denne siden og Fundel er bevis"],
         },
       ],
     },
@@ -268,7 +268,7 @@ export const translations = {
       location: "Langesund · Norge",
       linkedin: "linkedin.com/in/kennethandersenstrategy",
       availTitle: "Tilgjengelighet",
-      avail: "Åpen for rådgiverengasjementer og styreverv. Jobber med startups og scaleups i hele Norge, med tyngdepunkt på Østlandet. Svarer typisk innen 24 timer.",
+      avail: "Åpen for rådgiverengasjementer, styreverv og AI-foredrag/kurs. Jobber med startups og scaleups i hele Norge, med tyngdepunkt på Østlandet. Svarer typisk innen 24 timer.",
       form: {
         name: "Navn",
         email: "E-post",
@@ -300,10 +300,10 @@ export const translations = {
     hero: {
       eyebrow: "Strategic Advisor · Board Member · Operational Leader · Founder",
       title: ["Strategy that", "lands in operations."],
-      sub: "Kenneth Andersen is a strategic advisor and board member for companies that want to connect ambition to execution. Founder of Fundel — and always close to what's actually changing, especially in AI.",
+      sub: "Kenneth Andersen is a strategic advisor and board member for companies that want to connect ambition to execution. Founder of Fundel — and always close to what's actually changing, especially in AI. Also speaks and runs courses on practical AI for boards and leadership teams.",
       ctaPrimary: "Book a 30-min call",
       ctaSecondary: "What I deliver",
-      microProof: "Alongside my current role: board work, advisory, growth mandates and interim leadership.",
+      microProof: "Alongside my current role: board work, advisory, growth mandates, AI talks and interim leadership.",
     },
     logos: {
       label: "Experience from and partnerships with",
@@ -364,7 +364,7 @@ export const translations = {
         { tag: "01 / Advisory", title: "Strategic advisor", body: "Sparring partner for CEO, owner or leadership team. Strategy development, commercial modelling, M&A preparation and go-to-market. Monthly retainer or project-based.", bullets: ["1:1 with CEO/owner", "Commercial due diligence", "Growth roadmap"] },
         { tag: "02 / Board", title: "Board member", body: "Certified board member with experience from technology, energy and infrastructure companies. Brings commercial weight, execution experience and governance.", bullets: ["Board work and committees", "M&A and demerger", "Strategy processes"] },
         { tag: "03 / Growth", title: "Growth advisor — startups & scaleups", body: "Working with founders and growth companies across Norway, with a focus on Eastern Norway, who want to take their product to market. Structure on GTM, sales and strategy. Practical AI where it actually saves time. Founder-to-founder, without the consultant clichés.", bullets: ["Go-to-market and commercialisation", "AI application in sales and operations", "MVP building and rapid market testing with AI", "Growth structure from first customer to scale"] },
-        { tag: "04 / Speaking", title: "AI speaker & trainer", body: "Talks and internal courses on practical artificial intelligence for boards and leadership teams. Built on real board and executive experience — AI for decisions, not hype.", bullets: ["Talks for leadership teams and boards", "Internal AI courses and workshops", "Practical AI — not hype"] },
+        { tag: "04 / Speaking", title: "AI speaker & trainer", body: "Talks and internal courses on practical artificial intelligence for boards and leadership teams. Built on real board and executive experience — AI for decisions, not hype.", bullets: ["Talks for leadership teams and boards", "Internal AI courses and workshops", "Builds with AI himself (Claude Code) — this site and Fundel are proof"] },
       ],
     },
     career: {
@@ -463,7 +463,7 @@ export const translations = {
       location: "Langesund · Norway",
       linkedin: "linkedin.com/in/kennethandersenstrategy",
       availTitle: "Availability",
-      avail: "Open for advisory engagements and board roles. Working with startups and scaleups across Norway, with a focus on Eastern Norway. Typically respond within 24 hours.",
+      avail: "Open for advisory engagements, board roles and AI talks/courses. Working with startups and scaleups across Norway, with a focus on Eastern Norway. Typically respond within 24 hours.",
       form: {
         name: "Name",
         email: "Email",
