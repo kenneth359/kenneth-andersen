@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/translations";
@@ -38,8 +39,14 @@ function PhotoFrame({ src }: { src: string }) {
   const { lang } = useLang();
   return (
     <div className="photo-frame">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt="Kenneth Andersen" loading="eager" />
+      <Image
+        src={src}
+        alt="Kenneth Andersen — strategisk rådgiver, styremedlem og foredragsholder"
+        fill
+        priority
+        sizes="(max-width: 980px) 460px, 40vw"
+        style={{ objectFit: "cover" }}
+      />
       <div className="telemetry">REC · LIVE</div>
       <div className="corner tl" /><div className="corner tr" />
       <div className="corner bl" /><div className="corner br" />

@@ -51,11 +51,6 @@ export const metadata: Metadata = {
   publisher: "Kenneth Andersen",
   alternates: {
     canonical: BASE,
-    languages: {
-      "nb-NO": BASE,
-      "en-US": `${BASE}/en`,
-      "x-default": BASE,
-    },
   },
   openGraph: {
     type: "profile",
