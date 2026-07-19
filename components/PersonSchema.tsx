@@ -15,7 +15,7 @@ export default function PersonSchema() {
           "caption": "Kenneth Andersen — strategisk rådgiver, styremedlem og interim CEO"
         },
         "description": "Kenneth Andersen er strategisk rådgiver, styremedlem og former C-nivå leder med ekspertise innen energi, teknologi og virksomhetstransformasjon i Norge. 15 år erfaring fra energimontør til konsernledelse.",
-        "jobTitle": ["Strategisk rådgiver", "Styremedlem", "Interim CEO"],
+        "jobTitle": ["Strategisk rådgiver", "Styremedlem", "Interim CEO", "Foredragsholder — kunstig intelligens"],
         "knowsAbout": [
           "Strategisk rådgivning",
           "Styrearbeid",
@@ -26,7 +26,9 @@ export default function PersonSchema() {
           "Teknologi og digitalisering",
           "Mergers and Acquisitions",
           "Go-to-market strategi",
-          "Elkraft og kraftnett"
+          "Elkraft og kraftnett",
+          "Kunstig intelligens (AI) for ledelse og styrer",
+          "Praktisk AI-implementering i virksomheter"
         ],
         "nationality": { "@type": "Country", "name": "Norway" },
         "address": {
@@ -59,6 +61,12 @@ export default function PersonSchema() {
             "name": "Interim CEO",
             "occupationLocation": { "@type": "Country", "name": "Norway" },
             "description": "Interim topplederstøtte i omstilling, eierskifte og kritiske vekstfaser"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Foredragsholder og kursholder — kunstig intelligens",
+            "occupationLocation": { "@type": "Country", "name": "Norway" },
+            "description": "Foredrag og internkurs om praktisk KI for ledergrupper og styrer i norske virksomheter"
           }
         ],
         "alumniOf": [
@@ -84,7 +92,8 @@ export default function PersonSchema() {
           "Virksomhetstransformasjon",
           "Forretningsutvikling",
           "M&A rådgivning",
-          "Digital transformasjon"
+          "Digital transformasjon",
+          "AI-foredrag og kurs for ledergrupper og styrer"
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -112,6 +121,14 @@ export default function PersonSchema() {
                 "@type": "Service",
                 "name": "Interim CEO / COO",
                 "description": "Operativ leder gjennom kritiske faser — eierskifte, snu-operasjon eller skalering. Typisk 3–18 måneder."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI-foredrag og kurs",
+                "description": "Foredrag og internkurs om praktisk kunstig intelligens for ledere og styrer — fra strategi til beslutning."
               }
             }
           ]

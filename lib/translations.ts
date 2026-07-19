@@ -143,7 +143,7 @@ export const translations = {
     },
     services: {
       eyebrow: "Tjenester",
-      heading: "Tre måter jeg jobber med ledere og gründere på.",
+      heading: "Fire måter jeg jobber med ledere og gründere på.",
       sub: "Engasjement skreddersys per oppdrag — start gjerne med en sparringssamtale.",
       items: [
         {
@@ -163,6 +163,12 @@ export const translations = {
           title: "Vekstrådgiver — startups og scaleups",
           body: "Jobber med gründere og vekstselskaper i hele Norge, med tyngdepunkt på Østlandet, som vil ta produktet til markedet. Struktur på GTM, salg og strategi. Praktisk AI der det faktisk sparer tid. Gründer-til-gründer, uten konsulentklisjeer.",
           bullets: ["Go-to-market og kommersialisering", "AI-effektivisering i salg og drift", "Vekststruktur fra første kunde til skalering"],
+        },
+        {
+          tag: "04 / Foredrag",
+          title: "AI-foredragsholder og kursholder",
+          body: "Foredrag og internkurs om praktisk kunstig intelligens for styrer og ledergrupper. Bygget på egen styre- og konsernledererfaring — AI for beslutninger, ikke hype.",
+          bullets: ["Foredrag for ledergrupper og styrer", "Internkurs og workshops i KI", "Praktisk AI — ikke hype"],
         },
       ],
     },
@@ -352,12 +358,13 @@ export const translations = {
     },
     services: {
       eyebrow: "Services",
-      heading: "Three ways I work with leaders and founders.",
+      heading: "Four ways I work with leaders and founders.",
       sub: "Engagements are tailored — start with a sparring call.",
       items: [
         { tag: "01 / Advisory", title: "Strategic advisor", body: "Sparring partner for CEO, owner or leadership team. Strategy development, commercial modelling, M&A preparation and go-to-market. Monthly retainer or project-based.", bullets: ["1:1 with CEO/owner", "Commercial due diligence", "Growth roadmap"] },
         { tag: "02 / Board", title: "Board member", body: "Certified board member with experience from technology, energy and infrastructure companies. Brings commercial weight, execution experience and governance.", bullets: ["Board work and committees", "M&A and demerger", "Strategy processes"] },
         { tag: "03 / Growth", title: "Growth advisor — startups & scaleups", body: "Working with founders and growth companies across Norway, with a focus on Eastern Norway, who want to take their product to market. Structure on GTM, sales and strategy. Practical AI where it actually saves time. Founder-to-founder, without the consultant clichés.", bullets: ["Go-to-market and commercialisation", "AI application in sales and operations", "Growth structure from first customer to scale"] },
+        { tag: "04 / Speaking", title: "AI speaker & trainer", body: "Talks and internal courses on practical artificial intelligence for boards and leadership teams. Built on real board and executive experience — AI for decisions, not hype.", bullets: ["Talks for leadership teams and boards", "Internal AI courses and workshops", "Practical AI — not hype"] },
       ],
     },
     career: {

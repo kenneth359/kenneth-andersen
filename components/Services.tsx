@@ -17,8 +17,8 @@ export default function Services() {
           <div>
             <h2 className="h-section">
               {lang === "no"
-                ? <>Tre måter å <span className="accent-italic">jobbe sammen</span>.</>
-                : <>Three ways to <span className="accent-italic">work together</span>.</>}
+                ? <>Fire måter å <span className="accent-italic">jobbe sammen</span>.</>
+                : <>Four ways to <span className="accent-italic">work together</span>.</>}
             </h2>
             <p className="body-l" style={{ marginTop: 18, maxWidth: 580 }}>{s.sub}</p>
           </div>
