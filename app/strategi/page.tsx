@@ -65,7 +65,7 @@ export default function Strategi() {
         <section style={{ marginBottom: 56 }}>
           <h2 style={{ fontSize: 28, fontWeight: 500, letterSpacing: "-0.02em", marginBottom: 20 }}>Hva tilbys</h2>
           <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 16 }}>
-            {["Strategiutvikling og operasjonalisering fra veikart til gjennomføring", "Kommersiell modellering og forretningscaser som tåler due diligence", "Go-to-market og partnerstrategi i markeder uten fasit", "Digital transformasjon og AI som vekstdriver", "M&A-forberedelse og integrasjonsstøtte"].map((item, i) => (
+            {["Strategiutvikling og operasjonalisering fra veikart til gjennomføring", "Kommersiell modellering og forretningscaser som tåler due diligence", "Go-to-market og partnerstrategi i markeder uten fasit", "Digital transformasjon og AI som vekstdriver", "Strategiske partnerskap og beslutningsunderlag"].map((item, i) => (
               <li key={i} style={{ fontFamily: "var(--font-jetbrains-mono, monospace)", fontSize: 14, color: "#D4D4D2", paddingLeft: 24, position: "relative" }}>
                 <span style={{ position: "absolute", left: 0, color: "#FF6B35" }}>→</span>
                 {item}
