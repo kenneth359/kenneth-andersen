@@ -107,10 +107,10 @@ export default function AiForedrag() {
           </p>
           <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 16 }}>
             {[
-              "AI-assistert produktutvikling: bygger og drifter selv produksjonskode med AI-kodeagenter (Claude Code) — denne nettsiden og Fundel-plattformen er begge utviklet på den måten",
-              "MVP fra idé til marked: grunnla og bygde Fundel — sponsormarkedsplass for norske idrettslag — fra konsept til live plattform med Vipps- og kortbetaling",
-              "Rask innovasjonstrakt: bruker AI til å gå fra idé til testbar prototype på dager i stedet for måneder, for å validere markedsrespons før full utvikling",
-              "AI i go-to-market og markedsarbeid: samme metodikk som ligger bak posisjonering, innhold og SEO på denne siden",
+              "AI-assistert utvikling: bruker ChatGPT og Claude til å utvikle, forbedre og kvalitetssikre digitale løsninger, blant annet denne nettsiden og prototyper for Fundel",
+              "Fra idé til marked: etablerte Fundel og ledet utviklingen av en publisert digital plattform for idrettslag, med kommersiell modell, produktprioritering og pilotarbeid",
+              "Prototyper og arbeidsverktøy: har utviklet et lokalt oppfølgingsverktøy for salgsprosesser, med pipeline, kontaktlogg og import/eksport — foreløpig uten live CRM-integrasjoner",
+              "AI i kommersialisering: bruker ChatGPT, Claude og Copilot til analyse, markedsinnhold, kundeoppfølging og arbeidsflyter; har også gjennomført fordypning gjennom VibeLabs Masterclass",
             ].map((item, i) => (
               <li key={i} style={{ fontFamily: "var(--font-jetbrains-mono, monospace)", fontSize: 14, color: "#D4D4D2", paddingLeft: 24, position: "relative" }}>
                 <span style={{ position: "absolute", left: 0, color: "#FF6B35" }}>→</span>
