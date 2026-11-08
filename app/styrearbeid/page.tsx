@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://kennethandersen.no/styrearbeid",
     title: "Styremedlem Kenneth Andersen — Energi og teknologi, Norge",
-    description: "Sertifisert styremedlem med M&A-erfaring, kommersiell tyngde og gjennomføringskraft. Tilgjengelig for nye styreverv.",
+    description: "Sertifisert styremedlem med kommersiell tyngde og gjennomføringskraft. Tilgjengelig for nye styreverv.",
     images: [{ url: "https://kennethandersen.no/assets/kenneth-tedx.jpg", width: 1200, height: 800 }],
   },
 };
@@ -23,7 +23,7 @@ const faqSchema = {
       "name": "Hva bidrar Kenneth Andersen med som styremedlem?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kenneth Andersen bidrar med kommersiell tyngde, gjennomføringserfaring og governance-kompetanse. Spesialisert på energi, teknologi og infrastruktur. Har erfaring fra M&A-prosesser, fisjoner og strategiprosesser i norske vekstselskaper."
+        "text": "Kenneth Andersen bidrar med kommersiell tyngde, gjennomføringserfaring og governance-kompetanse. Spesialisert på energi, teknologi og infrastruktur. Har erfaring fra strategiprosesser, virksomhetsutvikling og kommersielle beslutninger."
       }
     },
     {
@@ -64,7 +64,7 @@ export default function Styrearbeid() {
         </p>
         <section style={{ marginBottom: 48, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
           {[
-            { title: "M&A og fisjon", desc: "Erfaring fra begge sider av transaksjoner — due diligence, forhandling og integrasjon." },
+            { title: "Strategiske veivalg", desc: "Erfaring med vurdering av alternativer, risiko, forretningsmodeller og beslutningsgrunnlag." },
             { title: "Strategiprosesser", desc: "Setter krav til strategi som tåler operasjonell virkelighet, ikke bare styrerommet." },
             { title: "Kommersiell utfordring", desc: "Stiller de ubehagelige spørsmålene om inntektsmodell, marked og gjennomføringskraft." },
             { title: "Governance", desc: "Kjenn til NUES og norsk corporate governance. Erfaring fra vekstfaser og eierskifter." },
