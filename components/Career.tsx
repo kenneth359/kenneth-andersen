@@ -20,14 +20,14 @@ export default function Career() {
           <Reveal>
             <div className="timeline">
               {c.roles.map((r, i) => (
-                <div key={i} className={`timeline-row ${i < 3 ? "featured" : ""}`}>
+                <div key={i} className={`timeline-row ${i === 0 ? "featured" : ""}`}>
                   <div className="period">{r.period}</div>
                   <div>
                     <div className="role-title">{r.title}</div>
                     <div className="role-comp">{r.company}</div>
                   </div>
                   <div className="pill">
-                    {i < 3 ? (lang === "no" ? "Aktiv" : "Active") : "—"}
+                    {i === 0 ? (lang === "no" ? "Aktiv" : "Active") : "—"}
                   </div>
                 </div>
               ))}

@@ -16,7 +16,7 @@ export const translations = {
     hero: {
       eyebrow: "Strategisk rådgiver · Styremedlem · Operativ leder · Gründer",
       title: ["Strategi som", "lander i drift."],
-      sub: "Kenneth Andersen er strategisk rådgiver og styremedlem for selskaper som vil koble ambisjon til gjennomføring. Gründer av Fundel — og alltid tett på hva som faktisk endrer seg, særlig innen AI. Holder også foredrag og kurs om praktisk AI for styrer og ledergrupper.",
+      sub: "Jeg bygger nye virksomheter, partnerskap og produkter — fra strategi og business case til kommersiell modell og gjennomføring. Kombinerer erfaring fra operativ ledelse, energi og industri med praktisk bruk av AI. Gründer av Fundel, med erfaring fra styrearbeid og strategiske vekstprosesser.",
       ctaPrimary: "Book 30 min sparring",
       ctaSecondary: "Se hva jeg leverer",
       microProof: "Ved siden av nåværende rolle: styrearbeid, rådgivning, vekstoppdrag, AI-foredrag og interim ledelse.",
@@ -53,7 +53,7 @@ export const translations = {
         {
           n: "05", label: "Bygg", year: "2017→",
           title: "CEO, COO og konsernledelse",
-          body: "Tre selskaper bygd fra grunnen eller gjennom eierskifte — Otera Ratel, OneCo Elkraft og Skagerak Mobil Energi. Styreerfaring fra M&A, fisjon og strategiprosesser.",
+          body: "Leder- og virksomhetsansvar fra Otera Ratel og OneCo, og forretningsutvikling i Skagerak Energi. Erfaring med nye satsinger, strategiske partnerskap, styringsmodeller og eierprosesser.",
         },
       ],
       footnote: "Hver rolle har lagt et lag. Det er grunnen til at jeg lander strategi som faktisk virker i drift — fordi jeg har stått der drift skjer.",
@@ -65,7 +65,7 @@ export const translations = {
       pillars: [
         {
           n: "01", title: "Resultatorientert",
-          body: "Strategi er ikke et dokument — det er det som faktisk skjer i operasjonen. Jeg setter tydelige mål, måler nådestand ukentlig, og fjerner friksjon mellom plan og gjennomføring.",
+          body: "Strategi er ikke et dokument — det er det som faktisk skjer i operasjonen. Jeg setter tydelige mål, følger utviklingen ukentlig, og fjerner friksjon mellom plan og gjennomføring.",
           proof: "2× budsjettmål på 12 mnd, OneCo Elkraft",
         },
         {
@@ -93,12 +93,12 @@ export const translations = {
     track: {
       eyebrow: "Track record",
       heading: "Tall som har fulgt med.",
-      sub: "Et utvalg — verifiserbart, hentet fra reelle roller.",
+      sub: "Utvalgte resultater fra tidligere roller. Tallene bygger på tidligere CV og bør verifiseres mot underliggende dokumentasjon.",
       stats: [
         { value: "15+", label: "år", note: "Strategi, ledelse, leveranse" },
         { value: "2×", label: "budsjettmål", note: "12 måneder, OneCo Elkraft" },
         { value: "21→60", label: "ansatte", note: "Skalering på 12 mnd, OneCo" },
-        { value: "¾", label: "store nasjonale anbud", note: "Vunnet, Otera Ratel" },
+        { value: "¾", label: "store nasjonale anbud", note: "Til forhandling, Otera Ratel" },
         { value: "73", label: "MNOK Kvilldal HVDC", note: "OneCo, største elkraftprosjekt" },
         { value: "100", label: "MNOK kontrakter", note: "Konkurranseutsatte markeder" },
       ],
@@ -108,13 +108,13 @@ export const translations = {
       heading: "Tre historier som forteller hva jeg gjør.",
       items: [
         {
-          tag: "Build · Interim CEO", period: "2020 → i dag",
+          tag: "Virksomhetsutvikling · Interim CEO i 2024", period: "2020 → i dag",
           company: "Skagerak Mobil Energi",
-          title: "Bygd en ny konsernvirksomhet fra null til operativ drift.",
-          body: "Tok rollen som Interim CEO og senior forretningsutvikler. Etablerte strategi, team, styringsmodell og KPI-rammeverk. Bygget en ny kategori — mobile, utslippsfrie energiløsninger for bygg- og anleggssektoren — i et marked som ikke fantes.",
+          title: "Utvikler nye forretningsområder fra strategi til marked.",
+          body: "Senior forretningsutvikler i Skagerak Energi siden 2020, og interim daglig leder i Skagerak Mobil Energi juni–november 2024. Leder strategiske initiativer innen batterier, mobile energiløsninger og depotlading, fra forretningsmodell og partnerdialog til produkt- og leveransemodell.",
           bullets: [
-            "Strategiske partnerskap med store aktører",
-            "Evaluert oppkjøpscase og drevet forretningsutvikling — business case, partnerdialog og investordekk",
+            "Idéfix: prosjektleder for strukturert partner- og eierprosess, fra analyse av 13 kandidater til dialog med over 15 aktører",
+            "Bygget opp depotlading for tungtransport med standardisert produktpakke, NLF/Circle K-partnerkanal og første referansekunde", "Pådriver for praktisk AI: beslutningsdashboard, møteportaler og seksmåneders kompetanseløp",
           ],
         },
         {
@@ -131,10 +131,10 @@ export const translations = {
         {
           tag: "Transformasjon · CEO", period: "2017–2018",
           company: "Otera Ratel (Agder Energi)",
-          title: "Reposisjonerte selskap gjennom eierskifte — vant ¾ store anbud.",
+          title: "Etablerte virksomhet i Norge og tok tre av fire store anbud til forhandling.",
           body: "Daglig leder med fullt P&L-ansvar. Kvalifiserte selskapet til Statnett og Hafslund Nett, bygget HMS- og kvalitetssystemer og leverte 145 kV GIS-prosjekt på Sildvik. Strukturert avvikling ved konsernsalg.",
           bullets: [
-            "3 av 4 store nasjonale anbud vunnet på første driftsår",
+            "3 av 4 store nasjonale anbud videre til forhandling første driftsår",
             "145 kV GIS-stasjon for Statnett, levert på kvalitet og tid",
             "Bevarte nøkkelkompetanse og kunderelasjoner gjennom salg",
           ],
@@ -176,7 +176,7 @@ export const translations = {
       eyebrow: "Karriere",
       heading: "Tidslinje.",
       roles: [
-        { period: "2020 → i dag", title: "Interim CEO / Senior Forretningsutvikler", company: "Skagerak Mobil Energi, Skagerak Energi" },
+        { period: "2020 → i dag", title: "Senior forretningsutvikler elektrifisering Norden (interim daglig leder juni–nov. 2024)", company: "Skagerak Energi / Skagerak Mobil Energi" },
         { period: "2018 – 2020", title: "Direktør Markeds- og forretningsutvikling, Energi/Elkraft", company: "OneCo AS" },
         { period: "2017 – 2018", title: "CEO / Country Manager", company: "Otera Ratel AS (Agder Energi)" },
         { period: "2015 – 2017", title: "Prosjektleder, nettinfrastruktur", company: "Laugstol AS" },
@@ -192,7 +192,7 @@ export const translations = {
       ],
       eduLabel: "Utdanning",
       edu: [
-        { year: "2023–2024", title: "Master Markedsstrategi (30 sp)", school: "Handelshøyskolen BI, Oslo" },
+        { year: "2023–2024", title: "Markedsstrategi (30 studiepoeng)", school: "Handelshøyskolen BI, Oslo" },
         { year: "2013–2017", title: "Master Økonomi og ledelse — Strategi og Innovasjon", school: "NTNU, Trondheim" },
         { year: "2008–2011", title: "Bachelor Elkraftteknikk", school: "Universitetet i Sørøst-Norge" },
         { year: "2003–2005", title: "Fagbrev Energimontør (gr. H)", school: "Midtnett Buskerud" },
@@ -300,7 +300,7 @@ export const translations = {
     hero: {
       eyebrow: "Strategic Advisor · Board Member · Operational Leader · Founder",
       title: ["Strategy that", "lands in operations."],
-      sub: "Kenneth Andersen is a strategic advisor and board member for companies that want to connect ambition to execution. Founder of Fundel — and always close to what's actually changing, especially in AI. Also speaks and runs courses on practical AI for boards and leadership teams.",
+      sub: "I build businesses, partnerships and products — from strategy and business cases to commercial models and execution. I combine operational leadership in energy and industry with hands-on AI implementation. Founder of Fundel, with board experience and strategic growth responsibilities.",
       ctaPrimary: "Book a 30-min call",
       ctaSecondary: "What I deliver",
       microProof: "Alongside my current role: board work, advisory, growth mandates, AI talks and interim leadership.",
@@ -318,7 +318,7 @@ export const translations = {
         { n: "02", label: "Pressure", year: "2006–2008", title: "Royal Guard · 2nd Battalion, Afghanistan", body: "Assault soldier in international service. Decisions under pressure, teamwork with no alternative. Laid the foundation for how I lead people through hard situations today." },
         { n: "03", label: "Head", year: "2008–2017", title: "BSc Electrical Engineering · ABB Marine, South Korea", body: "Engineering degree and Lead Commissioning at ABB Marine in Korea. Commissioned power and propulsion systems on offshore vessels at Samsung and Hyundai yards. International, zero defect tolerance." },
         { n: "04", label: "Strategy", year: "2013–2024", title: "MSc Strategy & Innovation · NTNU · BI", body: "Built on the technical background with master's degrees in strategy, innovation and market strategy. Published author on organisational identity in M&A." },
-        { n: "05", label: "Build", year: "2017→", title: "CEO, COO and executive leadership", body: "Three companies built from the ground up or through ownership change — Otera Ratel, OneCo Elkraft and Skagerak Mobil Energi. Board experience from M&A, demergers and strategy processes." },
+        { n: "05", label: "Build", year: "2017→", title: "CEO, COO and executive leadership", body: "Leadership and business responsibility from Otera Ratel and OneCo, followed by new business development at Skagerak Energi. Experience in ventures, strategic partnerships, governance and ownership processes." },
       ],
       footnote: "Every role adds a layer. That's why I land strategy that actually works in operations — because I have stood where operations happen.",
     },
@@ -337,12 +337,12 @@ export const translations = {
     track: {
       eyebrow: "Track record",
       heading: "Numbers that have followed.",
-      sub: "A selection — verifiable, drawn from real roles.",
+      sub: "Selected results from previous roles, based on earlier CVs and subject to verification against primary documentation.",
       stats: [
         { value: "15+", label: "years", note: "Strategy, leadership, delivery" },
         { value: "2×", label: "budget target", note: "12 months, OneCo Elkraft" },
         { value: "21→60", label: "employees", note: "Scaling in 12 months, OneCo" },
-        { value: "¾", label: "major national tenders", note: "Won, Otera Ratel" },
+        { value: "¾", label: "major national tenders", note: "Advanced to negotiation, Otera Ratel" },
         { value: "73", label: "MNOK Kvilldal HVDC", note: "OneCo, largest elkraft project" },
         { value: "100", label: "MNOK contracts", note: "Competitive markets" },
       ],
@@ -351,9 +351,9 @@ export const translations = {
       eyebrow: "Selected work",
       heading: "Three stories that show what I do.",
       items: [
-        { tag: "Build · Interim CEO", period: "2020 → today", company: "Skagerak Mobil Energi", title: "Built a new business from zero to operational.", body: "Took the role as Interim CEO and senior business developer. Established strategy, team, governance model and KPI framework. Built a new category — mobile zero-emission energy solutions for construction — in a market that didn't yet exist.", bullets: ["Strategic partnerships with major players", "Evaluated acquisition cases and drove business development — business case, partner dialogue and investor decks"] },
+        { tag: "Business building · Interim CEO in 2024", period: "2020 → today", company: "Skagerak Mobil Energi", title: "Developing new businesses from strategy to market.", body: "Senior business developer at Skagerak Energi since 2020, and interim Managing Director at Skagerak Mobil Energi from June to November 2024. Leading strategic initiatives in batteries, mobile energy and depot charging, spanning business models, partnerships and scalable delivery models.", bullets: ["Idéfix: project lead for a structured partnership and ownership process, from 13 initial candidates to dialogue with more than 15 parties", "Built a depot charging offer for heavy transport with a standardised product package, NLF/Circle K partner channel and first reference customer", "Driving practical AI adoption through decision dashboards, meeting portals and a six-month skills programme"] },
         { tag: "Growth · Director", period: "2018–2020", company: "OneCo Elkraft", title: "Doubled revenue against budget in twelve months.", body: "Led the elkraft and energy segment with full responsibility for strategy, sales and delivery. Structured sales work, clear pipeline and targeted positioning delivered growth well above budget.", bullets: ["Scaled the organisation from 21 to 60+ employees in 12 months", "Led Kvilldal HVDC (73 MNOK) — OneCo's largest elkraft project", "Refined the HUB delivery model for cross-region resource utilisation"] },
-        { tag: "Transformation · CEO", period: "2017–2018", company: "Otera Ratel (Agder Energi)", title: "Repositioned through ownership change — won ¾ major tenders.", body: "Managing director with full P&L responsibility. Qualified the company for Statnett and Hafslund Nett, built HSE and quality systems and delivered a 145 kV GIS project at Sildvik.", bullets: ["3 of 4 major national tenders won in first operating year", "145 kV GIS station for Statnett, delivered on quality and time", "Preserved key competence and customer relationships through sale"] },
+        { tag: "Transformation · CEO", period: "2017–2018", company: "Otera Ratel (Agder Energi)", title: "Established Norwegian operations and advanced three of four major tenders to negotiation.", body: "Managing director with full P&L responsibility. Qualified the company for Statnett and Hafslund Nett, built HSE and quality systems and delivered a 145 kV GIS project at Sildvik.", bullets: ["3 of 4 major national tenders advanced to negotiation in the first operating year", "145 kV GIS station for Statnett, delivered on quality and time", "Preserved key competence and customer relationships through sale"] },
       ],
     },
     services: {
@@ -371,7 +371,7 @@ export const translations = {
       eyebrow: "Career",
       heading: "Timeline.",
       roles: [
-        { period: "2020 → today", title: "Interim CEO / Senior Business Developer", company: "Skagerak Mobil Energi, Skagerak Energi" },
+        { period: "2020 → today", title: "Senior Business Developer, Nordic Electrification (Interim Managing Director Jun–Nov 2024)", company: "Skagerak Energi / Skagerak Mobil Energi" },
         { period: "2018 – 2020", title: "Director, Market & Business Development, Energy/Elkraft", company: "OneCo AS" },
         { period: "2017 – 2018", title: "CEO / Country Manager", company: "Otera Ratel AS (Agder Energi)" },
         { period: "2015 – 2017", title: "Project Manager, grid infrastructure", company: "Laugstol AS" },
@@ -387,7 +387,7 @@ export const translations = {
       ],
       eduLabel: "Education",
       edu: [
-        { year: "2023–2024", title: "Master in Market Strategy (30 ECTS)", school: "BI Norwegian Business School, Oslo" },
+        { year: "2023–2024", title: "Market Strategy, postgraduate coursework (30 ECTS)", school: "BI Norwegian Business School, Oslo" },
         { year: "2013–2017", title: "Master in Economics & Management — Strategy and Innovation", school: "NTNU, Trondheim" },
         { year: "2008–2011", title: "BSc Electrical Engineering", school: "University of South-Eastern Norway" },
         { year: "2003–2005", title: "Certified Energy Installer (cl. H)", school: "Midtnett Buskerud" },
