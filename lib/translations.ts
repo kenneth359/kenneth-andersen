@@ -53,7 +53,7 @@ export const translations = {
         {
           n: "05", label: "Bygg", year: "2017→",
           title: "CEO, COO og konsernledelse",
-          body: "Leder- og virksomhetsansvar fra Otera Ratel og OneCo, og forretningsutvikling i Skagerak Energi. Erfaring med nye satsinger, strategiske partnerskap, styringsmodeller og eierprosesser.",
+          body: "Leder- og virksomhetsansvar fra Otera Ratel og OneCo, og forretningsutvikling i Skagerak Energi. Erfaring med nye satsinger, strategiske partnerskap, styringsmodeller og kommersielle beslutningsprosesser.",
         },
       ],
       footnote: "Hver rolle har lagt et lag. Det er grunnen til at jeg lander strategi som faktisk virker i drift — fordi jeg har stått der drift skjer.",
@@ -85,8 +85,8 @@ export const translations = {
         },
         {
           n: "05", title: "Evig lærende",
-          body: "Holder meg aktivt oppdatert på hva som skjer — særlig innen AI. Ikke for å følge trender, men fordi det faktisk endrer hva som er mulig i salg, strategi og drift. Jeg tester selv, bruker det i Fundel, og hjelper klienter skille det som gir verdi fra det som er støy.",
-          proof: "Gründer av Fundel — sponsormarkedsplass for norske idrettslag",
+          body: "Jobber praktisk med ChatGPT, Claude og Microsoft Copilot som verktøy for analyse, produktutvikling, innhold og arbeidsflyt. Har også fordypet meg gjennom VibeLabs Masterclass. I Fundel omsetter jeg dette til konkrete løsninger for salg, markedsarbeid og oppfølging.",
+          proof: "Gründer av Fundel — digital plattform og kommersiell vekstmodell for idrettslag",
         },
       ],
     },
@@ -113,8 +113,8 @@ export const translations = {
           title: "Utvikler nye forretningsområder fra strategi til marked.",
           body: "Senior forretningsutvikler i Skagerak Energi siden 2020, og interim daglig leder i Skagerak Mobil Energi juni–november 2024. Leder strategiske initiativer innen batterier, mobile energiløsninger og depotlading, fra forretningsmodell og partnerdialog til produkt- og leveransemodell.",
           bullets: [
-            "Idéfix: prosjektleder for strukturert partner- og eierprosess, fra analyse av 13 kandidater til dialog med over 15 aktører",
-            "Bygget opp depotlading for tungtransport med standardisert produktpakke, NLF/Circle K-partnerkanal og første referansekunde", "Pådriver for praktisk AI: beslutningsdashboard, møteportaler og seksmåneders kompetanseløp",
+            "Ledet konfidensielle strategiske utviklingsprosesser med analyser, scenariomodellering, interessentdialog og beslutningsunderlag",
+            "Utviklet kommersielt konsept for depotlading til tungtransport, med produktpakker, leverandørmodell, bransjesamarbeid og kundeprosesser", "Pådriver for praktisk AI: beslutningsstøtte, møteportaler og utvikling av kompetanseløp",
           ],
         },
         {
@@ -149,14 +149,14 @@ export const translations = {
         {
           tag: "01 / Rådgivning",
           title: "Strategisk rådgiver",
-          body: "Sparringspartner for CEO, eier eller lederteam. Strategiutvikling, kommersiell modellering, M&A-forberedelse og go-to-market. Typisk månedlig retainer eller prosjektbasert.",
+          body: "Sparringspartner for CEO, eier eller lederteam. Strategiutvikling, kommersiell modellering, partnerskap og go-to-market. Typisk månedlig retainer eller prosjektbasert.",
           bullets: ["1:1 med CEO/eier", "Kommersiell due diligence", "Veikart for vekst"],
         },
         {
           tag: "02 / Styrearbeid",
           title: "Styremedlem",
           body: "Sertifisert styremedlem med erfaring fra teknologi-, energi- og infrastrukturselskaper. Bidrar med kommersiell tyngde, gjennomføringserfaring og governance.",
-          bullets: ["Styrearbeid og styreutvalg", "M&A og fisjon", "Strategiprosesser"],
+          bullets: ["Styrearbeid og styreutvalg", "Strategiske veivalg", "Strategiprosesser"],
         },
         {
           tag: "03 / Vekst",
@@ -168,7 +168,7 @@ export const translations = {
           tag: "04 / Foredrag",
           title: "AI-foredragsholder og kursholder",
           body: "Foredrag og internkurs om praktisk kunstig intelligens for styrer og ledergrupper. Bygget på egen styre- og konsernledererfaring — AI for beslutninger, ikke hype.",
-          bullets: ["Foredrag for ledergrupper og styrer", "Internkurs og workshops i KI", "Bygger selv med AI (Claude Code) — denne siden og Fundel er bevis"],
+          bullets: ["Foredrag for ledergrupper og styrer", "Internkurs og workshops i KI", "Bruker ChatGPT, Claude og Copilot til å utvikle prototyper, beslutningsgrunnlag og arbeidsflyter", "Fundel: utvikler digitale salgs- og oppfølgingsprosesser med AI-støtte"],
         },
       ],
     },
@@ -318,7 +318,7 @@ export const translations = {
         { n: "02", label: "Pressure", year: "2006–2008", title: "Royal Guard · 2nd Battalion, Afghanistan", body: "Assault soldier in international service. Decisions under pressure, teamwork with no alternative. Laid the foundation for how I lead people through hard situations today." },
         { n: "03", label: "Head", year: "2008–2017", title: "BSc Electrical Engineering · ABB Marine, South Korea", body: "Engineering degree and Lead Commissioning at ABB Marine in Korea. Commissioned power and propulsion systems on offshore vessels at Samsung and Hyundai yards. International, zero defect tolerance." },
         { n: "04", label: "Strategy", year: "2013–2024", title: "MSc Strategy & Innovation · NTNU · BI", body: "Built on the technical background with master's degrees in strategy, innovation and market strategy. Published author on organisational identity in M&A." },
-        { n: "05", label: "Build", year: "2017→", title: "CEO, COO and executive leadership", body: "Leadership and business responsibility from Otera Ratel and OneCo, followed by new business development at Skagerak Energi. Experience in ventures, strategic partnerships, governance and ownership processes." },
+        { n: "05", label: "Build", year: "2017→", title: "CEO, COO and executive leadership", body: "Leadership and business responsibility from Otera Ratel and OneCo, followed by new business development at Skagerak Energi. Experience in ventures, strategic partnerships, governance and commercial decision processes." },
       ],
       footnote: "Every role adds a layer. That's why I land strategy that actually works in operations — because I have stood where operations happen.",
     },
@@ -331,7 +331,7 @@ export const translations = {
         { n: "02", title: "Data-driven", body: "Decisions backed by numbers. KPI structures that give line managers direction and the board visibility. Business cases that withstand due diligence.", proof: "Established 3-tier KPI framework, Skagerak Mobil Energi" },
         { n: "03", title: "Relationship builder", body: "Trust is built when people feel you understand their job. My leadership style is relational and direct — people know where they have me, and I know where they stand.", proof: "Scaled team from 21 to 60+ in 12 months" },
         { n: "04", title: "Commercial builder", body: "From technical insight to revenue. I see commercial opportunities in technology and operations that others miss, and structure the sales motion to land them.", proof: "Contracts up to 100 MNOK, new strategic partnerships" },
-        { n: "05", title: "Always learning", body: "I keep myself actively updated on what's happening — especially in AI. Not to follow trends, but because it genuinely changes what's possible in sales, strategy and operations. I test it myself, use it in Fundel, and help clients separate what delivers real value from what's just noise.", proof: "Founder of Fundel — sponsorship marketplace for Norwegian sports clubs" },
+        { n: "05", title: "Always learning", body: "I work hands-on with ChatGPT, Claude and Microsoft Copilot for analysis, product development, content and workflows, alongside further learning through VibeLabs Masterclass. At Fundel, I apply these tools to practical sales, marketing and follow-up solutions.", proof: "Founder of Fundel — digital platform and commercial growth model for sports clubs" },
       ],
     },
     track: {
@@ -351,7 +351,7 @@ export const translations = {
       eyebrow: "Selected work",
       heading: "Three stories that show what I do.",
       items: [
-        { tag: "Business building · Interim CEO in 2024", period: "2020 → today", company: "Skagerak Mobil Energi", title: "Developing new businesses from strategy to market.", body: "Senior business developer at Skagerak Energi since 2020, and interim Managing Director at Skagerak Mobil Energi from June to November 2024. Leading strategic initiatives in batteries, mobile energy and depot charging, spanning business models, partnerships and scalable delivery models.", bullets: ["Idéfix: project lead for a structured partnership and ownership process, from 13 initial candidates to dialogue with more than 15 parties", "Built a depot charging offer for heavy transport with a standardised product package, NLF/Circle K partner channel and first reference customer", "Driving practical AI adoption through decision dashboards, meeting portals and a six-month skills programme"] },
+        { tag: "Business building · Interim CEO in 2024", period: "2020 → today", company: "Skagerak Mobil Energi", title: "Developing new businesses from strategy to market.", body: "Senior business developer at Skagerak Energi since 2020, and interim Managing Director at Skagerak Mobil Energi from June to November 2024. Leading strategic initiatives in batteries, mobile energy and depot charging, spanning business models, partnerships and scalable delivery models.", bullets: ["Led confidential strategic development processes involving analysis, scenario modelling, stakeholder dialogue and executive decision support", "Developed a commercial depot charging concept for heavy transport, including product packages, supplier models, industry collaboration and customer development", "Driving practical AI adoption through decision support, meeting portals and skills programme development"] },
         { tag: "Growth · Director", period: "2018–2020", company: "OneCo Elkraft", title: "Doubled revenue against budget in twelve months.", body: "Led the elkraft and energy segment with full responsibility for strategy, sales and delivery. Structured sales work, clear pipeline and targeted positioning delivered growth well above budget.", bullets: ["Scaled the organisation from 21 to 60+ employees in 12 months", "Led Kvilldal HVDC (73 MNOK) — OneCo's largest elkraft project", "Refined the HUB delivery model for cross-region resource utilisation"] },
         { tag: "Transformation · CEO", period: "2017–2018", company: "Otera Ratel (Agder Energi)", title: "Established Norwegian operations and advanced three of four major tenders to negotiation.", body: "Managing director with full P&L responsibility. Qualified the company for Statnett and Hafslund Nett, built HSE and quality systems and delivered a 145 kV GIS project at Sildvik.", bullets: ["3 of 4 major national tenders advanced to negotiation in the first operating year", "145 kV GIS station for Statnett, delivered on quality and time", "Preserved key competence and customer relationships through sale"] },
       ],
@@ -361,10 +361,10 @@ export const translations = {
       heading: "Four ways I work with leaders and founders.",
       sub: "Engagements are tailored — start with a sparring call.",
       items: [
-        { tag: "01 / Advisory", title: "Strategic advisor", body: "Sparring partner for CEO, owner or leadership team. Strategy development, commercial modelling, M&A preparation and go-to-market. Monthly retainer or project-based.", bullets: ["1:1 with CEO/owner", "Commercial due diligence", "Growth roadmap"] },
-        { tag: "02 / Board", title: "Board member", body: "Certified board member with experience from technology, energy and infrastructure companies. Brings commercial weight, execution experience and governance.", bullets: ["Board work and committees", "M&A and demerger", "Strategy processes"] },
+        { tag: "01 / Advisory", title: "Strategic advisor", body: "Sparring partner for CEO, owner or leadership team. Strategy development, commercial modelling, partnerships and go-to-market. Monthly retainer or project-based.", bullets: ["1:1 with CEO/owner", "Commercial due diligence", "Growth roadmap"] },
+        { tag: "02 / Board", title: "Board member", body: "Certified board member with experience from technology, energy and infrastructure companies. Brings commercial weight, execution experience and governance.", bullets: ["Board work and committees", "Strategic decisions", "Strategy processes"] },
         { tag: "03 / Growth", title: "Growth advisor — startups & scaleups", body: "Working with founders and growth companies across Norway, with a focus on Eastern Norway, who want to take their product to market. Structure on GTM, sales and strategy. Practical AI where it actually saves time. Founder-to-founder, without the consultant clichés.", bullets: ["Go-to-market and commercialisation", "AI application in sales and operations", "MVP building and rapid market testing with AI", "Growth structure from first customer to scale"] },
-        { tag: "04 / Speaking", title: "AI speaker & trainer", body: "Talks and internal courses on practical artificial intelligence for boards and leadership teams. Built on real board and executive experience — AI for decisions, not hype.", bullets: ["Talks for leadership teams and boards", "Internal AI courses and workshops", "Builds with AI himself (Claude Code) — this site and Fundel are proof"] },
+        { tag: "04 / Speaking", title: "AI speaker & trainer", body: "Talks and internal courses on practical artificial intelligence for boards and leadership teams. Built on real board and executive experience — AI for decisions, not hype.", bullets: ["Talks for leadership teams and boards", "Internal AI courses and workshops", "Uses ChatGPT, Claude and Copilot for prototypes, decision support and workflows", "Fundel: developing AI-supported sales and follow-up processes"] },
       ],
     },
     career: {
