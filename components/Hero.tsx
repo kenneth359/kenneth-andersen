@@ -38,7 +38,11 @@ function HeroCTAs({ ctaPrimary, ctaSecondary }: { ctaPrimary: string; ctaSeconda
 function PhotoFrame({ src }: { src: string }) {
   const { lang } = useLang();
   return (
-    <div className="photo-frame">
+    <div className="portrait-stage">
+      <div className="orbit orbit-one" aria-hidden="true" />
+      <div className="orbit orbit-two" aria-hidden="true" />
+      <div className="portrait-glow" aria-hidden="true" />
+      <div className="photo-frame">
       <Image
         src={src}
         alt="Kenneth Andersen — strategisk rådgiver, styremedlem og foredragsholder"
@@ -47,12 +51,13 @@ function PhotoFrame({ src }: { src: string }) {
         sizes="(max-width: 980px) 460px, 40vw"
         style={{ objectFit: "cover" }}
       />
-      <div className="telemetry">REC · LIVE</div>
+      
       <div className="corner tl" /><div className="corner tr" />
       <div className="corner bl" /><div className="corner br" />
       <div className="photo-meta">
-        <span className="l">KA · 2024</span>
+        <span className="l">KENNETH ANDERSEN</span>
         <span className="l">{lang === "no" ? "PORTRETT" : "PORTRAIT"}</span>
+      </div>
       </div>
     </div>
   );
