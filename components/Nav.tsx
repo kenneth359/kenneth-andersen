@@ -39,7 +39,7 @@ export default function Nav() {
             {t.cta}
             <span className="arrow" aria-hidden="true" />
           </a>
-          <button className="btn-burger" aria-label="Menu" onClick={() => setOpen(!open)}>
+          <button className="btn-burger" aria-label="Menu" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
             <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
               <path
                 d={open ? "M2 2L20 12M2 12L20 2" : "M2 2H20M2 7H20M2 12H20"}
@@ -50,7 +50,7 @@ export default function Nav() {
         </div>
       </div>
       {open && (
-        <div className="mobile-menu">
+        <div className="mobile-menu" id="mobile-menu">
           {t.links.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label.toLowerCase()}</a>
           ))}
