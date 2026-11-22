@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Sans, Instrument_Serif, JetBrains_Mono, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import PersonSchema from "@/components/PersonSchema";
@@ -23,6 +23,13 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const schibsted = Schibsted_Grotesk({
+  variable: "--font-schibsted",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -98,7 +105,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="nb"
-      className={`${ibmPlexSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
+      className={`${ibmPlexSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${schibsted.variable}`}
       style={{ fontFamily: "var(--font-ibm-plex-sans), 'IBM Plex Sans', sans-serif" }}
     >
       <head>

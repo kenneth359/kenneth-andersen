@@ -1,39 +1,49 @@
-import StatusBar from "@/components/StatusBar";
-import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import LogoTicker from "@/components/LogoTicker";
-import Origin from "@/components/Origin";
-import OS from "@/components/OS";
-import Track from "@/components/Track";
-import Cases from "@/components/Cases";
-import Services from "@/components/Services";
-import Career from "@/components/Career";
-import Testimonials from "@/components/Testimonials";
-import Thoughts from "@/components/Thoughts";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import FloatingCTA from "@/components/FloatingCTA";
+import "./portrett.css";
+import Nav from "@/components/pt/Nav";
+import Cover from "@/components/pt/Cover";
+import Plate from "@/components/pt/Plate";
+import Contact from "@/components/pt/Contact";
+import Footer from "@/components/pt/Footer";
+import OriginFootnote from "@/components/pt/OriginFootnote";
+import {
+  Logos,
+  Origin,
+  Principles,
+  Numbers,
+  Cases,
+  Services,
+  Timeline,
+  References,
+  Notes,
+} from "@/components/pt/Sections";
 
 export default function Home() {
   return (
-    <>
-      <StatusBar />
+    <div className="pt">
       <Nav />
-      <main style={{ paddingTop: 30 }}>
-        <Hero />
-        <LogoTicker />
+      <Cover />
+      <main>
+        <Logos />
         <Origin />
-        <OS />
-        <Track />
-        <Cases />
+
+        <OriginFootnote />
+
+        <Principles />
+
+        {/* Beviset ligger på papir: siden snur, og snur tilbake etterpå. */}
+        <div className="pt-light">
+          <Numbers />
+          <Cases />
+        </div>
+
         <Services />
-        <Career />
-        <Testimonials />
-        <Thoughts />
+        <Plate src="/assets/kenneth-tedx.jpg" position="50% 2%" />
+        <Timeline />
+        <References />
+        <Notes />
         <Contact />
       </main>
       <Footer />
-      <FloatingCTA />
-    </>
+    </div>
   );
 }

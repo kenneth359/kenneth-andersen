@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portrettet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0C0C0D;
+  --black-2:#141416;
+  --bone:#EDE9E2;
+  --bone-2:#A8A49D;
+  --bone-3:#76736D;
+  --rule:rgba(237,233,226,.14);
+  --g:"Schibsted Grotesk",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--black);color:var(--bone);
+  font-family:var(--g);font-size:18px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1280px;margin:0 auto;padding:0 56px}
+
+/* cover */
+.cover{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between}
+.cover .shot{position:absolute;inset:0;overflow:hidden}
+.cover .shot img{width:100%;height:100%;object-fit:cover;object-position:68% 28%;filter:grayscale(.82) contrast(1.06)}
+.cover .shot::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,var(--black) 0%,rgba(12,12,13,.94) 34%,rgba(12,12,13,.45) 62%,rgba(12,12,13,.2) 100%)}
+.cover .top,.cover .btm{position:relative;z-index:2}
+.cover .top{display:flex;justify-content:space-between;align-items:center;gap:48px;padding:30px 0}
+.cover .top .n{font-weight:600;font-size:17px;letter-spacing:-.01em}
+.cover .top nav{display:flex;gap:30px;font-size:15px;color:var(--bone-2)}
+.cover .top nav a{color:inherit;text-decoration:none;padding:8px 0}
+.cover .top nav a:hover{color:var(--bone)}
+.cover .btm{padding-bottom:72px;max-width:980px}
+.cover h1{margin:0;font-weight:700;font-size:clamp(48px,8.6vw,124px);line-height:.92;letter-spacing:-.045em}
+.cover p{margin:30px 0 0;max-width:52ch;font-size:20px;line-height:1.58;color:var(--bone-2)}
+.cover .acts{margin-top:40px;display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.btn{background:var(--bone);color:var(--black);text-decoration:none;font-weight:600;font-size:16px;
+  padding:15px 26px;border-radius:2px;min-height:48px;display:inline-flex;align-items:center}
+.btn:hover{background:#fff}
+.btn-t{color:var(--bone);text-decoration:none;font-weight:500;font-size:16px;
+  border-bottom:1.5px solid rgba(237,233,226,.45);padding:8px 0;min-height:44px;display:inline-flex;align-items:center}
+.btn-t:hover{border-color:var(--bone)}
+.availbar{position:relative;z-index:2;background:var(--black)}
+.avail{border-top:1px solid var(--rule);padding:20px 0 26px;
+  font-size:15px;color:var(--bone-2);max-width:70ch}
+
+/* statement */
+.statement{padding:150px 0 130px}
+.statement p{margin:0;max-width:22ch;font-size:clamp(30px,4.2vw,54px);line-height:1.14;
+  letter-spacing:-.03em;font-weight:500}
+.statement .after{margin-top:34px;max-width:54ch;font-size:19px;color:var(--bone-2);
+  font-weight:400;letter-spacing:0}
+
+/* chapters */
+.ch-head{display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:1px solid var(--rule);padding-bottom:18px}
+.ch-head h2{margin:0;font-weight:700;font-size:clamp(28px,3.4vw,42px);letter-spacing:-.03em}
+.ch-head span{font-size:15px;color:var(--bone-3)}
+.ch{display:grid;grid-template-columns:150px 1fr 1.25fr;column-gap:40px;
+  padding:34px 0;border-bottom:1px solid var(--rule)}
+.ch:hover{background:var(--black-2)}
+.ch .yr{font-size:15px;color:var(--bone-3);padding-top:3px}
+.ch .ttl{font-size:21px;font-weight:600;letter-spacing:-.018em;line-height:1.28}
+.ch .bd{color:var(--bone-2);font-size:17px;line-height:1.62}
+
+/* stats */
+.stats{padding:140px 0 150px}
+.stats h2{margin:0 0 56px;font-weight:700;font-size:clamp(28px,3.4vw,42px);letter-spacing:-.03em}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule)}
+.st{background:var(--black);padding:34px 30px 32px}
+.st .v{font-weight:700;font-size:62px;line-height:1;letter-spacing:-.045em}
+.st .l{font-size:16px;font-weight:600;margin-top:12px}
+.st .n{font-size:16px;color:var(--bone-3);margin-top:4px}
+
+@media (max-width:1100px){ .cover .top nav{gap:22px;font-size:14px} }
+@media (max-width:920px){ .cover .top nav{display:none} }
+@media (max-width:860px){
+  .wrap{padding:0 20px}
+  .cover .btm{padding-bottom:48px}
+  .cover .shot::after{background:linear-gradient(180deg,rgba(12,12,13,.5) 0%,rgba(12,12,13,.86) 48%,var(--black) 92%)}
+  .cover .shot img{object-position:60% 18%}
+  .statement{padding:90px 0 80px}
+  .statement p{max-width:none}
+  .ch{grid-template-columns:1fr;row-gap:8px;padding:26px 0}
+  .stats{padding:80px 0 90px}
+  .sgrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="shot"><img src="../../public/assets/kenneth-studio.jpg" alt="Kenneth Andersen"></div>
+  <div class="wrap top">
+    <div class="n">Kenneth Andersen</div>
+    <nav><a href="#">Bakgrunn</a><a href="#">Arbeidsmåte</a><a href="#">Resultater</a><a href="#">Caser</a><a href="#">Tjenester</a><a href="#">Kontakt</a></nav>
+  </div>
+  <div class="wrap btm">
+    <h1>Strategi som lander i drift.</h1>
+    <p>Strategisk rådgiver og styremedlem for selskaper som vil koble ambisjon til gjennomføring. Gründer av Fundel, og alltid tett på hva som faktisk endrer seg, særlig innen AI.</p>
+    <div class="acts">
+      <a class="btn" href="#">Book 30 min sparring</a>
+      <a class="btn-t" href="#">Se hva jeg leverer</a>
+    </div>
+  </div>
+  <div class="availbar"><div class="wrap"><div class="avail">Ved siden av nåværende rolle: styrearbeid, rådgivning, vekstoppdrag, AI-foredrag og interim ledelse.</div></div></div>
+</header>
+
+<section class="wrap statement">
+  <p>Sjeldent å finne en konsernsjef som har lagt kabel selv.</p>
+  <div class="after">Den bredden gjør at jeg leser organisasjoner annerledes, og at de leser meg annerledes tilbake. Fem kapitler, én leder.</div>
+</section>
+
+<section class="wrap">
+  <div class="ch-head"><h2>Fem kapitler</h2><span>2003 til i dag</span></div>
+  <div class="ch"><div class="yr">2003–2008</div><div class="ttl">Fagbrev som energimontør</div><div class="bd">Begynte i bunnen hos Midtnett Buskerud. Lærte at strøm ikke tar høyde for PowerPoints. Praktisk håndverk, sikkerhet og respekt for de som faktisk leverer.</div></div>
+  <div class="ch"><div class="yr">2006–2008</div><div class="ttl">Kongens Garde, 2. Bataljon, Afghanistan</div><div class="bd">Stormsoldat i internasjonal tjeneste. Beslutninger under press, lagarbeid uten alternativ. La grunnlaget for hvordan jeg leder folk i krevende situasjoner i dag.</div></div>
+  <div class="ch"><div class="yr">2008–2017</div><div class="ttl">Bachelor Elkraft, ABB Marine, Sør-Korea</div><div class="bd">Lead Commissioning hos ABB Marine i Korea. Satte i drift kraft- og propulsjonssystemer på offshorefartøy hos Samsung og Hyundai. Internasjonalt, nullfeiltoleranse.</div></div>
+  <div class="ch"><div class="yr">2013–2024</div><div class="ttl">Master Strategi og Innovasjon, NTNU og BI</div><div class="bd">Bygget på den tekniske bakgrunnen med masterutdanning i strategi, innovasjon og markedsstrategi. Publisert forfatter på organisasjonsidentitet ved oppkjøp.</div></div>
+  <div class="ch"><div class="yr">2017→</div><div class="ttl">CEO, COO og konsernledelse</div><div class="bd">Tre selskaper bygd fra grunnen eller gjennom eierskifte: Otera Ratel, OneCo Elkraft og Skagerak Mobil Energi. Styreerfaring fra M&amp;A, fisjon og strategiprosesser.</div></div>
+</section>
+
+<section class="wrap stats">
+  <h2>Tall som har fulgt med.</h2>
+  <div class="sgrid">
+    <div class="st"><div class="v">15+</div><div class="l">år</div><div class="n">Strategi, ledelse, leveranse</div></div>
+    <div class="st"><div class="v">2×</div><div class="l">budsjettmål</div><div class="n">12 måneder, OneCo Elkraft</div></div>
+    <div class="st"><div class="v">21→60</div><div class="l">ansatte</div><div class="n">Skalering på 12 mnd, OneCo</div></div>
+    <div class="st"><div class="v">¾</div><div class="l">store nasjonale anbud</div><div class="n">Vunnet, Otera Ratel</div></div>
+    <div class="st"><div class="v">73</div><div class="l">MNOK Kvilldal HVDC</div><div class="n">OneCo, største elkraftprosjekt</div></div>
+    <div class="st"><div class="v">100</div><div class="l">MNOK kontrakter</div><div class="n">Konkurranseutsatte markeder</div></div>
+  </div>
+</section>
+
+</body>
+</html>

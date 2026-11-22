@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Styrepapir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F2F1ED;
+  --bone-2:#E8E6E0;
+  --ink:#15171A;
+  --ink-2:#44484D;
+  --ink-3:#6B7075;
+  --petrol:#0E3B38;
+  --rule:rgba(21,23,26,.16);
+  --rule-soft:rgba(21,23,26,.09);
+  --grotesk:"Archivo",system-ui,sans-serif;
+  --serif:"Source Serif 4",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bone);color:var(--ink);
+  font-family:var(--serif);font-size:19px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px}
+
+/* masthead */
+.masthead{display:flex;justify-content:space-between;align-items:baseline;
+  padding:28px 0 22px;border-bottom:1px solid var(--ink);}
+.masthead .name{font-family:var(--grotesk);font-weight:600;font-size:17px;letter-spacing:-.01em}
+.masthead nav{display:flex;gap:28px;font-family:var(--grotesk);font-size:15px;font-weight:400;color:var(--ink-2)}
+.masthead nav a{color:inherit;text-decoration:none;padding:6px 0}
+.masthead nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+
+/* hero */
+.hero{padding:96px 0 72px}
+.hero h1{
+  grid-column:1/9;margin:0;
+  font-family:var(--grotesk);font-weight:700;
+  font-size:clamp(46px,7.4vw,104px);line-height:.95;letter-spacing:-.035em;
+}
+.hero .sub{grid-column:1/8;margin:36px 0 0;max-width:60ch;font-size:21px;line-height:1.6;color:var(--ink-2)}
+.hero .acts{grid-column:1/8;margin-top:40px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.btn{
+  font-family:var(--grotesk);font-size:16px;font-weight:600;letter-spacing:-.005em;
+  background:var(--petrol);color:var(--bone);text-decoration:none;
+  padding:15px 26px;border-radius:2px;min-height:48px;display:inline-flex;align-items:center;
+}
+.btn:hover{background:#0a2d2b}
+.btn-text{font-family:var(--grotesk);font-size:16px;font-weight:500;color:var(--ink);
+  text-decoration:none;border-bottom:1.5px solid var(--ink);padding:8px 0;min-height:44px;display:inline-flex;align-items:center}
+.btn-text:hover{color:var(--petrol);border-color:var(--petrol)}
+
+/* marginalia */
+.roles{grid-column:10/13;align-self:end;border-top:1px solid var(--ink);padding-top:10px}
+.roles li{list-style:none;font-family:var(--grotesk);font-size:15px;font-weight:500;
+  padding:9px 0;border-bottom:1px solid var(--rule-soft);display:flex;justify-content:space-between;gap:12px}
+.roles{margin:0;padding-left:0}
+.roles li span{color:var(--ink-3);font-weight:400}
+
+/* photo band */
+.band{background:var(--petrol);margin-top:24px}
+.band-inner{max-width:1240px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px;align-items:end}
+.band figure{grid-column:1/7;margin:0;height:520px;overflow:hidden;position:relative;background:var(--petrol)}
+.band img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;
+  filter:grayscale(1) contrast(1.08) brightness(1.04);mix-blend-mode:luminosity;opacity:.92}
+.band .note{grid-column:8/13;padding:0 0 72px;color:#CFE0DB;font-size:20px;line-height:1.6;max-width:44ch}
+.band .note strong{display:block;font-family:var(--grotesk);font-weight:600;font-size:14px;
+  letter-spacing:.02em;color:#7FA9A2;margin-bottom:14px}
+
+/* chapters */
+.sec{padding:112px 0 0}
+.sec-head{grid-column:1/8}
+.sec-head h2{font-family:var(--grotesk);font-weight:700;font-size:clamp(34px,4.4vw,58px);
+  line-height:1.02;letter-spacing:-.03em;margin:0}
+.sec-head .lede{margin:24px 0 0;font-size:21px;color:var(--ink-2);max-width:56ch}
+.chapters{margin-top:64px;border-top:1px solid var(--ink)}
+.ch{display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px;
+  padding:30px 0;border-bottom:1px solid var(--rule)}
+.ch .yr{grid-column:1/3;font-family:var(--grotesk);font-size:15px;font-weight:500;color:var(--ink-3);padding-top:4px}
+.ch .ttl{grid-column:3/7;font-family:var(--grotesk);font-size:20px;font-weight:600;letter-spacing:-.015em;line-height:1.3}
+.ch .bd{grid-column:7/12;color:var(--ink-2);font-size:18px;line-height:1.6}
+
+/* stats */
+.stats{padding:112px 0 120px}
+.stats h2{grid-column:1/8;font-family:var(--grotesk);font-weight:700;
+  font-size:clamp(34px,4.4vw,58px);line-height:1.02;letter-spacing:-.03em;margin:0}
+.stats .grid2{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:32px;row-gap:0;border-top:1px solid var(--ink)}
+.st{padding:28px 0 26px;border-bottom:1px solid var(--rule);padding-right:28px}
+.st .v{font-family:var(--grotesk);font-weight:700;font-size:56px;line-height:1;letter-spacing:-.04em}
+.st .l{font-family:var(--grotesk);font-size:16px;font-weight:600;margin-top:10px}
+.st .n{font-size:17px;color:var(--ink-3);margin-top:4px}
+
+@media (max-width:860px){
+  .wrap,.band-inner{padding:0 20px}
+  .hero{padding:56px 0 44px}
+  .hero h1,.hero .sub,.hero .acts,.sec-head,.stats h2{grid-column:1/13}
+  .roles{grid-column:1/13;margin-top:40px}
+  .band figure{grid-column:1/13;height:360px}
+  .band .note{grid-column:1/13;padding:36px 0 56px}
+  .ch .yr,.ch .ttl,.ch .bd{grid-column:1/13}
+  .ch .ttl{margin-top:6px}.ch .bd{margin-top:8px}
+  .stats .grid2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="name">Kenneth Andersen</div>
+    <nav>
+      <a href="#">Bakgrunn</a><a href="#">Arbeidsmåte</a><a href="#">Resultater</a>
+      <a href="#">Caser</a><a href="#">Tjenester</a><a href="#">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero grid">
+    <h1>Strategi som lander i drift.</h1>
+    <ul class="roles">
+      <li>Strategisk rådgiver <span>2024→</span></li>
+      <li>Styremedlem <span>2017→</span></li>
+      <li>Operativ leder <span>CEO, COO</span></li>
+      <li>Gründer <span>Fundel</span></li>
+    </ul>
+    <p class="sub">Kenneth Andersen er strategisk rådgiver og styremedlem for selskaper som vil koble ambisjon til gjennomføring. Gründer av Fundel, og alltid tett på hva som faktisk endrer seg, særlig innen AI. Holder også foredrag og kurs om praktisk AI for styrer og ledergrupper.</p>
+    <div class="acts">
+      <a class="btn" href="#">Book 30 min sparring</a>
+      <a class="btn-text" href="#">Se hva jeg leverer</a>
+    </div>
+  </section>
+</div>
+
+<div class="band">
+  <div class="band-inner">
+    <figure><img src="../../public/assets/kenneth-studio.jpg" alt="Kenneth Andersen"></figure>
+    <div class="note">
+      <strong>Tilgjengelig nå</strong>
+      Ved siden av nåværende rolle: styrearbeid, rådgivning, vekstoppdrag, AI-foredrag og interim ledelse.
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="sec">
+    <div class="grid">
+      <div class="sec-head">
+        <h2>Fem kapitler. Én leder.</h2>
+        <p class="lede">Sjeldent å finne en konsernsjef som har lagt kabel selv. Den bredden gjør at jeg leser organisasjoner annerledes, og at de leser meg annerledes tilbake.</p>
+      </div>
+    </div>
+    <div class="chapters">
+      <div class="ch"><div class="yr">2003–2008</div><div class="ttl">Fagbrev som energimontør</div><div class="bd">Begynte i bunnen hos Midtnett Buskerud. Lærte at strøm ikke tar høyde for PowerPoints. Praktisk håndverk, sikkerhet og respekt for de som faktisk leverer.</div></div>
+      <div class="ch"><div class="yr">2006–2008</div><div class="ttl">Kongens Garde, 2. Bataljon, Afghanistan</div><div class="bd">Stormsoldat i internasjonal tjeneste. Beslutninger under press, lagarbeid uten alternativ. La grunnlaget for hvordan jeg leder folk i krevende situasjoner i dag.</div></div>
+      <div class="ch"><div class="yr">2008–2017</div><div class="ttl">Bachelor Elkraft, ABB Marine, Sør-Korea</div><div class="bd">Lead Commissioning hos ABB Marine i Korea. Satte i drift kraft- og propulsjonssystemer på offshorefartøy hos Samsung og Hyundai. Internasjonalt, nullfeiltoleranse.</div></div>
+      <div class="ch"><div class="yr">2013–2024</div><div class="ttl">Master Strategi og Innovasjon, NTNU og BI</div><div class="bd">Bygget på den tekniske bakgrunnen med masterutdanning i strategi, innovasjon og markedsstrategi. Publisert forfatter på organisasjonsidentitet ved oppkjøp.</div></div>
+      <div class="ch"><div class="yr">2017→</div><div class="ttl">CEO, COO og konsernledelse</div><div class="bd">Tre selskaper bygd fra grunnen eller gjennom eierskifte: Otera Ratel, OneCo Elkraft og Skagerak Mobil Energi. Styreerfaring fra M&amp;A, fisjon og strategiprosesser.</div></div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="grid"><h2>Tall som har fulgt med.</h2></div>
+    <div class="grid2">
+      <div class="st"><div class="v">15+</div><div class="l">år</div><div class="n">Strategi, ledelse, leveranse</div></div>
+      <div class="st"><div class="v">2×</div><div class="l">budsjettmål</div><div class="n">12 måneder, OneCo Elkraft</div></div>
+      <div class="st"><div class="v">21→60</div><div class="l">ansatte</div><div class="n">Skalering på 12 mnd, OneCo</div></div>
+      <div class="st"><div class="v">¾</div><div class="l">store nasjonale anbud</div><div class="n">Vunnet, Otera Ratel</div></div>
+      <div class="st"><div class="v">73</div><div class="l">MNOK Kvilldal HVDC</div><div class="n">OneCo, største elkraftprosjekt</div></div>
+      <div class="st"><div class="v">100</div><div class="l">MNOK kontrakter</div><div class="n">Konkurranseutsatte markeder</div></div>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
