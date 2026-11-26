@@ -927,11 +927,11 @@ body:has(.pt)::before { display: none; }
 
 /* ============================================================
    RUNDE 5 — farge, varme og et portrett som toner inn
-   Aksentfargen er energi-oransje. På det lyse beltet brukes en
+   Aksentfargen er fjordgrønn. På det lyse beltet brukes en
    mørkere variant for å holde kontrastkravene (WCAG AA).
    ============================================================ */
-.pt { --accent: #FF7A3D; --accent-2: #FF9A66; --accent-ink: #0C0C0D; --glow: rgba(255, 122, 61, 0.14); }
-.pt-light { --accent: #B93E0C; --accent-2: #9A3209; --accent-ink: #FFFFFF; --glow: rgba(185, 62, 12, 0.08); }
+.pt { --accent: #6CC4B8; --accent-2: #8ED6CC; --accent-ink: #0C0C0D; --glow: rgba(108, 196, 184, 0.14); }
+.pt-light { --accent: #1D6A61; --accent-2: #15524B; --accent-ink: #FFFFFF; --glow: rgba(29, 106, 97, 0.08); }
 
 .pt .pt-btn { background: var(--accent); color: var(--accent-ink); }
 .pt-light .pt-btn { background: var(--accent); color: var(--accent-ink); }
@@ -946,7 +946,7 @@ body:has(.pt)::before { display: none; }
 .pt-press .go, .pt-ai-ex .arrow { color: var(--accent); }
 .pt-role ol li::before { color: var(--accent); }
 .pt-princ .proof, .pt-lens .proof, .pt-row .proof { border-left: 2px solid var(--accent); padding-left: 12px; }
-.pt-ai-tools li { border-color: rgba(255, 122, 61, 0.45); }
+.pt-ai-tools li { border-color: rgba(108, 196, 184, 0.45); }
 .pt-case .left .tag { color: var(--accent); }
 .pt-svc .tag, .pt-row .meta div:last-child { color: var(--accent); }
 .pt-sub-eyebrow { color: var(--accent) !important; }

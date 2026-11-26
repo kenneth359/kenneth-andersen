@@ -33,7 +33,7 @@ export const translations = {
       speaksLabel: "Snakker språket til",
       speaks: ["CEO", "CFO", "CMO", "CTO", "styret", "kunden"],
       ctaPrimary: "Se full CV",
-      ctaSecondary: "Ta en prat",
+      ctaSecondary: "Book 30 min",
       microProof: "Senior forretningsutvikler elektrifisering Norden i Skagerak Energi. Tidligere daglig leder i Otera Ratel og direktør i OneCo.",
     },
     logos: {
@@ -139,7 +139,7 @@ export const translations = {
     os: {
       eyebrow: "Arbeidsmåte",
       heading: "Slik jobber jeg.",
-      sub: "Fem vaner som går igjen, enten jeg leder et selskap, et anbud eller sitter i et styre.",
+      sub: "Tre vaner som går igjen, enten jeg leder et selskap, et anbud eller sitter i et styre.",
       pillars: [
         {
           n: "01", title: "Relasjoner er jobben",
@@ -152,17 +152,7 @@ export const translations = {
           proof: "Beslutningsgrunnlag for konsernledelse og styre i Skagerak Energi",
         },
         {
-          n: "03", title: "Kunden og investeringen først",
-          body: "Jeg starter med kundens driftsproblem, hvem som beslutter og hvordan investeringen skal forsvares internt hos dem. Først da definerer vi tilbudet.",
-          proof: "Ledet det vinnende tilbudet til Avinor om batteri og lading for elfly på Flesland",
-        },
-        {
-          n: "04", title: "Tall som tåler styret",
-          body: "Business case med CAPEX, OPEX, NPV, IRR og risiko. Jeg sier tydelig hva som er dokumentert og hva som er antakelser, også når det svekker saken.",
-          proof: "Utviklet KPI-rammeverk som kobler teknologiutvikling, kundeavtaler og kommersiell fremdrift",
-        },
-        {
-          n: "05", title: "Salget henger sammen med leveransen",
+          n: "03", title: "Salget henger sammen med leveransen",
           body: "Tekniske, kommersielle og økonomiske folk kommer inn tidlig. Omfang, pris, kapasitet og leveranse testes før avtalen signeres, slik at den er lønnsom for begge parter.",
           proof: "To kontrakter på over 70 MNOK hver i OneCo, levert tverrfaglig og i konsortium med ABB",
         },
@@ -355,7 +345,6 @@ export const translations = {
         { k: "FAU", v: "Med i foreldrerådets arbeidsutvalg ved Langesund barneskole." },
         { k: "Fredagsklubben", v: "Startet et gratis fredagstilbud for mellomtrinnet ved Langesund barneskole, og skaffet finansieringen." },
         { k: "DNT", v: "Frivillig i Den Norske Turistforening." },
-        { k: "Idrett", v: "Løping, svømming, styrke og Backyard Ultra." },
       ],
     },
     career: {
@@ -479,14 +468,14 @@ export const translations = {
         { q: "Hva har Kenneth Andersen gjort i Skagerak Energi?", a: "Han ledet pilotprosjektet Mobil energi til byggeplasser fra 2021 og bygde det videre til selskapet Skagerak Mobil Energi, der han var konstituert daglig leder i 2024. Han ledet også det vinnende tilbudet til Avinor om mobil lading for elfly på Bergen lufthavn Flesland." },
         { q: "Hvilken bakgrunn har han?", a: "Fagbrev som energimontør, bachelor i elkraftteknikk fra Universitetet i Sørøst-Norge, master i økonomi og ledelse fra NTNU og markedsstrategi fra BI. Han har jobbet fire år for ABB Marine i Sør-Korea og tjenestegjort i Kongens Garde og i Afghanistan. Han er sertifisert styremedlem." },
         { q: "Hva slags roller er han aktuell for?", a: "Kommersielle lederroller og C-nivåroller i etablerte konsern og vekstselskaper innen energi, industri og teknologi, ledelse av nye forretningsområder, aktivt eierskap og styreverv." },
-        { q: "Hvordan kontakter man Kenneth Andersen?", a: "På e-post kenneth.andersen2@gmail.com, telefon +47 402 37 351, via LinkedIn eller kontaktskjemaet her på siden." },
+        { q: "Hvordan kontakter man Kenneth Andersen?", a: "På e-post kenneth.andersen2@gmail.com, telefon +47 402 37 351, via LinkedIn eller ved å booke 30 minutter her på siden." },
       ],
     },
     contact: {
       eyebrow: "Kontakt",
       heading: "La oss snakke.",
-      sub: "Ring, send en e-post eller skriv i skjemaet. Henvendelser behandles fortrolig.",
-      bookCta: "Send e-post",
+      sub: "Book en halvtime, ring eller skriv. Henvendelser behandles fortrolig.",
+      bookCta: "Book 30 minutter",
       orLabel: "eller skriv direkte",
       email: "kenneth.andersen2@gmail.com",
       phone: "+47 402 37 351",
@@ -530,7 +519,7 @@ export const translations = {
       speaksLabel: "Speaks the language of",
       speaks: ["the CEO", "the CFO", "the CMO", "the CTO", "the board", "the customer"],
       ctaPrimary: "View full CV",
-      ctaSecondary: "Let's talk",
+      ctaSecondary: "Book 30 min",
       microProof: "Senior Business Developer, Nordic Electrification at Skagerak Energi. Former managing director of Otera Ratel and director at OneCo.",
     },
     logos: {
@@ -592,13 +581,11 @@ export const translations = {
     os: {
       eyebrow: "How I work",
       heading: "How I work.",
-      sub: "Five habits that show up whether I am running a company, a tender or sitting on a board.",
+      sub: "Three habits that show up whether I am running a company, a tender or sitting on a board.",
       pillars: [
         { n: "01", title: "Relationships are the job", body: "I am genuinely interested in people: what they are good at, what worries them and what they need to succeed. That is the basis for everything else, whether building a company, a market or a team. Trust takes time, and I take the time.", proof: "“Played with open cards, was transparent in negotiations” — customer, OneCo" },
         { n: "02", title: "Complex things, made clear", body: "Technology and capital decisions quickly become hard to follow for the people who have to back them. I spend a lot of time making the case simple enough for everyone to take a position, without removing what matters.", proof: "Decision material for group management and board at Skagerak Energi" },
-        { n: "03", title: "Start with the customer's investment", body: "I begin with the customer's operational problem, who decides, and how the investment will be justified inside their organisation. Only then do we define the offer.", proof: "Led the winning bid to Avinor for battery and charging for electric aircraft at Bergen Airport" },
-        { n: "04", title: "Numbers that hold up in the boardroom", body: "Business cases with CAPEX, OPEX, NPV, IRR and risk. I say clearly what is documented and what is an assumption, even when it weakens the case.", proof: "Built a KPI framework linking technology development, customer agreements and commercial progress" },
-        { n: "05", title: "Connect the sale to delivery", body: "Technical, commercial and financial people come in early. Scope, price, capacity and delivery are tested before signing, so the agreement works for both sides.", proof: "Two contracts above NOK 70 million each at OneCo, delivered cross-functionally and in a consortium with ABB" },
+        { n: "03", title: "Connect the sale to delivery", body: "Technical, commercial and financial people come in early. Scope, price, capacity and delivery are tested before signing, so the agreement works for both sides.", proof: "Two contracts above NOK 70 million each at OneCo, delivered cross-functionally and in a consortium with ABB" },
       ],
     },
     track: {
@@ -750,7 +737,6 @@ export const translations = {
         { k: "Parents' council", v: "Member of the parents' council working committee (FAU) at Langesund primary school." },
         { k: "Friday club", v: "Started a free Friday club for pupils in years 5–7 at Langesund primary school, and secured the funding." },
         { k: "DNT", v: "Volunteer with the Norwegian Trekking Association." },
-        { k: "Sport", v: "Running, swimming, strength training and backyard ultras." },
       ],
     },
     career: {
@@ -839,14 +825,14 @@ export const translations = {
         { q: "What has he done at Skagerak Energi?", a: "He led the pilot project Mobile energy for construction sites from 2021 and built it into the company Skagerak Mobil Energi, where he was interim CEO in 2024. He also led the winning bid for Avinor's mobile charging for electric aircraft at Bergen Airport Flesland." },
         { q: "What is his background?", a: "Trade certificate as a power line technician, BSc in electrical power engineering, a master's in economics and management from NTNU and market strategy at BI. He worked four years for ABB Marine in South Korea and served in the King's Guard and in Afghanistan. He is a certified board member." },
         { q: "What roles is he relevant for?", a: "Commercial and C-level roles in established groups and growth companies in energy, industry and technology, leading new business areas, active ownership and board positions." },
-        { q: "How do I contact Kenneth Andersen?", a: "By email at kenneth.andersen2@gmail.com, phone +47 402 37 351, via LinkedIn or the contact form on this site." },
+        { q: "How do I contact Kenneth Andersen?", a: "By email at kenneth.andersen2@gmail.com, phone +47 402 37 351, via LinkedIn or by booking 30 minutes on this site." },
       ],
     },
     contact: {
       eyebrow: "Contact",
       heading: "Let's talk.",
-      sub: "Call, email or use the form. Enquiries are treated confidentially.",
-      bookCta: "Send email",
+      sub: "Book half an hour, call or write. Enquiries are treated confidentially.",
+      bookCta: "Book 30 minutes",
       orLabel: "or write directly",
       email: "kenneth.andersen2@gmail.com",
       phone: "+47 402 37 351",

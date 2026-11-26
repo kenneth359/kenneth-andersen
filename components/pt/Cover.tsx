@@ -41,7 +41,7 @@ export default function Cover() {
           <a className="pt-btn" href="/cv">
             {h.ctaPrimary}
           </a>
-          <a className="pt-btn-line" href="#kontakt">{h.ctaSecondary}</a>
+          <a className="pt-btn-line" href="https://calendly.com/kenneth-andersen2/30min" target="_blank" rel="noopener noreferrer">{h.ctaSecondary}</a>
         </div>
       </div>
 

@@ -3,7 +3,6 @@ import Nav from "@/components/pt/Nav";
 import Cover from "@/components/pt/Cover";
 import Contact from "@/components/pt/Contact";
 import Footer from "@/components/pt/Footer";
-import OriginFootnote from "@/components/pt/OriginFootnote";
 import RevealObserver from "@/components/pt/RevealObserver";
 import { translations } from "@/lib/translations";
 
@@ -32,7 +31,6 @@ import {
   Cases,
   Services,
   Faq,
-  Timeline,
   References,
 } from "@/components/pt/Sections";
 
@@ -50,8 +48,6 @@ export default function Home() {
         <Lenses />
         <Origin />
 
-        <OriginFootnote />
-
         <Role />
         <Principles />
 
@@ -68,7 +64,6 @@ export default function Home() {
         <Ventures />
         <PersonalPlate />
         <Personal />
-        <Timeline />
         <References />
         <Services />
         <Faq />

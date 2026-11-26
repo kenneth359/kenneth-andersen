@@ -35,7 +35,7 @@ export default function Contact() {
           <h3>{c.sub}</h3>
 
           <div className="acts">
-            <a className="pt-btn" href={`mailto:${c.email}`}>
+            <a className="pt-btn" href="https://calendly.com/kenneth-andersen2/30min" target="_blank" rel="noopener noreferrer">
               {c.bookCta}
             </a>
             <a className="pt-btn-line" href={`tel:${c.phone.replace(/\s/g, "")}`}>{c.phone}</a>

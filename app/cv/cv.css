@@ -121,8 +121,8 @@ body:has(.cvp)::before { display: none; }
 }
 
 /* aksent, samme som forsiden (mørk variant for kontrast på papir) */
-.cvp { --accent: #B93E0C; }
-.cvp-print { background: #FF7A3D; color: #0C0C0D; }
+.cvp { --accent: #1D6A61; }
+.cvp-print { background: #6CC4B8; color: #0C0C0D; }
 .cvp-fig .v { color: var(--accent); }
 .cvp-head { border-bottom-color: var(--accent); }
 .cvp-job .period { color: var(--accent); }
