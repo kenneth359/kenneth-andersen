@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/translations";
 
-const CALENDLY_URL = "https://calendly.com/kenneth-andersen2/30min";
-
 export default function Contact() {
   const { lang } = useLang();
   const c = translations[lang].contact;
@@ -37,9 +35,10 @@ export default function Contact() {
           <h3>{c.sub}</h3>
 
           <div className="acts">
-            <a className="pt-btn" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+            <a className="pt-btn" href={`mailto:${c.email}`}>
               {c.bookCta}
             </a>
+            <a className="pt-btn-line" href={`tel:${c.phone.replace(/\s/g, "")}`}>{c.phone}</a>
           </div>
 
           {status === "success" ? (

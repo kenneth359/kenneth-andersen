@@ -856,25 +856,6 @@ body:has(.pt)::before { display: none; }
 .pt-engaged dl > div { display: grid; grid-template-columns: 180px minmax(0, 1fr); column-gap: 32px; padding: 16px 0; border-top: 1px solid var(--rule); }
 .pt-engaged dt { font-size: 18px; font-weight: 600; }
 .pt-engaged dd { margin: 0; font-size: 17px; color: var(--bone-2); }
-@media (min-width: 1001px) {
-  .pt-cover .shot { left: 50%; }
-  .pt-cover .shot img { object-position: 50% 22%; filter: grayscale(0.55) contrast(1.04); }
-  .pt-cover .shot::after {
-    background:
-      linear-gradient(to top, rgba(12,12,13,.9) 0%, rgba(12,12,13,.15) 30%, transparent 55%),
-      linear-gradient(90deg, var(--black) 0%, rgba(12,12,13,.55) 22%, transparent 48%);
-  }
-  .pt-cover-body { max-width: calc(50% + var(--pad) * 0.5); margin-left: max(0px, calc((100% - var(--max)) / 2)); }
-  .pt-cover h1 { font-size: clamp(48px, 6.2vw, 100px); }
-}
-/* mobil og nettbrett: portrettet som eget bilde øverst, teksten under */
-@media (max-width: 1000px) {
-  .pt .pt-cover { min-height: 0; justify-content: flex-start; }
-  .pt .pt-cover .shot { position: relative; inset: auto; height: min(118vw, 640px); }
-  .pt .pt-cover .shot img { object-position: 50% 18%; filter: grayscale(0.5) contrast(1.04); }
-  .pt .pt-cover .shot::after { background: linear-gradient(to top, var(--black) 0%, rgba(12,12,13,.35) 26%, transparent 50%); }
-  .pt .pt-cover-body { padding-top: 8px; margin-top: -64px; }
-}
 @media (max-width: 680px) {
   .pt-engaged dl > div { grid-template-columns: 1fr; row-gap: 4px; }
 }
@@ -941,4 +922,73 @@ body:has(.pt)::before { display: none; }
   .pt-marquee-track { gap: 36px !important; padding-right: 36px !important; animation-duration: 40s; }
   .pt-recr .facts > div { grid-template-columns: 1fr; row-gap: 4px; }
   .pt-recr .fit li { font-size: 17px; }
+}
+
+
+/* ============================================================
+   RUNDE 5 — farge, varme og et portrett som toner inn
+   Aksentfargen er energi-oransje. På det lyse beltet brukes en
+   mørkere variant for å holde kontrastkravene (WCAG AA).
+   ============================================================ */
+.pt { --accent: #FF7A3D; --accent-2: #FF9A66; --accent-ink: #0C0C0D; --glow: rgba(255, 122, 61, 0.14); }
+.pt-light { --accent: #B93E0C; --accent-2: #9A3209; --accent-ink: #FFFFFF; --glow: rgba(185, 62, 12, 0.08); }
+
+.pt .pt-btn { background: var(--accent); color: var(--accent-ink); }
+.pt-light .pt-btn { background: var(--accent); color: var(--accent-ink); }
+.pt .pt-btn-line { border-bottom-color: var(--accent); }
+.pt .pt-sec-head .side { color: var(--accent); font-weight: 500; }
+.pt-cover .eyebrow .nm { color: var(--accent); }
+.pt-speaks .rot-inner > span { color: var(--accent); border-bottom-color: var(--accent); }
+.pt-lens .role { color: var(--accent); }
+.pt-lens { border-top: 2px solid transparent; transition: background 200ms ease, border-color 200ms ease; }
+.pt-fig .v { color: var(--accent); }
+.pt-tl-row.now .t::after { background: var(--accent); box-shadow: 0 0 0 4px var(--glow); }
+.pt-press .go, .pt-ai-ex .arrow { color: var(--accent); }
+.pt-role ol li::before { color: var(--accent); }
+.pt-princ .proof, .pt-lens .proof, .pt-row .proof { border-left: 2px solid var(--accent); padding-left: 12px; }
+.pt-ai-tools li { border-color: rgba(255, 122, 61, 0.45); }
+.pt-case .left .tag { color: var(--accent); }
+.pt-svc .tag, .pt-row .meta div:last-child { color: var(--accent); }
+.pt-sub-eyebrow { color: var(--accent) !important; }
+.pt-sub-head h1 .soft { color: var(--accent); }
+
+/* varme i flatene */
+.pt-availbar { background: transparent; }
+.pt-statement p.big { background: linear-gradient(90deg, var(--bone) 0%, var(--bone) 60%, var(--accent-2) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* bilder i farge, ikke grått */
+.pt-plate img { filter: grayscale(0.25) contrast(1.04) saturate(0.95); }
+
+/* portrett som toner inn bak teksten */
+.pt-cover .shot { inset: 0; left: 52%; }
+.pt-cover .shot img { object-position: 55% 18%; filter: grayscale(0.2) contrast(1.03) saturate(0.95); opacity: 0.85; }
+.pt-cover .shot::after {
+  background:
+    linear-gradient(to top, var(--black) 0%, rgba(12,12,13,.55) 22%, transparent 50%),
+    linear-gradient(90deg, var(--black) 0%, rgba(12,12,13,.7) 22%, rgba(12,12,13,.2) 55%, rgba(12,12,13,.1) 100%);
+}
+.pt-cover-body { max-width: calc(1000px + var(--pad) * 2); }
+@media (min-width: 1001px) {
+  .pt-cover h1 { font-size: clamp(52px, 6.6vw, 108px); }
+  .pt-cover-body { max-width: min(62%, calc(860px + var(--pad) * 2)); margin-left: max(0px, calc((100% - var(--max)) / 2)); }
+}
+@media (max-width: 1000px) {
+  .pt .pt-cover { min-height: 100svh; justify-content: flex-end; }
+  .pt .pt-cover .shot { position: absolute; inset: 0; height: auto; left: 0; }
+  .pt .pt-cover .shot { bottom: auto; height: min(120vw, 760px); }
+  .pt .pt-cover .shot img { object-position: 50% 16%; opacity: 0.85; }
+  .pt .pt-cover .shot::after {
+    background: linear-gradient(180deg, rgba(12,12,13,.1) 0%, rgba(12,12,13,.2) 30%, rgba(12,12,13,.85) 62%, var(--black) 90%);
+  }
+  .pt .pt-cover-body { margin-top: 0; padding-top: min(74vw, 420px); }
+}
+
+.pt-contact .acts { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+@media (hover: hover) and (pointer: fine) {
+  .pt .pt-btn:hover { background: var(--accent-2); }
+  .pt-lens:hover { border-top-color: var(--accent); }
+  .pt-marquee-track li:hover { color: var(--accent); }
+  .pt-press a:hover .t { color: var(--accent); }
+  .pt-nav-links a::after { background: var(--accent); }
 }
