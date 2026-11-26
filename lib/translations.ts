@@ -164,7 +164,7 @@ export const translations = {
         {
           n: "05", title: "Salget henger sammen med leveransen",
           body: "Tekniske, kommersielle og økonomiske folk kommer inn tidlig. Omfang, pris, kapasitet og leveranse testes før avtalen signeres, slik at den er lønnsom for begge parter.",
-          proof: "Ledet tilbudsprosessen for Kvilldal HVDC, en kontrakt på 73 MNOK",
+          proof: "To kontrakter på over 70 MNOK hver i OneCo, levert tverrfaglig og i konsortium med ABB",
         },
       ],
     },
@@ -175,8 +175,8 @@ export const translations = {
       stats: [
         { value: "1 av 5", label: "tilbydere valgt av Avinor", note: "Mobil lading for elfly på Flesland, 2025" },
         { value: "146 MWh", label: "levert energi", note: "Ca. 105 tonn CO₂ redusert (beregnet), 386+ batteribytter" },
-        { value: "360 kW", label: "lading per uttak", note: "Mobil battericontainer for anleggsmaskiner, Skagerak" },
-        { value: "73 MNOK", label: "Kvilldal HVDC", note: "Ledet tilbudsprosessen, OneCo" },
+        { value: ">70 MNOK", label: "per kontrakt, to kontrakter levert tverrfaglig", note: "Kvilldal HVDC og Songkjølen/Engerfjellet (Odal vindpark), OneCo" },
+        { value: "21→60+", label: "ansatte i enheten", note: "Vekst i OneCo Sør mens jeg satt i ledergruppen" },
         { value: "2×+", label: "vekst mot budsjett", note: "Over tolv måneder, OneCo energi og kraft" },
         { value: "3 av 4", label: "store nasjonale anbud til forhandling", note: "Første driftsår, Otera Ratel" },
       ],
@@ -223,13 +223,13 @@ export const translations = {
         {
           tag: "Vekst · Direktør", period: "2018–2020",
           company: "OneCo, energi og kraft",
-          title: "Mer enn dobbelt så høy vekst som budsjettert.",
-          body: "Medlem av ledergruppen i OneCo Sør, først som avdelingsleder og deretter direktør for marked og forretningsutvikling. Ansvar for pipeline, anbud, kapasitetsplanlegging, marginer og prognoser i teknisk entreprise.",
+          title: "Fikk et stort konsern til å tenke hub og tverrfaglig leveranse.",
+          body: "Medlem av ledergruppen i OneCo Sør, først som avdelingsleder og deretter direktør for marked og forretningsutvikling. Konsernet var organisert i fagsiloer. Jeg fikk gjennomslag for en regional HUB-modell der montører, prosjektledere og fag deles på tvers, slik at vi kunne levere hele anlegg i stedet for enkeltfag. Det åpnet for større kontrakter og en vekst på mer enn det dobbelte av budsjett.",
           bullets: [
+            "To kontrakter på over 70 MNOK hver: Kvilldal HVDC, der jeg ledet tilbudsprosessen, og infrastrukturen til Songkjølen og Engerfjellet (nå Odal vindpark)",
+            "Bygget konsortium med ABB for vindparkene, med høyspent, lavspent og fiber i samme leveranse",
             "Vekst på mer enn det dobbelte av budsjettert nivå over tolv måneder",
-            "Ledet tilbudsprosessen for Kvilldal HVDC, 73 MNOK",
-            "Bygget konsortium med ABB for infrastrukturen til vindparkene Songkjølen og Engerfjellet (nå Odal vindpark)",
-            "Bidro til at enheten vokste fra rundt 21 til over 60 ansatte, og utviklet en regional HUB-modell for deling av montører og prosjektledere",
+            "Bidro til at enheten vokste fra rundt 21 til over 60 ansatte",
           ],
         },
         {
@@ -344,10 +344,17 @@ export const translations = {
       ],
     },
     personal: {
-      plateLine: "Backyard Ultra har ingen målstrek. Man løper én runde til, helt til man er den siste igjen.",
+      plateLine: "Backyard Ultra: én runde i timen. Det handler ikke om fart, men om å stå klar på startstreken igjen.",
       eyebrow: "Utenfor jobb",
       heading: "Målbevisst, over tid.",
       body: "Jeg løper, svømmer og trener styrke, og har stilt i Backyard Ultra. Idretten har lært meg det samme som selskapsbygging: resultater kommer ikke over natta. De kommer av tydelige mål, jevnt arbeid og å justere underveis. Det samme gjelder relasjoner: tillit bygges over tid, ikke i første møte.",
+      engagedTitle: "Engasjert der jeg bor",
+      engaged: [
+        { k: "FAU", v: "Med i foreldrerådets arbeidsutvalg ved Langesund barneskole." },
+        { k: "Fredagsklubben", v: "Startet et gratis fredagstilbud for mellomtrinnet ved Langesund barneskole, og skaffet finansieringen." },
+        { k: "DNT", v: "Frivillig i Den Norske Turistforening." },
+        { k: "Idrett", v: "Løping, svømming, styrke og Backyard Ultra." },
+      ],
     },
     career: {
       eyebrow: "Karriere",
@@ -461,6 +468,17 @@ export const translations = {
         { tag: "Energi", title: "Mobil energi for utslippsfrie byggeplasser: fra pilot til eget selskap", date: "Caseartikkel" },
       ],
       cta: "Følg på LinkedIn",
+    },
+    faq: {
+      eyebrow: "Spørsmål og svar",
+      heading: "Kort om meg.",
+      items: [
+        { q: "Hvem er Kenneth Andersen?", a: "Kenneth Andersen er en norsk kommersiell leder og selskapsbygger fra Langesund i Telemark. Han er senior forretningsutvikler for elektrifisering i Norden i Skagerak Energi, og har tidligere vært daglig leder i Otera Ratel og direktør for marked og forretningsutvikling i OneCo." },
+        { q: "Hva har Kenneth Andersen gjort i Skagerak Energi?", a: "Han ledet pilotprosjektet Mobil energi til byggeplasser fra 2021 og bygde det videre til selskapet Skagerak Mobil Energi, der han var konstituert daglig leder i 2024. Han ledet også det vinnende tilbudet til Avinor om mobil lading for elfly på Bergen lufthavn Flesland." },
+        { q: "Hvilken bakgrunn har han?", a: "Fagbrev som energimontør, bachelor i elkraftteknikk fra Universitetet i Sørøst-Norge, master i økonomi og ledelse fra NTNU og markedsstrategi fra BI. Han har jobbet fire år for ABB Marine i Sør-Korea og tjenestegjort i Kongens Garde og i Afghanistan. Han er sertifisert styremedlem." },
+        { q: "Hva slags roller er han aktuell for?", a: "Kommersielle lederroller og C-nivåroller i etablerte konsern og vekstselskaper innen energi, industri og teknologi, ledelse av nye forretningsområder, aktivt eierskap og styreverv." },
+        { q: "Hvordan kontakter man Kenneth Andersen?", a: "På e-post kenneth.andersen2@gmail.com, telefon +47 402 37 351, via LinkedIn eller ved å booke en samtale på 30 minutter her på siden." },
+      ],
     },
     contact: {
       eyebrow: "Kontakt",
@@ -578,7 +596,7 @@ export const translations = {
         { n: "02", title: "Complex things, made clear", body: "Technology and capital decisions quickly become hard to follow for the people who have to back them. I spend a lot of time making the case simple enough for everyone to take a position, without removing what matters.", proof: "Decision material for group management and board at Skagerak Energi" },
         { n: "03", title: "Start with the customer's investment", body: "I begin with the customer's operational problem, who decides, and how the investment will be justified inside their organisation. Only then do we define the offer.", proof: "Led the winning bid to Avinor for battery and charging for electric aircraft at Bergen Airport" },
         { n: "04", title: "Numbers that hold up in the boardroom", body: "Business cases with CAPEX, OPEX, NPV, IRR and risk. I say clearly what is documented and what is an assumption, even when it weakens the case.", proof: "Built a KPI framework linking technology development, customer agreements and commercial progress" },
-        { n: "05", title: "Connect the sale to delivery", body: "Technical, commercial and financial people come in early. Scope, price, capacity and delivery are tested before signing, so the agreement works for both sides.", proof: "Led the bid process for the NOK 73 million Kvilldal HVDC contract" },
+        { n: "05", title: "Connect the sale to delivery", body: "Technical, commercial and financial people come in early. Scope, price, capacity and delivery are tested before signing, so the agreement works for both sides.", proof: "Two contracts above NOK 70 million each at OneCo, delivered cross-functionally and in a consortium with ABB" },
       ],
     },
     track: {
@@ -588,8 +606,8 @@ export const translations = {
       stats: [
         { value: "1 of 5", label: "bidders chosen by Avinor", note: "Mobile charging for electric aircraft at Flesland, 2025" },
         { value: "146 MWh", label: "energy delivered", note: "Approx. 105 tonnes CO₂ avoided (calculated), 386+ battery swaps" },
-        { value: "360 kW", label: "charging per outlet", note: "Mobile battery container for construction machinery, Skagerak" },
-        { value: "NOK 73m", label: "Kvilldal HVDC", note: "Led the bid process, OneCo" },
+        { value: ">NOK 70m", label: "per contract, two contracts delivered cross-functionally", note: "Kvilldal HVDC and Songkjølen/Engerfjellet (Odal wind farm), OneCo" },
+        { value: "21→60+", label: "employees in the unit", note: "Growth at OneCo Sør while I was on the management team" },
         { value: "2×+", label: "growth vs. budget", note: "Over twelve months, OneCo energy and power" },
         { value: "3 of 4", label: "major national tenders to negotiation", note: "First operating year, Otera Ratel" },
       ],
@@ -636,13 +654,13 @@ export const translations = {
         {
           tag: "Growth · Director", period: "2018–2020",
           company: "OneCo, energy and power",
-          title: "More than twice the budgeted growth.",
-          body: "Member of the OneCo Sør management team, first as head of department, then as director of marketing and business development. Responsible for pipeline, tenders, capacity planning, margins and forecasts in technical contracting.",
+          title: "Got a large group to think in hubs and cross-disciplinary delivery.",
+          body: "Member of the OneCo Sør management team, first as head of department, then as director of marketing and business development. The group was organised in trade silos. I won support for a regional hub model where technicians, project managers and disciplines are shared, so we could deliver complete installations instead of single trades. That opened the door to larger contracts and growth of more than twice the budget.",
           bullets: [
+            "Two contracts above NOK 70 million each: Kvilldal HVDC, where I led the bid, and infrastructure for Songkjølen and Engerfjellet (now Odal wind farm)",
+            "Formed a consortium with ABB for the wind farms, with high voltage, low voltage and fibre in one delivery",
             "Growth of more than twice the budgeted level over twelve months",
-            "Led the bid process for Kvilldal HVDC, NOK 73 million",
-            "Formed a consortium with ABB for infrastructure at the Songkjølen and Engerfjellet wind farms (now Odal wind farm)",
-            "Contributed to the unit growing from around 21 to more than 60 employees, and developed a regional hub model for sharing technicians and project managers",
+            "Contributed to the unit growing from around 21 to more than 60 employees",
           ],
         },
         {
@@ -719,10 +737,17 @@ export const translations = {
       ],
     },
     personal: {
-      plateLine: "A backyard ultra has no finish line. You run one more lap, until you are the last one left.",
+      plateLine: "Backyard ultra: one lap every hour. It is not about speed, but about being ready at the start line again.",
       eyebrow: "Outside work",
       heading: "Determined, over time.",
       body: "I run, swim and do strength training, and I have taken part in backyard ultras. Sport has taught me the same thing as building companies: results do not come overnight. They come from clear goals, steady work and adjusting along the way. The same goes for relationships: trust is built over time, not in the first meeting.",
+      engagedTitle: "Involved where I live",
+      engaged: [
+        { k: "Parents' council", v: "Member of the parents' council working committee (FAU) at Langesund primary school." },
+        { k: "Friday club", v: "Started a free Friday club for pupils in years 5–7 at Langesund primary school, and secured the funding." },
+        { k: "DNT", v: "Volunteer with the Norwegian Trekking Association." },
+        { k: "Sport", v: "Running, swimming, strength training and backyard ultras." },
+      ],
     },
     career: {
       eyebrow: "Career",
@@ -801,6 +826,17 @@ export const translations = {
         { tag: "Energy", title: "Mobile energy for zero-emission construction sites: from pilot to a separate company", date: "Case article" },
       ],
       cta: "Follow on LinkedIn",
+    },
+    faq: {
+      eyebrow: "Questions and answers",
+      heading: "About me, briefly.",
+      items: [
+        { q: "Who is Kenneth Andersen?", a: "Kenneth Andersen is a Norwegian commercial leader and venture builder from Langesund in Telemark. He is Senior Business Developer for Nordic Electrification at Skagerak Energi, and was previously managing director of Otera Ratel and director of marketing and business development at OneCo." },
+        { q: "What has he done at Skagerak Energi?", a: "He led the pilot project Mobile energy for construction sites from 2021 and built it into the company Skagerak Mobil Energi, where he was interim CEO in 2024. He also led the winning bid for Avinor's mobile charging for electric aircraft at Bergen Airport Flesland." },
+        { q: "What is his background?", a: "Trade certificate as a power line technician, BSc in electrical power engineering, a master's in economics and management from NTNU and market strategy at BI. He worked four years for ABB Marine in South Korea and served in the King's Guard and in Afghanistan. He is a certified board member." },
+        { q: "What roles is he relevant for?", a: "Commercial and C-level roles in established groups and growth companies in energy, industry and technology, leading new business areas, active ownership and board positions." },
+        { q: "How do I contact Kenneth Andersen?", a: "By email at kenneth.andersen2@gmail.com, phone +47 402 37 351, via LinkedIn or by booking a 30-minute call on this site." },
+      ],
     },
     contact: {
       eyebrow: "Contact",

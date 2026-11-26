@@ -15,11 +15,15 @@ const BASE = "https://kennethandersen.no";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
-  title: "Kenneth Andersen | Kommersiell leder, selskapsbygger og styremedlem i energi og teknologi",
+  title: "Kenneth Andersen | Kommersiell leder og selskapsbygger i energi og teknologi, Langesund",
   description:
     "Kommersiell leder og selskapsbygger i energi og teknologi. Tidligere daglig leder og direktør, bygde Skagerak Mobil Energi fra pilot til eget selskap.",
   keywords: [
     "Kenneth Andersen",
+    "Kenneth Andersen Skagerak Energi",
+    "Kenneth Andersen Langesund",
+    "Kenneth Andersen OneCo",
+    "Kenneth Andersen Otera Ratel",
     "kommersiell leder",
     "corporate venture builder",
     "kommersiell direktør energi",
@@ -48,9 +52,9 @@ export const metadata: Metadata = {
       "Kommersiell leder, selskapsbygger og styremedlem i energi og teknologi. Snakker språket til CEO, CFO, CMO og CTO.",
     images: [
       {
-        url: `${BASE}/assets/kenneth-studio.jpg`,
-        width: 1200,
-        height: 800,
+        url: `${BASE}/assets/kenneth-hero.jpg`,
+        width: 1400,
+        height: 1700,
         alt: "Kenneth Andersen",
       },
     ],
@@ -64,7 +68,7 @@ export const metadata: Metadata = {
     title: "Kenneth Andersen — det komplekse, gjort forståelig",
     description:
       "Kommersiell leder, selskapsbygger og styremedlem i energi og teknologi.",
-    images: [`${BASE}/assets/kenneth-studio.jpg`],
+    images: [`${BASE}/assets/kenneth-hero.jpg`],
   },
   robots: {
     index: true,

@@ -5,6 +5,17 @@ import Contact from "@/components/pt/Contact";
 import Footer from "@/components/pt/Footer";
 import OriginFootnote from "@/components/pt/OriginFootnote";
 import RevealObserver from "@/components/pt/RevealObserver";
+import { translations } from "@/lib/translations";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: translations.no.faq.items.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 import {
   Logos,
   Origin,
@@ -20,6 +31,7 @@ import {
   Numbers,
   Cases,
   Services,
+  Faq,
   Timeline,
   References,
 } from "@/components/pt/Sections";
@@ -27,6 +39,10 @@ import {
 export default function Home() {
   return (
     <div className="pt">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <Nav />
       <Cover />
       <main>
@@ -55,6 +71,7 @@ export default function Home() {
         <Timeline />
         <References />
         <Services />
+        <Faq />
         <Contact />
       </main>
       <Footer />

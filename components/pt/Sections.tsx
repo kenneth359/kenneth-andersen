@@ -210,6 +210,17 @@ export function Personal() {
         <span className="side">{p.eyebrow}</span>
       </div>
       <p className="pt-personal-body pt-reveal">{p.body}</p>
+      <div className="pt-engaged">
+        <h3>{p.engagedTitle}</h3>
+        <dl>
+          {p.engaged.map((e) => (
+            <div className="pt-reveal" key={e.k}>
+              <dt>{e.k}</dt>
+              <dd>{e.v}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
     </section>
   );
 }
@@ -513,6 +524,27 @@ export function Notes() {
         <a className="pt-btn-quiet" href={LINKEDIN} target="_blank" rel="noopener noreferrer">
           {t.cta}
         </a>
+      </div>
+    </section>
+  );
+}
+
+export function Faq() {
+  const { lang } = useLang();
+  const f = translations[lang].faq;
+  return (
+    <section id="faq" className="pt-wrap pt-sec">
+      <div className="pt-sec-head">
+        <h2>{f.heading}</h2>
+        <span className="side">{f.eyebrow}</span>
+      </div>
+      <div className="pt-sub-faq">
+        {f.items.map((it) => (
+          <div className="pt-reveal" key={it.q}>
+            <h3>{it.q}</h3>
+            <p>{it.a}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

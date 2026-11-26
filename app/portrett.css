@@ -848,6 +848,37 @@ body:has(.pt)::before { display: none; }
   .pt-press a { padding: 22px 48px 22px 20px; }
 }
 
+/* ---------- hero med hele portrettet (runde 4) ---------- */
+.pt-cover .eyebrow .nm { color: var(--bone); font-weight: 600; }
+.pt-engaged { margin-top: 48px; max-width: 900px; }
+.pt-engaged h3 { margin: 0 0 12px; font-size: 17px; font-weight: 600; color: var(--bone-3); }
+.pt-engaged dl { margin: 0; }
+.pt-engaged dl > div { display: grid; grid-template-columns: 180px minmax(0, 1fr); column-gap: 32px; padding: 16px 0; border-top: 1px solid var(--rule); }
+.pt-engaged dt { font-size: 18px; font-weight: 600; }
+.pt-engaged dd { margin: 0; font-size: 17px; color: var(--bone-2); }
+@media (min-width: 1001px) {
+  .pt-cover .shot { left: 50%; }
+  .pt-cover .shot img { object-position: 50% 22%; filter: grayscale(0.55) contrast(1.04); }
+  .pt-cover .shot::after {
+    background:
+      linear-gradient(to top, rgba(12,12,13,.9) 0%, rgba(12,12,13,.15) 30%, transparent 55%),
+      linear-gradient(90deg, var(--black) 0%, rgba(12,12,13,.55) 22%, transparent 48%);
+  }
+  .pt-cover-body { max-width: calc(50% + var(--pad) * 0.5); margin-left: max(0px, calc((100% - var(--max)) / 2)); }
+  .pt-cover h1 { font-size: clamp(48px, 6.2vw, 100px); }
+}
+/* mobil og nettbrett: portrettet som eget bilde øverst, teksten under */
+@media (max-width: 1000px) {
+  .pt .pt-cover { min-height: 0; justify-content: flex-start; }
+  .pt .pt-cover .shot { position: relative; inset: auto; height: min(118vw, 640px); }
+  .pt .pt-cover .shot img { object-position: 50% 18%; filter: grayscale(0.5) contrast(1.04); }
+  .pt .pt-cover .shot::after { background: linear-gradient(to top, var(--black) 0%, rgba(12,12,13,.35) 26%, transparent 50%); }
+  .pt .pt-cover-body { padding-top: 8px; margin-top: -64px; }
+}
+@media (max-width: 680px) {
+  .pt-engaged dl > div { grid-template-columns: 1fr; row-gap: 4px; }
+}
+
 /* ---------- responsivt ---------- */
 @media (max-width: 1240px) {
   .pt-nav-links { gap: 18px; }

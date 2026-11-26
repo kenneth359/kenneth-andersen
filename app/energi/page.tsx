@@ -34,7 +34,7 @@ export default function Energi() {
       "Mobil energi for utslippsfrie byggeplasser: fra pilot i 2021 til eget selskap, samarbeid med Circle K fra 2023",
       "Vunnet konkurranse om batteri og lading for elfly på Bergen lufthavn Flesland",
       "Depotlading for tungtransport og energistyringsplattform",
-      "Tilbudsleder for Kvilldal HVDC (73 MNOK) og konsortium med ABB for Odal vindpark",
+      "To kontrakter på over 70 MNOK hver i OneCo: Kvilldal HVDC (tilbudsleder) og Songkjølen/Engerfjellet i konsortium med ABB",
       "Kvalifisering hos Statnett og Hafslund Nett, 145 kV gassisolert koblingsanlegg på Sildvik",
       "Idriftsettelse av kraft- og fremdriftssystemer for ABB Marine i Sør-Korea"
     ]

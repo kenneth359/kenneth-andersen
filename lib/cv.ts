@@ -45,9 +45,10 @@ export const cv = {
         summary: "Medlem av ledergruppen i OneCo Sør. Ledet kommersiell utvikling i teknisk entreprise: pipeline, anbud, kapasitetsplanlegging, marginer og prognoser.",
         bullets: [
           "Vekst på mer enn det dobbelte av budsjettert nivå over tolv måneder",
-          "Ledet tilbudsprosessen for Kvilldal HVDC-kontrakten på 73 MNOK: teknisk omfang, prising, kontraktsrisiko og leveranseforutsetninger",
-          "Bygget konsortium med ABB for infrastrukturen til vindparkene Songkjølen og Engerfjellet (nå Odal vindpark): høyspent, lavspent og fiber",
-          "Bidro til at enheten vokste fra rundt 21 til over 60 ansatte. Utviklet en regional HUB-modell for deling av montører og prosjektledere",
+          "Fikk konsernet til å gå fra fagsiloer til en regional HUB-modell med tverrfaglig leveranse, der montører, prosjektledere og fag deles på tvers",
+          "To kontrakter på over 70 MNOK hver: ledet tilbudsprosessen for Kvilldal HVDC (teknisk omfang, prising, kontraktsrisiko og leveranse), og infrastrukturen til Songkjølen og Engerfjellet (nå Odal vindpark)",
+          "Bygget konsortium med ABB for vindparkene, med høyspent, lavspent og fiber i samme leveranse",
+          "Bidro til at enheten vokste fra rundt 21 til over 60 ansatte",
         ],
       },
       {
@@ -99,7 +100,7 @@ export const cv = {
     langTitle: "Språk og verktøy",
     lang: "Norsk (morsmål), engelsk (flytende), forstår svensk og dansk. Excel for finansiell modellering, CRM. Bruker Microsoft Copilot, ChatGPT, Claude og Claude Code daglig i tilbudsarbeid, markedsarbeid, prosjektstyring, strategiarbeid og prototyping, med kildekontroll og egen vurdering. Fordypning gjennom VibeLabs Masterclass.",
     personalTitle: "Personlig",
-    personal: "Løper, svømmer og trener styrke, og har stilt i Backyard Ultra. Idretten har lært meg at resultater kommer av tydelige mål, jevnt arbeid og tålmodighet, ikke over natta.",
+    personal: "Løper, svømmer og trener styrke, og har stilt i Backyard Ultra. Med i FAU ved Langesund barneskole, startet og finansierte Fredagsklubben for mellomtrinnet, og frivillig i DNT.",
     refs: "Referanser og attester på forespørsel.",
   },
   en: {
@@ -142,9 +143,10 @@ export const cv = {
         summary: "Member of the OneCo Sør management team. Led commercial development in technical contracting: pipeline, tenders, capacity planning, margins and forecasts.",
         bullets: [
           "Growth of more than twice the budgeted level over twelve months",
-          "Led the bid process for the NOK 73 million Kvilldal HVDC contract: technical scope, pricing, contractual risk and delivery assumptions",
-          "Formed a consortium with ABB for infrastructure at the Songkjølen and Engerfjellet wind farms (now Odal wind farm): high voltage, low voltage and fibre",
-          "Contributed to the unit growing from around 21 to more than 60 employees. Developed a regional hub model for sharing technicians and project managers",
+          "Moved the group from trade silos to a regional hub model with cross-disciplinary delivery, sharing technicians, project managers and disciplines",
+          "Two contracts above NOK 70 million each: led the bid for Kvilldal HVDC (technical scope, pricing, contractual risk and delivery), and infrastructure for Songkjølen and Engerfjellet (now Odal wind farm)",
+          "Formed a consortium with ABB for the wind farms, with high voltage, low voltage and fibre in one delivery",
+          "Contributed to the unit growing from around 21 to more than 60 employees",
         ],
       },
       {
@@ -196,7 +198,7 @@ export const cv = {
     langTitle: "Languages and tools",
     lang: "Norwegian (native), English (fluent), understand Swedish and Danish. Excel for financial modelling, CRM. Use Microsoft Copilot, ChatGPT, Claude and Claude Code daily in bids, marketing, project management, strategy and prototyping, with source checking and my own judgement. Further training through the VibeLabs Masterclass.",
     personalTitle: "Personal",
-    personal: "Running, swimming and strength training, including backyard ultras. Sport has taught me that results come from clear goals, steady work and patience, not overnight.",
+    personal: "Running, swimming and strength training, including backyard ultras. Member of the parents' council at Langesund primary school, started and funded a Friday club for years 5–7, and volunteer with the Norwegian Trekking Association (DNT).",
     refs: "References available on request.",
   },
 } as const;

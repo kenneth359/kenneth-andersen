@@ -10,10 +10,13 @@ export default function PersonSchema() {
         name: "Kenneth Andersen",
         givenName: "Kenneth",
         familyName: "Andersen",
+        alternateName: ["Kenneth Andersen Skagerak Energi", "Kenneth Andersen Langesund"],
+        disambiguatingDescription:
+          "Norsk kommersiell leder og selskapsbygger i energi og teknologi fra Langesund, senior forretningsutvikler i Skagerak Energi. Ikke å forveksle med den danske fotballtreneren Kenneth Andersen.",
         url: "https://kennethandersen.no",
         image: {
           "@type": "ImageObject",
-          url: "https://kennethandersen.no/assets/kenneth-studio.jpg",
+          url: "https://kennethandersen.no/assets/kenneth-hero.jpg",
           caption: "Kenneth Andersen",
         },
         description:
@@ -31,8 +34,26 @@ export default function PersonSchema() {
           "Go-to-market",
           "Styrearbeid",
           "Praktisk bruk av kunstig intelligens i ledelse",
+          "Kommersiell ledelse",
+          "Mobil energi og batteri for byggeplasser",
+          "Lading av elfly",
         ],
         nationality: { "@type": "Country", name: "Norway" },
+        homeLocation: { "@type": "Place", name: "Langesund, Bamble, Telemark, Norge" },
+        email: "mailto:kenneth.andersen2@gmail.com",
+        telephone: "+4740237351",
+        memberOf: [
+          { "@type": "Organization", name: "Styreforeningen" },
+          { "@type": "Organization", name: "Den Norske Turistforening (DNT)" },
+        ],
+        subjectOf: [
+          { "@type": "NewsArticle", headline: "Bygger verdens største offgrid-batteri. Vil passe alt fra byggeplasser til festivaler", publisher: { "@type": "Organization", name: "Teknisk Ukeblad" }, datePublished: "2021-03-12", url: "https://www.tu.no/bygg/bygger-verdens-storste-offgrid-batteri-vil-passe-alt-fra-byggeplasser-til-festivaler/1183273" },
+          { "@type": "NewsArticle", headline: "Skagerak Energi satser på batteri til byggeplasser", publisher: { "@type": "Organization", name: "Energiteknikk" }, datePublished: "2021-04", url: "https://energiteknikk.net/2021/04/skagerak-energi-satser-pa-batteri-til-byggeplasser/" },
+          { "@type": "Article", headline: "Storsatsing på utslippsfrie byggeplasser", publisher: { "@type": "Organization", name: "Skagerak Energi" }, datePublished: "2023-06-26", url: "https://www.skagerakenergi.no/innovasjon/mobil-energi-til-byggeplasser/storsatsing-pa-utslippsfrie-byggeplasser" },
+          { "@type": "NewsArticle", headline: "Går sammen om å levere battericontainere til anleggsplasser", publisher: { "@type": "Organization", name: "Lastebil.no" }, datePublished: "2023", url: "https://lastebil.no/Aktuelt/Nyhetsarkiv/2023/Gaar-sammen-om-aa-levere-battericontainere-til-anleggsplasser" },
+          { "@type": "Article", headline: "Nå kommer lynladere på hjul", publisher: { "@type": "Organization", name: "Skagerak Energi" }, datePublished: "2024-01-18", url: "https://www.skagerakenergi.no/innovasjon/mobil-energi-til-byggeplasser/na-kommer-lynladere-pa-hjul" },
+          { "@type": "NewsArticle", headline: "Avinor inngår avtaler om levering av elflyladere til Stavanger og Bergen", publisher: { "@type": "Organization", name: "Avinor" }, datePublished: "2025-03-31", url: "https://kommunikasjon.ntb.no/pressemelding/18476215/avinor-inngar-avtaler-om-levering-av-elflyladere-til-stavanger-og-bergen?lang=no" },
+        ],
         address: {
           "@type": "PostalAddress",
           addressCountry: "NO",

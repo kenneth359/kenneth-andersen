@@ -11,7 +11,7 @@ export default function Cover() {
     <header className="pt-cover">
       <div className="shot" aria-hidden="true">
         <Image
-          src="/assets/kenneth-studio.jpg"
+          src="/assets/kenneth-hero.jpg"
           alt=""
           fill
           priority
@@ -21,8 +21,9 @@ export default function Cover() {
       </div>
 
       <div className="pt-wrap pt-cover-body">
-        <p className="eyebrow">{h.eyebrow}</p>
+        <p className="eyebrow"><span className="nm">Kenneth Andersen</span> · {h.eyebrow}</p>
         <h1>
+          <span className="sr-only">Kenneth Andersen: </span>
           <span className="ln"><span>{h.title[0]}</span></span>{" "}
           <span className="ln"><span>{h.title[1]}</span></span>
         </h1>
