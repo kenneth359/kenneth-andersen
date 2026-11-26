@@ -43,7 +43,7 @@ export default function CvPage() {
       <main className="cvp-sheet">
         <header className="cvp-head">
           <div className="cvp-photo">
-            <Image src="/assets/kenneth-hero.jpg" alt="Kenneth Andersen" fill sizes="120px" style={{ objectFit: "cover", objectPosition: "50% 18%" }} />
+            <Image src="/assets/kenneth-portrett.jpg" alt="Kenneth Andersen" fill sizes="120px" style={{ objectFit: "cover", objectPosition: "50% 18%" }} />
           </div>
           <div>
             <h1>Kenneth Andersen</h1>

@@ -11,7 +11,7 @@ export default function Cover() {
     <header className="pt-cover">
       <div className="shot" aria-hidden="true">
         <Image
-          src="/assets/kenneth-hero.jpg"
+          src="/assets/kenneth-portrett.jpg"
           alt=""
           fill
           priority

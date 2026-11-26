@@ -16,7 +16,7 @@ export default function PersonSchema() {
         url: "https://kennethandersen.no",
         image: {
           "@type": "ImageObject",
-          url: "https://kennethandersen.no/assets/kenneth-hero.jpg",
+          url: "https://kennethandersen.no/assets/kenneth-portrett.jpg",
           caption: "Kenneth Andersen",
         },
         description:

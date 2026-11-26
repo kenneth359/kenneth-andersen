@@ -52,9 +52,9 @@ export const metadata: Metadata = {
       "Kommersiell leder, selskapsbygger og styremedlem i energi og teknologi. Snakker språket til CEO, CFO, CMO og CTO.",
     images: [
       {
-        url: `${BASE}/assets/kenneth-hero.jpg`,
-        width: 1400,
-        height: 1700,
+        url: `${BASE}/assets/kenneth-portrett.jpg`,
+        width: 600,
+        height: 840,
         alt: "Kenneth Andersen",
       },
     ],
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Kenneth Andersen — det komplekse, gjort forståelig",
     description:
       "Kommersiell leder, selskapsbygger og styremedlem i energi og teknologi.",
-    images: [`${BASE}/assets/kenneth-hero.jpg`],
+    images: [`${BASE}/assets/kenneth-portrett.jpg`],
   },
   robots: {
     index: true,

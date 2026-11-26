@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: "https://kennethandersen.no/cv",
     title: "CV — Kenneth Andersen",
     description: "Corporate venture builder, kommersiell leder og styremedlem i energi og teknologi.",
-    images: [{ url: "https://kennethandersen.no/assets/kenneth-hero.jpg", width: 1400, height: 1700 }],
+    images: [{ url: "https://kennethandersen.no/assets/kenneth-portrett.jpg", width: 600, height: 840 }],
   },
 };
 

@@ -960,7 +960,7 @@ body:has(.pt)::before { display: none; }
 
 /* portrett som toner inn bak teksten */
 .pt-cover .shot { inset: 0; left: 52%; }
-.pt-cover .shot img { object-position: 55% 18%; filter: grayscale(0.2) contrast(1.03) saturate(0.95); opacity: 0.85; }
+.pt-cover .shot img { object-position: 50% 20%; filter: none; opacity: 0.9; }
 .pt-cover .shot::after {
   background:
     linear-gradient(to top, var(--black) 0%, rgba(12,12,13,.55) 22%, transparent 50%),
@@ -975,7 +975,7 @@ body:has(.pt)::before { display: none; }
   .pt .pt-cover { min-height: 100svh; justify-content: flex-end; }
   .pt .pt-cover .shot { position: absolute; inset: 0; height: auto; left: 0; }
   .pt .pt-cover .shot { bottom: auto; height: min(120vw, 760px); }
-  .pt .pt-cover .shot img { object-position: 50% 16%; opacity: 0.85; }
+  .pt .pt-cover .shot img { object-position: 50% 14%; opacity: 0.85; filter: none; }
   .pt .pt-cover .shot::after {
     background: linear-gradient(180deg, rgba(12,12,13,.1) 0%, rgba(12,12,13,.2) 30%, rgba(12,12,13,.85) 62%, var(--black) 90%);
   }
