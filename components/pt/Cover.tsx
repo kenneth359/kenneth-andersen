@@ -23,7 +23,7 @@ export default function Cover() {
       <div className="pt-wrap pt-cover-body">
         <p className="eyebrow">{h.eyebrow}</p>
         <h1>
-          <span className="ln"><span>{h.title[0]}</span></span>
+          <span className="ln"><span>{h.title[0]}</span></span>{" "}
           <span className="ln"><span>{h.title[1]}</span></span>
         </h1>
         <p className="lede">{h.sub}</p>
