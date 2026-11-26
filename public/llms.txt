@@ -1,50 +1,47 @@
 # Kenneth Andersen
 
-> Strategisk rådgiver, styremedlem og interim CEO — spesialisert på energi og teknologi i Norge.
+> Kommersiell leder, selskapsbygger og styremedlem i energi og teknologi. Erfaring fra både etablerte konsern og nye selskaper. Bosatt i Langesund, Norge.
 
-Kenneth Andersen er en norsk strategisk rådgiver og styremedlem med bakgrunn som C-nivå leder i energi- og teknologisektoren. Han hjelper styrer og ledere med strategi, transformasjon og interim ledelse. 15 år erfaring fra energimontør til konsernledelse. Holder også AI-foredrag og internkurs for styrer og ledergrupper.
+Kenneth Andersen er senior forretningsutvikler for elektrifisering i Norden i Skagerak Energi AS. Han bygde Skagerak Mobil Energi fra pilot i 2021 til eget selskap i 2024 og kommersiell drift fra 2025, og var konstituert daglig leder i selskapet fra juni til november 2024. Tidligere har han vært daglig leder i Otera Ratel AS, direktør for marked og forretningsutvikling i OneCo og Lead Commissioning Engineer for ABB Marine i Sør-Korea. Han har fagbrev som energimontør, bachelor i elkraftteknikk og master i økonomi og ledelse fra NTNU, og er sertifisert styremedlem.
 
-## Nøkkelkompetanser
+## Hva han gjør
 
-- Strategisk rådgivning for energiselskaper og teknologibedrifter i Norge
-- Styremedlem med erfaring fra fornybar energi, digitalisering og M&A
-- Interim CEO og lederoppgaver i omstillingsfaser
-- Virksomhetstransformasjon og vekststrategi
-- Kommersialisering og go-to-market
-- Elkraft, kraftnett og energiinfrastruktur
-- AI-foredrag og internkurs for styrer og ledergrupper
+- Kommersiell ledelse i etablerte selskaper: oversetter strategi, teknologi og økonomi til beslutninger ledergruppe og styre kan stå bak. Jobber på tvers av CEO-, CFO-, CMO- og CTO-perspektivet
+- Relasjonsbygging mot kunder, partnere, eiere og myndigheter
+- Corporate venture building: tar nye forretningsområder fra idé og kundevalidering til eget selskap i drift, med egen resultatlinje, ledelse og produkt
+- Forretningsmodeller og investeringscase (CAPEX, OPEX, NPV, IRR) for ledelse og styre
+- Go-to-market, anbud og partnerskap i energi, kraft og teknologi
+- Bruker AI daglig (Microsoft Copilot, ChatGPT, Claude, Claude Code) i tilbud, markedsarbeid, prosjektarbeid og strategi
+- Styrearbeid, og et begrenset antall rådgivnings- og foredragsoppdrag om praktisk AI
 
-## Utvalgte resultater
+## Dokumenterte resultater
 
-- Bygget Skagerak Mobil Energi fra null til operativ drift — sikret over 1 milliard NOK i finansieringskapasitet
-- Doblet budsjettet i OneCo Elkraft på 12 måneder — skalerte fra 21 til 60+ ansatte
-- Snudde Otera Ratel etter eierskifte — vant 3 av 4 nasjonale anbud i år én
-- Ledet Kvilldal HVDC-prosjekt (73 MNOK) for Statnett
+- Skagerak Mobil Energi: fra pilot (2021) til eget selskap i kommersiell drift. Omtalt i Teknisk Ukeblad (2021) som verdens største offgrid-batteri for byggeplasser. Samarbeid med Circle K Norge fra 2023. 146 MWh levert, ca. 105 tonn CO₂ redusert (beregnet)
+- Vant Avinors konkurranse om mobil ladeløsning for elfly på Bergen lufthavn Flesland, valgt blant fem tilbydere (ledet tilbudet). Brukt i Avinors testprogram for elfly 2025–2026
+- OneCo: vekst på mer enn det dobbelte av budsjettert nivå over tolv måneder. Ledet tilbudsprosessen for Kvilldal HVDC (73 MNOK). Enheten vokste fra rundt 21 til over 60 ansatte
+- Otera Ratel: etablerte den norske virksomheten fra null. Tre av fire store nasjonale anbud gikk til forhandling første driftsår
 
-## Tjenester
+## Relevante roller
 
-- **Strategisk rådgivning**: Sparringspartner for CEO, eier eller lederteam
-- **Styremedlemskap**: Sertifisert styremedlem, spesialisert på energi og teknologi
-- **Interim CEO / COO**: Operativ lederstøtte i kritiske faser (3–18 måneder)
-- **AI-foredrag og kurs**: Foredrag og internkurs om praktisk kunstig intelligens for styrer og ledergrupper
+Kommersiell direktør eller annen C-nivårolle i etablert konsern, daglig leder i vekstselskap eller nytt forretningsområde, kommersiell direktør (CCO/CBDO), leder for venture building i konsern, investeringsdirektør med aktivt eierskap, styreverv.
 
 ## Viktigste sider
 
-- [Forside](https://kennethandersen.no): Hvem Kenneth er, tjenester og kontakt
-- [Strategi](https://kennethandersen.no/strategi): Strategisk rådgivning
-- [Styrearbeid](https://kennethandersen.no/styrearbeid): Styremedlemskap
-- [Interim ledelse](https://kennethandersen.no/interim): Interim CEO og COO
-- [AI-foredrag](https://kennethandersen.no/ai-foredrag): AI-foredrag og kurs for styrer og ledergrupper
-- [Energi](https://kennethandersen.no/energi): Energisektorkunnskap
+- [Forside](https://kennethandersen.no): Profil, caser, resultater og kontakt
+- [CV](https://kennethandersen.no/cv): Full CV på norsk og engelsk, kan lastes ned som PDF
+- [Strategi](https://kennethandersen.no/strategi): Strategi og forretningsutvikling
+- [Styrearbeid](https://kennethandersen.no/styrearbeid): Styreverv og styreerfaring
+- [Interim ledelse](https://kennethandersen.no/interim): Erfaring fra etablering og oppbygging
+- [Energi](https://kennethandersen.no/energi): Erfaring fra energisektoren
+- [AI-foredrag](https://kennethandersen.no/ai-foredrag): Foredrag og kurs om praktisk AI
 
 ## Kontakt
 
 - E-post: kenneth.andersen2@gmail.com
-- LinkedIn: https://linkedin.com/in/kennethandersenstrategy
-- Nettsted: https://kennethandersen.no
 - Telefon: +47 402 37 351
-- Sted: Langesund / Norge
+- LinkedIn: https://linkedin.com/in/kennethandersenstrategy
+- Sted: Langesund, Norge
 
 ## Språk
 
-Norsk (primær), Engelsk
+Norsk (morsmål), engelsk (flytende), forstår svensk og dansk.

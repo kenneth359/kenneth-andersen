@@ -11,7 +11,7 @@ export default function Nav() {
   return (
     <nav className="pt-nav">
       <div className="pt-nav-inner">
-        <a href="#" className="name">Kenneth Andersen</a>
+        <a href="/" className="name">Kenneth Andersen</a>
 
         <div className="pt-nav-links">
           {t.links.map((l) => (
@@ -37,7 +37,7 @@ export default function Nav() {
             </button>
           </div>
 
-          <a href="#kontakt" className="pt-btn pt-nav-cta">{t.cta}</a>
+          <a href={t.cvHref} className="pt-btn pt-nav-cta">{t.cta}</a>
 
           <button
             className="pt-burger"
@@ -62,7 +62,7 @@ export default function Nav() {
           {t.links.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
           ))}
-          <a href="#kontakt" className="pt-btn" onClick={() => setOpen(false)}>{t.cta}</a>
+          <a href={t.cvHref} className="pt-btn" onClick={() => setOpen(false)}>{t.cta}</a>
         </div>
       )}
     </nav>

@@ -1,6 +1,8 @@
 "use client";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/translations";
+import CountUp from "./CountUp";
+import Plate from "./Plate";
 
 const LINKEDIN = "https://linkedin.com/in/kennethandersenstrategy";
 
@@ -48,10 +50,15 @@ export function Logos() {
   const { lang } = useLang();
   const { logos } = translations[lang];
   return (
-    <section className="pt-logos">
-      <div className="pt-wrap inner">
+    <section className="pt-logos" aria-label={logos.label}>
+      <div className="pt-wrap">
         <span className="label">{logos.label}</span>
-        <ul>
+      </div>
+      <div className="pt-marquee">
+        <ul className="pt-marquee-track">
+          {logos.items.map((n) => <li key={n}>{n}</li>)}
+        </ul>
+        <ul className="pt-marquee-track" aria-hidden="true">
           {logos.items.map((n) => <li key={n}>{n}</li>)}
         </ul>
       </div>
@@ -94,6 +101,221 @@ export function Origin() {
   );
 }
 
+export function Lenses() {
+  const { lang } = useLang();
+  const l = translations[lang].lenses;
+  return (
+    <section id="bredde" className="pt-wrap pt-sec">
+      <div className="pt-sec-head">
+        <h2>{l.heading}</h2>
+        <span className="side">{l.eyebrow}</span>
+      </div>
+      <p className="pt-sec-lede">{l.sub}</p>
+      <div className="pt-lenses">
+        {l.items.map((it) => (
+          <article className="pt-lens pt-reveal" key={it.role}>
+            <div className="role">{it.role}</div>
+            <h3>{it.q}</h3>
+            <p className="bd">{it.body}</p>
+            <p className="proof">{it.proof}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function Role() {
+  const { lang } = useLang();
+  const r = translations[lang].role;
+  const cols = [r.build, r.lead];
+  return (
+    <section id="rolle" className="pt-wrap pt-sec">
+      <div className="pt-sec-head">
+        <h2>{r.heading}</h2>
+        <span className="side">{r.eyebrow}</span>
+      </div>
+      <p className="pt-sec-lede">{r.sub}</p>
+
+      <div className="pt-role">
+        {cols.map((c) => (
+          <div className="pt-role-col pt-reveal" key={c.title}>
+            <h3>{c.title}</h3>
+            <ol>
+              {c.items.map((it) => <li key={it}>{it}</li>)}
+            </ol>
+            <p className="note">{c.note}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function AiWork() {
+  const { lang } = useLang();
+  const a = translations[lang].ai;
+  return (
+    <section id="ai" className="pt-wrap pt-sec">
+      <div className="pt-sec-head">
+        <h2>{a.heading}</h2>
+        <span className="side">{a.eyebrow}</span>
+      </div>
+      <p className="pt-sec-lede">{a.sub}</p>
+
+      <dl className="pt-ai">
+        {a.areas.map((x) => (
+          <div className="pt-reveal" key={x.k}>
+            <dt>{x.k}</dt>
+            <dd>{x.v}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <div className="pt-ai-ex">
+        <h3>{a.examplesTitle}</h3>
+        <ul>
+          {a.examples.map((x) => (
+            <li className="pt-reveal" key={x.from}>
+              <span className="from">{x.from}</span>
+              <span className="arrow" aria-hidden="true">→</span>
+              <span className="to">{x.to}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="pt-ai-tools">
+        <span className="label">{a.toolsLabel}</span>
+        <ul>
+          {a.tools.map((t) => <li key={t}>{t}</li>)}
+        </ul>
+      </div>
+
+      <div className="pt-recr-acts">
+        <p className="pt-ai-note">{a.note}</p>
+        <a className="pt-btn-line" href="/ai-foredrag">{a.cta}</a>
+      </div>
+    </section>
+  );
+}
+
+export function Personal() {
+  const { lang } = useLang();
+  const p = translations[lang].personal;
+  return (
+    <section id="personlig" className="pt-wrap pt-sec pt-personal">
+      <div className="pt-sec-head">
+        <h2>{p.heading}</h2>
+        <span className="side">{p.eyebrow}</span>
+      </div>
+      <p className="pt-personal-body pt-reveal">{p.body}</p>
+    </section>
+  );
+}
+
+export function PersonalPlate() {
+  const { lang } = useLang();
+  return (
+    <Plate
+      src="/assets/kenneth-tedx.jpg"
+      position="50% 2%"
+      line={translations[lang].personal.plateLine}
+    />
+  );
+}
+
+export function Press() {
+  const { lang } = useLang();
+  const p = translations[lang].press;
+  return (
+    <section id="omtale" className="pt-wrap pt-sec">
+      <div className="pt-sec-head">
+        <h2>{p.heading}</h2>
+        <span className="side">{p.eyebrow}</span>
+      </div>
+      <p className="pt-sec-lede">{p.sub}</p>
+      <ul className="pt-press">
+        {p.items.map((it) => (
+          <li className="pt-reveal" key={it.url}>
+            <a href={it.url} target="_blank" rel="noopener noreferrer">
+              <span className="meta">{it.outlet} · {it.date}</span>
+              <span className="t">{it.title}</span>
+              <span className="n">{it.note}</span>
+              <span className="go" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export function Ventures() {
+  const { lang } = useLang();
+  const v = translations[lang].ventures;
+  return (
+    <section id="selskapsbygging" className="pt-wrap pt-sec">
+      <div className="pt-sec-head">
+        <h2>{v.heading}</h2>
+        <span className="side">{v.eyebrow}</span>
+      </div>
+      <p className="pt-sec-lede">{v.sub}</p>
+      <div className="pt-svcs">
+        {v.items.map((it) => (
+          <article className="pt-svc pt-reveal" key={it.title}>
+            <div className="tag">{it.tag}</div>
+            <h3>{it.title}</h3>
+            <p className="bd">{it.body}</p>
+            <ul>
+              {it.bullets.map((b) => <li key={b}>{b}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function Recruiters() {
+  const { lang } = useLang();
+  const r = translations[lang].recruiters;
+  return (
+    <section id="rekrutterere" className="pt-wrap pt-sec">
+      <div className="pt-sec-head">
+        <h2>{r.heading}</h2>
+        <span className="side">{r.eyebrow}</span>
+      </div>
+      <p className="pt-sec-lede">{r.sub}</p>
+
+      <div className="pt-recr">
+        <div>
+          <h3>{r.fitTitle}</h3>
+          <ul className="fit">
+            {r.fit.map((f) => <li key={f}>{f}</li>)}
+          </ul>
+        </div>
+        <div>
+          <h3>{r.factsTitle}</h3>
+          <dl className="facts">
+            {r.facts.map((f) => (
+              <div key={f.k}>
+                <dt>{f.k}</dt>
+                <dd>{f.v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+
+      <div className="pt-recr-acts">
+        <a className="pt-btn" href="/cv">{r.cta}</a>
+        <a className="pt-btn-line" href="/cv?print=1">{r.ctaPrint}</a>
+      </div>
+    </section>
+  );
+}
+
 export function Principles() {
   const { lang } = useLang();
   const os = translations[lang].os;
@@ -106,7 +328,7 @@ export function Principles() {
 
       <div className="pt-princs">
         {os.pillars.map((p) => (
-          <article className="pt-princ" key={p.title}>
+          <article className="pt-princ pt-reveal" key={p.title}>
             <h3>{p.title}</h3>
             <div>
               <p className="bd">{p.body}</p>
@@ -130,8 +352,8 @@ export function Numbers() {
       </div>
       <div className="pt-figs">
         {t.stats.map((s) => (
-          <div className="pt-fig" key={s.label + s.value}>
-            <div className="v">{s.value}</div>
+          <div className="pt-fig pt-reveal" key={s.label + s.value}>
+            <div className="v"><CountUp value={s.value} /></div>
             <div>
               <div className="l">{s.label}</div>
               <div className="n">{s.note}</div>
@@ -152,7 +374,7 @@ export function Cases() {
         <h2>{c.heading}</h2>
       </div>
       {c.items.map((it) => (
-        <article className="pt-case" key={it.company}>
+        <article className="pt-case pt-reveal" key={it.company}>
           <div className="left">
             <div className="company">{it.company}</div>
             <div className="tag">{it.tag}</div>
@@ -178,17 +400,19 @@ export function Services() {
     <section id="tjenester" className="pt-wrap pt-sec">
       <div className="pt-sec-head">
         <h2>{s.heading}</h2>
+        <span className="side">{s.eyebrow}</span>
       </div>
       <p className="pt-sec-lede">{s.sub}</p>
-      <div className="pt-svcs">
+      <div className="pt-svcs pt-svcs-3">
         {s.items.map((it) => (
-          <article className="pt-svc" key={it.title}>
+          <article className="pt-svc pt-reveal" key={it.title}>
             <div className="tag">{it.tag}</div>
             <h3>{it.title}</h3>
             <p className="bd">{it.body}</p>
             <ul>
               {it.bullets.map((b) => <li key={b}>{b}</li>)}
             </ul>
+            <a className="pt-btn-line pt-svc-link" href={it.link.href}>{it.link.label}</a>
           </article>
         ))}
       </div>

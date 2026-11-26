@@ -1,20 +1,27 @@
 import "./portrett.css";
 import Nav from "@/components/pt/Nav";
 import Cover from "@/components/pt/Cover";
-import Plate from "@/components/pt/Plate";
 import Contact from "@/components/pt/Contact";
 import Footer from "@/components/pt/Footer";
 import OriginFootnote from "@/components/pt/OriginFootnote";
+import RevealObserver from "@/components/pt/RevealObserver";
 import {
   Logos,
   Origin,
+  Role,
+  Lenses,
+  AiWork,
+  Personal,
+  PersonalPlate,
+  Ventures,
+  Press,
+  Recruiters,
   Principles,
   Numbers,
   Cases,
   Services,
   Timeline,
   References,
-  Notes,
 } from "@/components/pt/Sections";
 
 export default function Home() {
@@ -24,26 +31,34 @@ export default function Home() {
       <Cover />
       <main>
         <Logos />
+        <Lenses />
         <Origin />
 
         <OriginFootnote />
 
+        <Role />
         <Principles />
 
         {/* Beviset ligger på papir: siden snur, og snur tilbake etterpå. */}
         <div className="pt-light">
           <Numbers />
           <Cases />
+          <Press />
         </div>
 
-        <Services />
-        <Plate src="/assets/kenneth-tedx.jpg" position="50% 2%" />
+        <Recruiters />
+
+        <AiWork />
+        <Ventures />
+        <PersonalPlate />
+        <Personal />
         <Timeline />
         <References />
-        <Notes />
+        <Services />
         <Contact />
       </main>
       <Footer />
+      <RevealObserver />
     </div>
   );
 }

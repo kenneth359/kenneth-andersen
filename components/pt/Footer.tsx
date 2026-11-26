@@ -20,6 +20,16 @@ export default function Footer() {
             {nav.links.map((l) => (
               <a key={l.href} href={l.href}>{l.label}</a>
             ))}
+            <a href="/cv">CV</a>
+          </div>
+
+          <div className="col">
+            <h4>{lang === "no" ? "Mer" : "More"}</h4>
+            <a href="/strategi">{lang === "no" ? "Strategi" : "Strategy"}</a>
+            <a href="/styrearbeid">{lang === "no" ? "Styrearbeid" : "Board work"}</a>
+            <a href="/interim">{lang === "no" ? "Interim ledelse" : "Interim leadership"}</a>
+            <a href="/energi">{lang === "no" ? "Energi" : "Energy"}</a>
+            <a href="/ai-foredrag">{lang === "no" ? "AI-foredrag" : "AI talks"}</a>
           </div>
 
           <div className="col">

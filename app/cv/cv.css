@@ -1,0 +1,121 @@
+/* ============================================================
+   /cv — papirversjon av profilen. Skjerm: ark på mørk bunn.
+   Utskrift: A4, ingen verktøylinje.
+   ============================================================ */
+.cvp {
+  --ink: #15171A;
+  --ink-2: #42464B;
+  --ink-3: #5E6368;
+  --paper: #F7F6F2;
+  --rule: rgba(21, 23, 26, 0.16);
+  --g: var(--font-schibsted), "Schibsted Grotesk", system-ui, sans-serif;
+  min-height: 100vh;
+  background: #0C0C0D;
+  font-family: var(--g);
+  color: var(--ink);
+  padding-bottom: 80px;
+}
+body:has(.cvp) { background: #0C0C0D; }
+body:has(.cvp)::before { display: none; }
+
+.cvp *, .cvp *::before, .cvp *::after { box-sizing: border-box; }
+
+.cvp a:focus-visible, .cvp button:focus-visible { outline: 2px solid #EDE9E2; outline-offset: 3px; }
+.cvp-sheet a:focus-visible { outline-color: var(--ink); }
+
+.cvp-bar { position: sticky; top: 0; z-index: 10; background: rgba(12,12,13,.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(237,233,226,.14); }
+.cvp-bar-inner { max-width: 900px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.cvp-home { color: #EDE9E2; text-decoration: none; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; }
+.cvp-bar-right { display: flex; align-items: center; gap: 12px; }
+.cvp-lang { display: flex; border: 1px solid rgba(237,233,226,.26); border-radius: 2px; overflow: hidden; }
+.cvp-lang button { min-width: 44px; min-height: 40px; background: transparent; border: 0; color: #A8A49D; font: 600 13px var(--g); cursor: pointer; }
+.cvp-lang button.on { background: #EDE9E2; color: #0C0C0D; }
+.cvp-print { min-height: 42px; padding: 10px 18px; border: 0; border-radius: 2px; background: #EDE9E2; color: #0C0C0D; font: 600 15px var(--g); cursor: pointer; }
+
+.cvp-sheet {
+  max-width: 900px;
+  margin: 40px auto 0;
+  background: var(--paper);
+  padding: 64px 72px 56px;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+.cvp-sheet p { margin: 0; }
+
+.cvp-head { display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 28px; align-items: center; padding-bottom: 28px; border-bottom: 2px solid var(--ink); }
+.cvp-photo { position: relative; width: 108px; height: 132px; overflow: hidden; background: #DDD; filter: grayscale(1); }
+.cvp-head h1 { margin: 0; font-size: 40px; line-height: 1; font-weight: 700; letter-spacing: -0.035em; }
+.cvp-title { margin-top: 10px !important; font-size: 16px; font-weight: 500; color: var(--ink-2); }
+.cvp-contact { margin-top: 12px !important; font-size: 13.5px; color: var(--ink-3); display: flex; flex-wrap: wrap; row-gap: 2px; }
+.cvp-contact a { color: inherit; text-decoration: none; }
+.cvp-contact .sep { margin: 0 8px; }
+
+.cvp-sec { margin-top: 30px; }
+.cvp-sec h2 { margin: 0 0 12px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); padding-bottom: 6px; border-bottom: 1px solid var(--rule); }
+.cvp-lede { color: var(--ink); max-width: 76ch; }
+.cvp-lede + .cvp-lede { margin-top: 8px !important; }
+
+.cvp-figs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 24px; }
+.cvp-fig .v { font-size: 24px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; }
+.cvp-fig .l { font-size: 13.5px; font-weight: 600; margin-top: 2px; }
+.cvp-fig .n { font-size: 12.5px; color: var(--ink-3); line-height: 1.4; }
+
+.cvp-job { padding: 14px 0 12px; border-bottom: 1px solid var(--rule); }
+.cvp-job li, .cvp-job-head, .cvp-job .org { break-inside: avoid; }
+.cvp-job-head { break-after: avoid; }
+.cvp-job:last-of-type { border-bottom: 0; }
+.cvp-job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.cvp-job h3 { margin: 0; font-size: 16.5px; font-weight: 650; letter-spacing: -0.01em; }
+.cvp-job .period { font-size: 13.5px; color: var(--ink-3); white-space: nowrap; }
+.cvp-job .org { font-size: 14px; font-weight: 500; color: var(--ink-2); margin: 2px 0 6px; }
+.cvp-job p { color: var(--ink-2); }
+.cvp-job ul { margin: 6px 0 0; padding: 0 0 0 18px; color: var(--ink-2); }
+.cvp-job li { margin: 3px 0; padding-left: 2px; }
+.cvp-job li::marker { color: var(--ink-3); }
+.cvp-earlier { margin-top: 10px !important; font-size: 14px; color: var(--ink-3); }
+
+.cvp-dl { margin: 0; }
+.cvp-dl > div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 16px; padding: 6px 0; break-inside: avoid; }
+.cvp-dl dt { font-weight: 600; font-size: 14.5px; }
+.cvp-dl dd { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+.cvp-two { display: grid; grid-template-columns: 1fr; }
+.cvp-refs { margin-top: 10px !important; font-size: 14px; color: var(--ink-3); }
+
+@media (max-width: 760px) {
+  .cvp-sheet { margin-top: 0; padding: 36px 20px 40px; }
+  .cvp-head { grid-template-columns: 1fr; gap: 18px; }
+  .cvp-head h1 { font-size: 32px; }
+  .cvp-figs { grid-template-columns: 1fr 1fr; }
+  .cvp-dl > div { grid-template-columns: 1fr; gap: 2px; }
+  .cvp-job-head { flex-direction: column; gap: 2px; }
+  .cvp-print { padding: 10px 12px; font-size: 14px; }
+  .cvp-home { font-size: 14px; }
+}
+
+@page { size: A4; margin: 14mm 14mm 14mm 14mm; }
+@media print {
+  html, body { background: #fff !important; }
+  .cvp { background: #fff; padding: 0; min-height: 0; }
+  .cvp-bar { display: none; }
+  .cvp-sheet { margin: 0; max-width: none; padding: 0; background: #fff; font-size: 10pt; line-height: 1.45; }
+  .cvp-head h1 { font-size: 26pt; }
+  .cvp-title { font-size: 11pt; }
+  .cvp-contact { font-size: 9pt; }
+  .cvp-sec { margin-top: 16pt; }
+  .cvp-sec h2 { font-size: 8.5pt; margin-bottom: 7pt; }
+  .cvp-fig .v { font-size: 15pt; }
+  .cvp-fig .l { font-size: 9pt; }
+  .cvp-fig .n { font-size: 8.5pt; }
+  .cvp-job h3 { font-size: 11pt; }
+  .cvp-job .period, .cvp-job .org { font-size: 9.5pt; }
+  .cvp-earlier, .cvp-refs, .cvp-dl dt, .cvp-dl dd { font-size: 9.5pt; }
+  .cvp-dl > div { grid-template-columns: 120pt minmax(0, 1fr); padding: 3pt 0; }
+  .cvp-photo { width: 78pt; height: 96pt; }
+  .cvp-head { grid-template-columns: 78pt minmax(0, 1fr); }
+  .cvp a { color: inherit; }
+  .cvp-sec h2 { break-after: avoid; }
+  .cvp-job { padding: 9pt 0 8pt; }
+  .cvp-job ul { margin-top: 4pt; }
+  .cvp-job li { margin: 1.5pt 0; }
+  .cvp-lede + .cvp-lede { margin-top: 5pt !important; }
+}
